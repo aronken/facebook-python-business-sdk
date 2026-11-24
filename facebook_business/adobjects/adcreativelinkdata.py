@@ -45,6 +45,7 @@ class AdCreativeLinkData(
         image_hash = 'image_hash'
         image_layer_specs = 'image_layer_specs'
         image_overlay_spec = 'image_overlay_spec'
+        is_local_expansion = 'is_local_expansion'
         link = 'link'
         message = 'message'
         multi_share_end_card = 'multi_share_end_card'
@@ -58,6 +59,7 @@ class AdCreativeLinkData(
         preferred_video_tags = 'preferred_video_tags'
         retailer_item_ids = 'retailer_item_ids'
         show_multiple_images = 'show_multiple_images'
+        smart_pse_enabled = 'smart_pse_enabled'
         static_fallback_spec = 'static_fallback_spec'
         use_flexible_image_aspect_ratio = 'use_flexible_image_aspect_ratio'
 
@@ -91,6 +93,7 @@ class AdCreativeLinkData(
         'image_hash': 'string',
         'image_layer_specs': 'list<AdCreativeLinkDataImageLayerSpec>',
         'image_overlay_spec': 'AdCreativeLinkDataImageOverlaySpec',
+        'is_local_expansion': 'bool',
         'link': 'string',
         'message': 'string',
         'multi_share_end_card': 'bool',
@@ -104,6 +107,7 @@ class AdCreativeLinkData(
         'preferred_video_tags': 'list<string>',
         'retailer_item_ids': 'list<string>',
         'show_multiple_images': 'bool',
+        'smart_pse_enabled': 'bool',
         'static_fallback_spec': 'AdCreativeStaticFallbackSpec',
         'use_flexible_image_aspect_ratio': 'bool',
     }

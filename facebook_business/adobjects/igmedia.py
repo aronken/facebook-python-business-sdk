@@ -28,26 +28,83 @@ class IGMedia(
 
     class Field(AbstractObject.Field):
         alt_text = 'alt_text'
+        audio_id = 'audio_id'
         boost_eligibility_info = 'boost_eligibility_info'
         caption = 'caption'
         comments_count = 'comments_count'
         copyright_check_information = 'copyright_check_information'
+        current_live_viewer_count = 'current_live_viewer_count'
+        has_poll = 'has_poll'
+        has_slider = 'has_slider'
         id = 'id'
         ig_id = 'ig_id'
+        ingest_first_video_received_time = 'ingest_first_video_received_time'
+        ingest_is_ready_to_start = 'ingest_is_ready_to_start'
+        ingest_key = 'ingest_key'
+        ingest_last_heartbeat_time = 'ingest_last_heartbeat_time'
+        ingest_state = 'ingest_state'
+        ingest_url = 'ingest_url'
+        ingest_video_height = 'ingest_video_height'
+        ingest_video_width = 'ingest_video_width'
+        is_ai_generated = 'is_ai_generated'
         is_comment_enabled = 'is_comment_enabled'
         is_shared_to_feed = 'is_shared_to_feed'
         legacy_instagram_media_id = 'legacy_instagram_media_id'
         like_count = 'like_count'
+        live_reactions = 'live_reactions'
+        live_status = 'live_status'
+        media_audio_type = 'media_audio_type'
         media_product_type = 'media_product_type'
         media_type = 'media_type'
         media_url = 'media_url'
         owner = 'owner'
         permalink = 'permalink'
+        reposts_count = 'reposts_count'
+        saved_count = 'saved_count'
+        shares_count = 'shares_count'
         shortcode = 'shortcode'
         thumbnail_url = 'thumbnail_url'
         timestamp = 'timestamp'
+        total_comments_count = 'total_comments_count'
+        total_like_count = 'total_like_count'
+        total_views_count = 'total_views_count'
         username = 'username'
+        video_title = 'video_title'
         view_count = 'view_count'
+
+    class Status:
+        ended = 'ENDED'
+        started = 'STARTED'
+
+    def api_delete(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
+        from facebook_business.utils import api_utils
+        if batch is None and (success is not None or failure is not None):
+          api_utils.warning('`success` and `failure` callback only work for batch call.')
+        param_types = {
+        }
+        enums = {
+        }
+        request = FacebookRequest(
+            node_id=self['id'],
+            method='DELETE',
+            endpoint='/',
+            api=self._api,
+            param_checker=TypeChecker(param_types, enums),
+            target_class=AbstractCrudObject,
+            api_type='NODE',
+            response_parser=ObjectParser(reuse_object=self),
+        )
+        request.add_params(params)
+        request.add_fields(fields)
+
+        if batch is not None:
+            request.add_to_batch(batch, success=success, failure=failure)
+            return request
+        elif pending:
+            return request
+        else:
+            self.assure_call()
+            return request.execute()
 
     def api_get(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
@@ -65,6 +122,7 @@ class IGMedia(
         enums = {
             'boostable_media_callsite_enum': [
                 'ADS_MANAGER_L1_EDITOR_DYNAMIC_ADS_WITH_EXISTING_POST',
+                'PA_HUB_CATALOG_INGESTION_CREATOR_ASSET',
             ],
         }
         request = FacebookRequest(
@@ -95,8 +153,10 @@ class IGMedia(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
             'comment_enabled': 'bool',
+            'status': 'status_enum',
         }
         enums = {
+            'status_enum': IGMedia.Status.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
@@ -506,30 +566,54 @@ class IGMedia(
 
     _field_types = {
         'alt_text': 'string',
+        'audio_id': 'string',
         'boost_eligibility_info': 'IGMediaBoostEligibilityInfo',
         'caption': 'string',
         'comments_count': 'int',
         'copyright_check_information': 'IGVideoCopyrightCheckMatchesInformation',
+        'current_live_viewer_count': 'int',
+        'has_poll': 'bool',
+        'has_slider': 'bool',
         'id': 'string',
         'ig_id': 'string',
+        'ingest_first_video_received_time': 'int',
+        'ingest_is_ready_to_start': 'bool',
+        'ingest_key': 'string',
+        'ingest_last_heartbeat_time': 'int',
+        'ingest_state': 'string',
+        'ingest_url': 'string',
+        'ingest_video_height': 'int',
+        'ingest_video_width': 'int',
+        'is_ai_generated': 'bool',
         'is_comment_enabled': 'bool',
         'is_shared_to_feed': 'bool',
         'legacy_instagram_media_id': 'string',
         'like_count': 'int',
+        'live_reactions': 'IGLiveMediaReactions',
+        'live_status': 'string',
+        'media_audio_type': 'string',
         'media_product_type': 'string',
         'media_type': 'string',
         'media_url': 'string',
         'owner': 'IGUser',
         'permalink': 'string',
+        'reposts_count': 'int',
+        'saved_count': 'int',
+        'shares_count': 'int',
         'shortcode': 'string',
         'thumbnail_url': 'string',
         'timestamp': 'datetime',
+        'total_comments_count': 'int',
+        'total_like_count': 'int',
+        'total_views_count': 'int',
         'username': 'string',
+        'video_title': 'string',
         'view_count': 'int',
     }
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
+        field_enum_info['Status'] = IGMedia.Status.__dict__.values()
         return field_enum_info
 
 

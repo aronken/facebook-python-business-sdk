@@ -28,7 +28,9 @@ class AdStudyCell(
 
     class Field(AbstractObject.Field):
         ad_entities_count = 'ad_entities_count'
+        ad_ids = 'ad_ids'
         control_percentage = 'control_percentage'
+        exclusion_geo = 'exclusion_geo'
         id = 'id'
         name = 'name'
         treatment_percentage = 'treatment_percentage'
@@ -89,6 +91,7 @@ class AdStudyCell(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
             'adaccounts': 'list<unsigned int>',
+            'ads': 'list<string>',
             'adsets': 'list<string>',
             'campaigns': 'list<string>',
             'creation_template': 'creation_template_enum',
@@ -215,7 +218,9 @@ class AdStudyCell(
 
     _field_types = {
         'ad_entities_count': 'unsigned int',
+        'ad_ids': 'list<string>',
         'control_percentage': 'float',
+        'exclusion_geo': 'list<string>',
         'id': 'string',
         'name': 'string',
         'treatment_percentage': 'float',

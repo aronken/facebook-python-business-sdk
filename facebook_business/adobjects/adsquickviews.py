@@ -31,12 +31,19 @@ class AdsQuickViews(
         breakdowns = 'breakdowns'
         column_fields = 'column_fields'
         description = 'description'
+        grouping = 'grouping'
         id = 'id'
+        is_attribution_windows_disabled = 'is_attribution_windows_disabled'
+        is_breakdowns_disabled = 'is_breakdowns_disabled'
+        is_columns_and_sort_disabled = 'is_columns_and_sort_disabled'
+        is_filters_disabled = 'is_filters_disabled'
+        is_grouping_disabled = 'is_grouping_disabled'
         name = 'name'
         owner = 'owner'
         permission = 'permission'
         quick_view_type = 'quick_view_type'
         sort = 'sort'
+        time_stamp_last_used_by_owner = 'time_stamp_last_used_by_owner'
 
     def api_get(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
@@ -73,12 +80,19 @@ class AdsQuickViews(
         'breakdowns': 'list<string>',
         'column_fields': 'list<string>',
         'description': 'string',
+        'grouping': 'string',
         'id': 'string',
+        'is_attribution_windows_disabled': 'bool',
+        'is_breakdowns_disabled': 'bool',
+        'is_columns_and_sort_disabled': 'bool',
+        'is_filters_disabled': 'bool',
+        'is_grouping_disabled': 'bool',
         'name': 'string',
         'owner': 'Profile',
         'permission': 'string',
         'quick_view_type': 'string',
         'sort': 'list<Object>',
+        'time_stamp_last_used_by_owner': 'datetime',
     }
     @classmethod
     def _get_field_enum_info(cls):

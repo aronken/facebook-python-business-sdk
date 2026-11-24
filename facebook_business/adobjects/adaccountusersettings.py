@@ -35,6 +35,8 @@ class AdAccountUserSettings(
         ad_object_export_format = 'ad_object_export_format'
         ads_manager_footer_row_toast_impressions = 'ads_manager_footer_row_toast_impressions'
         auto_review_video_caption = 'auto_review_video_caption'
+        budget_optimization_quick_view_created = 'budget_optimization_quick_view_created'
+        budget_pool_qv_created = 'budget_pool_qv_created'
         campaign_overview_columns = 'campaign_overview_columns'
         column_suggestion_status = 'column_suggestion_status'
         conditional_formatting_rules = 'conditional_formatting_rules'
@@ -60,7 +62,6 @@ class AdAccountUserSettings(
         is_3p_auth_setting_set = 'is_3p_auth_setting_set'
         is_ads_manager_footer_row_preference_set = 'is_ads_manager_footer_row_preference_set'
         is_ads_manager_footer_row_shown = 'is_ads_manager_footer_row_shown'
-        is_text_variation_nux_close = 'is_text_variation_nux_close'
         last_used_columns = 'last_used_columns'
         last_used_pe_filters = 'last_used_pe_filters'
         last_used_website_urls = 'last_used_website_urls'
@@ -84,7 +85,6 @@ class AdAccountUserSettings(
         should_logout_of_3p_sourcing = 'should_logout_of_3p_sourcing'
         should_show_shops_ads_metrics_onboarding_tour = 'should_show_shops_ads_metrics_onboarding_tour'
         show_archived_data = 'show_archived_data'
-        show_text_variation_nux_tooltip = 'show_text_variation_nux_tooltip'
         syd_campaign_trends_activemetric = 'syd_campaign_trends_activemetric'
         syd_campaign_trends_attribution = 'syd_campaign_trends_attribution'
         syd_campaign_trends_metrics = 'syd_campaign_trends_metrics'
@@ -92,9 +92,14 @@ class AdAccountUserSettings(
         syd_campaign_trends_time_range = 'syd_campaign_trends_time_range'
         syd_landing_page_opt_in_status = 'syd_landing_page_opt_in_status'
         text_gen_persona_opt_in_type = 'text_gen_persona_opt_in_type'
+        text_variations_hl_opt_in_out_ts = 'text_variations_hl_opt_in_out_ts'
+        text_variations_hl_opt_in_type = 'text_variations_hl_opt_in_type'
         text_variations_opt_in_out_ts = 'text_variations_opt_in_out_ts'
         text_variations_opt_in_type = 'text_variations_opt_in_type'
         user = 'user'
+        value_optimized_qv_created = 'value_optimized_qv_created'
+        value_qv_nux_impressions = 'value_qv_nux_impressions'
+        value_suggested_column_status = 'value_suggested_column_status'
 
     class SydCampaignTrendsObjective:
         app_installs = 'APP_INSTALLS'
@@ -158,6 +163,8 @@ class AdAccountUserSettings(
         'ad_object_export_format': 'string',
         'ads_manager_footer_row_toast_impressions': 'int',
         'auto_review_video_caption': 'bool',
+        'budget_optimization_quick_view_created': 'bool',
+        'budget_pool_qv_created': 'bool',
         'campaign_overview_columns': 'list<string>',
         'column_suggestion_status': 'string',
         'conditional_formatting_rules': 'list<string>',
@@ -183,7 +190,6 @@ class AdAccountUserSettings(
         'is_3p_auth_setting_set': 'bool',
         'is_ads_manager_footer_row_preference_set': 'bool',
         'is_ads_manager_footer_row_shown': 'bool',
-        'is_text_variation_nux_close': 'bool',
         'last_used_columns': 'Object',
         'last_used_pe_filters': 'list<Object>',
         'last_used_website_urls': 'list<string>',
@@ -207,7 +213,6 @@ class AdAccountUserSettings(
         'should_logout_of_3p_sourcing': 'bool',
         'should_show_shops_ads_metrics_onboarding_tour': 'bool',
         'show_archived_data': 'bool',
-        'show_text_variation_nux_tooltip': 'bool',
         'syd_campaign_trends_activemetric': 'string',
         'syd_campaign_trends_attribution': 'string',
         'syd_campaign_trends_metrics': 'list<string>',
@@ -215,9 +220,14 @@ class AdAccountUserSettings(
         'syd_campaign_trends_time_range': 'string',
         'syd_landing_page_opt_in_status': 'string',
         'text_gen_persona_opt_in_type': 'string',
+        'text_variations_hl_opt_in_out_ts': 'datetime',
+        'text_variations_hl_opt_in_type': 'string',
         'text_variations_opt_in_out_ts': 'datetime',
         'text_variations_opt_in_type': 'string',
         'user': 'User',
+        'value_optimized_qv_created': 'bool',
+        'value_qv_nux_impressions': 'int',
+        'value_suggested_column_status': 'string',
     }
     @classmethod
     def _get_field_enum_info(cls):

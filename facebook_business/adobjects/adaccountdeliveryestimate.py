@@ -24,8 +24,6 @@ class AdAccountDeliveryEstimate(
         self._api = api
 
     class Field(AbstractObject.Field):
-        daily_outcomes_curve = 'daily_outcomes_curve'
-        estimate_dau = 'estimate_dau'
         estimate_mau_lower_bound = 'estimate_mau_lower_bound'
         estimate_mau_upper_bound = 'estimate_mau_upper_bound'
         estimate_ready = 'estimate_ready'
@@ -39,6 +37,7 @@ class AdAccountDeliveryEstimate(
         automatic_objective = 'AUTOMATIC_OBJECTIVE'
         conversations = 'CONVERSATIONS'
         derived_events = 'DERIVED_EVENTS'
+        engaged_page_views = 'ENGAGED_PAGE_VIEWS'
         engaged_users = 'ENGAGED_USERS'
         event_responses = 'EVENT_RESPONSES'
         impressions = 'IMPRESSIONS'
@@ -48,6 +47,7 @@ class AdAccountDeliveryEstimate(
         link_clicks = 'LINK_CLICKS'
         meaningful_call_attempt = 'MEANINGFUL_CALL_ATTEMPT'
         messaging_appointment_conversion = 'MESSAGING_APPOINTMENT_CONVERSION'
+        messaging_deep_conversation_and_follow = 'MESSAGING_DEEP_CONVERSATION_AND_FOLLOW'
         messaging_purchase_conversion = 'MESSAGING_PURCHASE_CONVERSION'
         none = 'NONE'
         offsite_conversions = 'OFFSITE_CONVERSIONS'
@@ -65,8 +65,6 @@ class AdAccountDeliveryEstimate(
         visit_instagram_profile = 'VISIT_INSTAGRAM_PROFILE'
 
     _field_types = {
-        'daily_outcomes_curve': 'list<OutcomePredictionPoint>',
-        'estimate_dau': 'int',
         'estimate_mau_lower_bound': 'int',
         'estimate_mau_upper_bound': 'int',
         'estimate_ready': 'bool',

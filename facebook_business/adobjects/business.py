@@ -39,6 +39,7 @@ class Business(
         id = 'id'
         is_hidden = 'is_hidden'
         link = 'link'
+        marketing_messages_onboarding_status = 'marketing_messages_onboarding_status'
         name = 'name'
         payment_account_id = 'payment_account_id'
         primary_page = 'primary_page'
@@ -51,6 +52,7 @@ class Business(
         verification_status = 'verification_status'
         vertical = 'vertical'
         vertical_id = 'vertical_id'
+        whatsapp_business_manager_messaging_limit = 'whatsapp_business_manager_messaging_limit'
 
     class VerificationStatus:
         expired = 'expired'
@@ -63,6 +65,15 @@ class Business(
         rejected = 'rejected'
         revoked = 'revoked'
         verified = 'verified'
+
+    class WhatsappBusinessManagerMessagingLimit:
+        tier_100k = 'TIER_100K'
+        tier_10k = 'TIER_10K'
+        tier_250 = 'TIER_250'
+        tier_2k = 'TIER_2K'
+        tier_50 = 'TIER_50'
+        tier_unlimited = 'TIER_UNLIMITED'
+        untiered = 'UNTIERED'
 
     class TwoFactorType:
         admin_required = 'admin_required'
@@ -97,11 +108,9 @@ class Business(
     class PermittedTasks:
         advertise = 'ADVERTISE'
         analyze = 'ANALYZE'
-        cashier_role = 'CASHIER_ROLE'
         create_content = 'CREATE_CONTENT'
         global_structure_management = 'GLOBAL_STRUCTURE_MANAGEMENT'
         manage = 'MANAGE'
-        manage_jobs = 'MANAGE_JOBS'
         manage_leads = 'MANAGE_LEADS'
         messaging = 'MESSAGING'
         moderate = 'MODERATE'
@@ -111,6 +120,8 @@ class Business(
         profile_plus_advertise = 'PROFILE_PLUS_ADVERTISE'
         profile_plus_analyze = 'PROFILE_PLUS_ANALYZE'
         profile_plus_create_content = 'PROFILE_PLUS_CREATE_CONTENT'
+        profile_plus_creative_management = 'PROFILE_PLUS_CREATIVE_MANAGEMENT'
+        profile_plus_creator_management = 'PROFILE_PLUS_CREATOR_MANAGEMENT'
         profile_plus_facebook_access = 'PROFILE_PLUS_FACEBOOK_ACCESS'
         profile_plus_full_control = 'PROFILE_PLUS_FULL_CONTROL'
         profile_plus_global_structure_management = 'PROFILE_PLUS_GLOBAL_STRUCTURE_MANAGEMENT'
@@ -611,15 +622,125 @@ class Business(
         value_478 = '478'
         value_479 = '479'
         value_480 = '480'
+        value_481 = '481'
+        value_482 = '482'
+        value_483 = '483'
+        value_484 = '484'
+        value_485 = '485'
+        value_486 = '486'
+        value_487 = '487'
+        value_488 = '488'
+        value_489 = '489'
+        value_490 = '490'
+        value_491 = '491'
+        value_492 = '492'
+        value_493 = '493'
+        value_494 = '494'
+        value_495 = '495'
+        value_496 = '496'
+        value_497 = '497'
+        value_498 = '498'
+        value_499 = '499'
+        value_500 = '500'
+        value_501 = '501'
+        value_502 = '502'
+        value_503 = '503'
+        value_504 = '504'
+        value_505 = '505'
+        value_506 = '506'
+        value_507 = '507'
+        value_508 = '508'
+        value_509 = '509'
+        value_510 = '510'
+        value_511 = '511'
+        value_512 = '512'
+        value_513 = '513'
+        value_514 = '514'
+        value_515 = '515'
+        value_516 = '516'
+        value_517 = '517'
+        value_518 = '518'
+        value_519 = '519'
+        value_520 = '520'
+        value_521 = '521'
+        value_522 = '522'
+        value_523 = '523'
+        value_524 = '524'
+        value_525 = '525'
+        value_526 = '526'
+        value_527 = '527'
+        value_528 = '528'
+        value_529 = '529'
+        value_530 = '530'
+        value_531 = '531'
+        value_532 = '532'
+        value_533 = '533'
+        value_534 = '534'
+        value_535 = '535'
+        value_536 = '536'
+        value_537 = '537'
+        value_538 = '538'
+        value_539 = '539'
+        value_540 = '540'
+        value_541 = '541'
+        value_542 = '542'
+        value_543 = '543'
+        value_544 = '544'
+        value_545 = '545'
+        value_546 = '546'
+        value_547 = '547'
+        value_548 = '548'
+        value_549 = '549'
+        value_550 = '550'
+        value_551 = '551'
+        value_552 = '552'
+        value_553 = '553'
+        value_554 = '554'
+        value_555 = '555'
+        value_556 = '556'
+        value_557 = '557'
+        value_558 = '558'
+        value_559 = '559'
+        value_560 = '560'
+        value_561 = '561'
+        value_562 = '562'
+        value_563 = '563'
+        value_564 = '564'
+        value_565 = '565'
+        value_566 = '566'
+        value_567 = '567'
+        value_568 = '568'
+        value_569 = '569'
+        value_570 = '570'
+        value_571 = '571'
+        value_572 = '572'
+        value_573 = '573'
+        value_574 = '574'
+        value_575 = '575'
+        value_576 = '576'
+        value_577 = '577'
+        value_578 = '578'
+        value_579 = '579'
+        value_580 = '580'
+        value_581 = '581'
+        value_582 = '582'
+        value_583 = '583'
+        value_584 = '584'
+        value_585 = '585'
+        value_586 = '586'
+        value_587 = '587'
+        value_588 = '588'
+        value_589 = '589'
+        value_590 = '590'
+        value_591 = '591'
+        value_592 = '592'
 
     class PagePermittedTasks:
         advertise = 'ADVERTISE'
         analyze = 'ANALYZE'
-        cashier_role = 'CASHIER_ROLE'
         create_content = 'CREATE_CONTENT'
         global_structure_management = 'GLOBAL_STRUCTURE_MANAGEMENT'
         manage = 'MANAGE'
-        manage_jobs = 'MANAGE_JOBS'
         manage_leads = 'MANAGE_LEADS'
         messaging = 'MESSAGING'
         moderate = 'MODERATE'
@@ -629,6 +750,8 @@ class Business(
         profile_plus_advertise = 'PROFILE_PLUS_ADVERTISE'
         profile_plus_analyze = 'PROFILE_PLUS_ANALYZE'
         profile_plus_create_content = 'PROFILE_PLUS_CREATE_CONTENT'
+        profile_plus_creative_management = 'PROFILE_PLUS_CREATIVE_MANAGEMENT'
+        profile_plus_creator_management = 'PROFILE_PLUS_CREATOR_MANAGEMENT'
         profile_plus_facebook_access = 'PROFILE_PLUS_FACEBOOK_ACCESS'
         profile_plus_full_control = 'PROFILE_PLUS_FULL_CONTROL'
         profile_plus_global_structure_management = 'PROFILE_PLUS_GLOBAL_STRUCTURE_MANAGEMENT'
@@ -671,204 +794,6 @@ class Business(
         restaurants = 'RESTAURANTS'
         retail = 'RETAIL'
         transportation_and_accommodation = 'TRANSPORTATION_AND_ACCOMMODATION'
-
-    class SubverticalV2:
-        accounting_and_tax = 'ACCOUNTING_AND_TAX'
-        activities_and_leisure = 'ACTIVITIES_AND_LEISURE'
-        air = 'AIR'
-        apparel_and_accessories = 'APPAREL_AND_ACCESSORIES'
-        arts_and_heritage_and_education = 'ARTS_AND_HERITAGE_AND_EDUCATION'
-        ar_or_vr_gaming = 'AR_OR_VR_GAMING'
-        audio_streaming = 'AUDIO_STREAMING'
-        auto = 'AUTO'
-        auto_insurance = 'AUTO_INSURANCE'
-        auto_rental = 'AUTO_RENTAL'
-        baby = 'BABY'
-        ballot_initiative_or_referendum = 'BALLOT_INITIATIVE_OR_REFERENDUM'
-        beauty = 'BEAUTY'
-        beauty_and_fashion = 'BEAUTY_AND_FASHION'
-        beer_and_wine_and_liquor_and_malt_beverages = 'BEER_AND_WINE_AND_LIQUOR_AND_MALT_BEVERAGES'
-        bookstores = 'BOOKSTORES'
-        broadcast_television = 'BROADCAST_TELEVISION'
-        business_consultants = 'BUSINESS_CONSULTANTS'
-        buying_agency = 'BUYING_AGENCY'
-        cable_and_satellite = 'CABLE_AND_SATELLITE'
-        cable_television = 'CABLE_TELEVISION'
-        call_center_and_messaging_services = 'CALL_CENTER_AND_MESSAGING_SERVICES'
-        candidate_or_politician = 'CANDIDATE_OR_POLITICIAN'
-        career = 'CAREER'
-        career_and_tech = 'CAREER_AND_TECH'
-        casual_dining = 'CASUAL_DINING'
-        chronic_conditions_and_medical_causes = 'CHRONIC_CONDITIONS_AND_MEDICAL_CAUSES'
-        civic_influencers = 'CIVIC_INFLUENCERS'
-        clinical_trials = 'CLINICAL_TRIALS'
-        coffee = 'COFFEE'
-        computer_and_software_and_hardware = 'COMPUTER_AND_SOFTWARE_AND_HARDWARE'
-        console_and_cross_platform_gaming = 'CONSOLE_AND_CROSS_PLATFORM_GAMING'
-        consulting = 'CONSULTING'
-        consumer_electronics = 'CONSUMER_ELECTRONICS'
-        counseling_and_psychotherapy = 'COUNSELING_AND_PSYCHOTHERAPY'
-        creative_agency = 'CREATIVE_AGENCY'
-        credit_and_financing_and_mortages = 'CREDIT_AND_FINANCING_AND_MORTAGES'
-        cruises_and_marine = 'CRUISES_AND_MARINE'
-        culture_and_lifestyle = 'CULTURE_AND_LIFESTYLE'
-        data_analytics_and_data_management = 'DATA_ANALYTICS_AND_DATA_MANAGEMENT'
-        dating_and_technology_apps = 'DATING_AND_TECHNOLOGY_APPS'
-        department_store = 'DEPARTMENT_STORE'
-        desktop_software = 'DESKTOP_SOFTWARE'
-        dieting_and_fitness_programs = 'DIETING_AND_FITNESS_PROGRAMS'
-        digital_native_education_or_training = 'DIGITAL_NATIVE_EDUCATION_OR_TRAINING'
-        drinking_places = 'DRINKING_PLACES'
-        education_resources = 'EDUCATION_RESOURCES'
-        ed_tech = 'ED_TECH'
-        elearning_and_massive_online_open_courses = 'ELEARNING_AND_MASSIVE_ONLINE_OPEN_COURSES'
-        election_commission = 'ELECTION_COMMISSION'
-        electronics_and_appliances = 'ELECTRONICS_AND_APPLIANCES'
-        engineering_and_design = 'ENGINEERING_AND_DESIGN'
-        environment_and_animal_welfare = 'ENVIRONMENT_AND_ANIMAL_WELFARE'
-        esports = 'ESPORTS'
-        events = 'EVENTS'
-        farming_and_ranching = 'FARMING_AND_RANCHING'
-        file_storage_and_cloud_and_data_services = 'FILE_STORAGE_AND_CLOUD_AND_DATA_SERVICES'
-        finance = 'FINANCE'
-        fin_tech = 'FIN_TECH'
-        fishing_and_hunting_and_forestry_and_logging = 'FISHING_AND_HUNTING_AND_FORESTRY_AND_LOGGING'
-        fitness = 'FITNESS'
-        food = 'FOOD'
-        footwear = 'FOOTWEAR'
-        for_profit_colleges_and_universities = 'FOR_PROFIT_COLLEGES_AND_UNIVERSITIES'
-        full_service_agency = 'FULL_SERVICE_AGENCY'
-        government_controlled_entity = 'GOVERNMENT_CONTROLLED_ENTITY'
-        government_department_or_agency = 'GOVERNMENT_DEPARTMENT_OR_AGENCY'
-        government_official = 'GOVERNMENT_OFFICIAL'
-        government_owned_media = 'GOVERNMENT_OWNED_MEDIA'
-        grocery_and_drug_and_convenience = 'GROCERY_AND_DRUG_AND_CONVENIENCE'
-        head_of_state = 'HEAD_OF_STATE'
-        health_insurance = 'HEALTH_INSURANCE'
-        health_systems_and_practitioners = 'HEALTH_SYSTEMS_AND_PRACTITIONERS'
-        health_tech = 'HEALTH_TECH'
-        home_and_furniture_and_office = 'HOME_AND_FURNITURE_AND_OFFICE'
-        home_improvement = 'HOME_IMPROVEMENT'
-        home_insurance = 'HOME_INSURANCE'
-        home_tech = 'HOME_TECH'
-        hotel_and_accomodation = 'HOTEL_AND_ACCOMODATION'
-        household_goods_durable = 'HOUSEHOLD_GOODS_DURABLE'
-        household_goods_non_durable = 'HOUSEHOLD_GOODS_NON_DURABLE'
-        hr_and_financial_management = 'HR_AND_FINANCIAL_MANAGEMENT'
-        humanitarian_or_disaster_relief = 'HUMANITARIAN_OR_DISASTER_RELIEF'
-        independent_expenditure_group = 'INDEPENDENT_EXPENDITURE_GROUP'
-        insurance_tech = 'INSURANCE_TECH'
-        international_organizaton = 'INTERNATIONAL_ORGANIZATON'
-        investment_bank_and_brokerage = 'INVESTMENT_BANK_AND_BROKERAGE'
-        issue_advocacy = 'ISSUE_ADVOCACY'
-        legal = 'LEGAL'
-        life_insurance = 'LIFE_INSURANCE'
-        logistics_and_transportation_and_fleet_management = 'LOGISTICS_AND_TRANSPORTATION_AND_FLEET_MANAGEMENT'
-        manufacturing = 'MANUFACTURING'
-        medical_devices_and_supplies_and_equipment = 'MEDICAL_DEVICES_AND_SUPPLIES_AND_EQUIPMENT'
-        medspa_and_elective_surgeries_and_alternative_medicine = 'MEDSPA_AND_ELECTIVE_SURGERIES_AND_ALTERNATIVE_MEDICINE'
-        mining_and_quarrying = 'MINING_AND_QUARRYING'
-        mobile_gaming = 'MOBILE_GAMING'
-        movies = 'MOVIES'
-        museums_and_parks_and_libraries = 'MUSEUMS_AND_PARKS_AND_LIBRARIES'
-        music = 'MUSIC'
-        network_security_products = 'NETWORK_SECURITY_PRODUCTS'
-        news_and_current_events = 'NEWS_AND_CURRENT_EVENTS'
-        non_prescription = 'NON_PRESCRIPTION'
-        not_for_profit_colleges_and_universities = 'NOT_FOR_PROFIT_COLLEGES_AND_UNIVERSITIES'
-        office = 'OFFICE'
-        office_or_business_supplies = 'OFFICE_OR_BUSINESS_SUPPLIES'
-        oil_and_gas_and_consumable_fuel = 'OIL_AND_GAS_AND_CONSUMABLE_FUEL'
-        online_only_publications = 'ONLINE_ONLY_PUBLICATIONS'
-        package_or_freight_delivery = 'PACKAGE_OR_FREIGHT_DELIVERY'
-        party_independent_expenditure_group_us = 'PARTY_INDEPENDENT_EXPENDITURE_GROUP_US'
-        payment_processing_and_gateway_solutions = 'PAYMENT_PROCESSING_AND_GATEWAY_SOLUTIONS'
-        pc_gaming = 'PC_GAMING'
-        people = 'PEOPLE'
-        personal_care = 'PERSONAL_CARE'
-        pet = 'PET'
-        photography_and_filming_services = 'PHOTOGRAPHY_AND_FILMING_SERVICES'
-        pizza = 'PIZZA'
-        planning_agency = 'PLANNING_AGENCY'
-        political_party_or_committee = 'POLITICAL_PARTY_OR_COMMITTEE'
-        prescription = 'PRESCRIPTION'
-        professional_associations = 'PROFESSIONAL_ASSOCIATIONS'
-        property_and_casualty = 'PROPERTY_AND_CASUALTY'
-        quick_service = 'QUICK_SERVICE'
-        radio = 'RADIO'
-        railroads = 'RAILROADS'
-        real_estate = 'REAL_ESTATE'
-        real_money_gaming = 'REAL_MONEY_GAMING'
-        recreational = 'RECREATIONAL'
-        religious = 'RELIGIOUS'
-        reseller = 'RESELLER'
-        residential_and_long_term_care_facilities_and_outpatient_care_centers = 'RESIDENTIAL_AND_LONG_TERM_CARE_FACILITIES_AND_OUTPATIENT_CARE_CENTERS'
-        retail_and_credit_union_and_commercial_bank = 'RETAIL_AND_CREDIT_UNION_AND_COMMERCIAL_BANK'
-        ride_sharing_or_taxi_services = 'RIDE_SHARING_OR_TAXI_SERVICES'
-        safety_services = 'SAFETY_SERVICES'
-        scholarly = 'SCHOLARLY'
-        school_and_early_children_edcation = 'SCHOOL_AND_EARLY_CHILDREN_EDCATION'
-        social_media = 'SOCIAL_MEDIA'
-        software_as_a_service = 'SOFTWARE_AS_A_SERVICE'
-        sporting = 'SPORTING'
-        sporting_and_outdoor = 'SPORTING_AND_OUTDOOR'
-        sports = 'SPORTS'
-        superstores = 'SUPERSTORES'
-        t1_automotive_manufacturer = 'T1_AUTOMOTIVE_MANUFACTURER'
-        t1_motorcycle = 'T1_MOTORCYCLE'
-        t2_dealer_associations = 'T2_DEALER_ASSOCIATIONS'
-        t3_auto_agency = 'T3_AUTO_AGENCY'
-        t3_auto_resellers = 'T3_AUTO_RESELLERS'
-        t3_dealer_groups = 'T3_DEALER_GROUPS'
-        t3_franchise_dealer = 'T3_FRANCHISE_DEALER'
-        t3_independent_dealer = 'T3_INDEPENDENT_DEALER'
-        t3_parts_and_services = 'T3_PARTS_AND_SERVICES'
-        t3_portals = 'T3_PORTALS'
-        telecommunications_equipment_and_accessories = 'TELECOMMUNICATIONS_EQUIPMENT_AND_ACCESSORIES'
-        telephone_service_providers_and_carriers = 'TELEPHONE_SERVICE_PROVIDERS_AND_CARRIERS'
-        ticketing = 'TICKETING'
-        tobacco = 'TOBACCO'
-        tourism_and_travel_services = 'TOURISM_AND_TRAVEL_SERVICES'
-        tourism_board = 'TOURISM_BOARD'
-        toy_and_hobby = 'TOY_AND_HOBBY'
-        trade_school = 'TRADE_SCHOOL'
-        travel_agencies_and_guides_and_otas = 'TRAVEL_AGENCIES_AND_GUIDES_AND_OTAS'
-        utilities_and_energy_equipment_and_services = 'UTILITIES_AND_ENERGY_EQUIPMENT_AND_SERVICES'
-        veterinary_clinics_and_services = 'VETERINARY_CLINICS_AND_SERVICES'
-        video_streaming = 'VIDEO_STREAMING'
-        virtual_services = 'VIRTUAL_SERVICES'
-        vitamins_or_wellness = 'VITAMINS_OR_WELLNESS'
-        warehousing_and_storage = 'WAREHOUSING_AND_STORAGE'
-        water_and_soft_drink_and_baverage = 'WATER_AND_SOFT_DRINK_AND_BAVERAGE'
-        website_designers_or_graphic_designers = 'WEBSITE_DESIGNERS_OR_GRAPHIC_DESIGNERS'
-        wholesale = 'WHOLESALE'
-        wireless_services = 'WIRELESS_SERVICES'
-
-    class VerticalV2:
-        advertising_and_marketing = 'ADVERTISING_AND_MARKETING'
-        agriculture = 'AGRICULTURE'
-        automotive = 'AUTOMOTIVE'
-        banking_and_credit_cards = 'BANKING_AND_CREDIT_CARDS'
-        business_to_business = 'BUSINESS_TO_BUSINESS'
-        consumer_packaged_goods = 'CONSUMER_PACKAGED_GOODS'
-        ecommerce = 'ECOMMERCE'
-        education = 'EDUCATION'
-        energy_and_natural_resources_and_utilities = 'ENERGY_AND_NATURAL_RESOURCES_AND_UTILITIES'
-        entertainment_and_media = 'ENTERTAINMENT_AND_MEDIA'
-        gaming = 'GAMING'
-        government = 'GOVERNMENT'
-        healthcare_and_pharmaceuticals_and_biotech = 'HEALTHCARE_AND_PHARMACEUTICALS_AND_BIOTECH'
-        insurance = 'INSURANCE'
-        non_profit = 'NON_PROFIT'
-        organizations_and_associations = 'ORGANIZATIONS_AND_ASSOCIATIONS'
-        politics = 'POLITICS'
-        professional_services = 'PROFESSIONAL_SERVICES'
-        publishing = 'PUBLISHING'
-        restaurants = 'RESTAURANTS'
-        retail = 'RETAIL'
-        technology = 'TECHNOLOGY'
-        telecom = 'TELECOM'
-        travel = 'TRAVEL'
 
     class ActionSource:
         physical_store = 'PHYSICAL_STORE'
@@ -1041,6 +966,40 @@ class Business(
             self.assure_call()
             return request.execute()
 
+    def get_ad_custom_derived_metrics(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
+        from facebook_business.utils import api_utils
+        if batch is None and (success is not None or failure is not None):
+          api_utils.warning('`success` and `failure` callback only work for batch call.')
+        from facebook_business.adobjects.adcustomderivedmetrics import AdCustomDerivedMetrics
+        param_types = {
+            'adhoc_custom_metrics': 'list<string>',
+            'scope': 'scope_enum',
+        }
+        enums = {
+            'scope_enum': AdCustomDerivedMetrics.Scope.__dict__.values(),
+        }
+        request = FacebookRequest(
+            node_id=self['id'],
+            method='GET',
+            endpoint='/ad_custom_derived_metrics',
+            api=self._api,
+            param_checker=TypeChecker(param_types, enums),
+            target_class=AdCustomDerivedMetrics,
+            api_type='EDGE',
+            response_parser=ObjectParser(target_class=AdCustomDerivedMetrics, api=self._api),
+        )
+        request.add_params(params)
+        request.add_fields(fields)
+
+        if batch is not None:
+            request.add_to_batch(batch, success=success, failure=failure)
+            return request
+        elif pending:
+            return request
+        else:
+            self.assure_call()
+            return request.execute()
+
     def create_ad_review_request(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
@@ -1113,6 +1072,7 @@ class Business(
             'client_business': 'string',
             'confidence_level': 'float',
             'cooldown_start_time': 'int',
+            'creative_test_config': 'map',
             'description': 'string',
             'end_time': 'int',
             'name': 'string',
@@ -1768,21 +1728,15 @@ class Business(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         from facebook_business.adobjects.omegacustomertrx import OmegaCustomerTrx
         param_types = {
-            'account_ids': 'list<unsigned int>',
-            'advertiser_name': 'string',
-            'billing_period_end': 'string',
-            'billing_period_start': 'string',
             'end_date': 'string',
             'invoice_id': 'string',
             'issue_end_date': 'string',
             'issue_start_date': 'string',
-            'product_types': 'list<product_types_enum>',
             'root_id': 'unsigned int',
             'start_date': 'string',
             'type': 'type_enum',
         }
         enums = {
-            'product_types_enum': OmegaCustomerTrx.ProductTypes.__dict__.values(),
             'type_enum': OmegaCustomerTrx.Type.__dict__.values(),
         }
         request = FacebookRequest(
@@ -2319,53 +2273,19 @@ class Business(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         from facebook_business.adobjects.cpascollaborationrequest import CPASCollaborationRequest
         param_types = {
+            'request_role': 'request_role_enum',
+            'since': 'datetime',
+            'source': 'source_enum',
             'status': 'string',
+            'until': 'datetime',
         }
         enums = {
+            'request_role_enum': CPASCollaborationRequest.RequestRole.__dict__.values(),
+            'source_enum': CPASCollaborationRequest.Source.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
             method='GET',
-            endpoint='/collaborative_ads_collaboration_requests',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=CPASCollaborationRequest,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=CPASCollaborationRequest, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
-    def create_collaborative_ads_collaboration_request(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        from facebook_business.adobjects.cpascollaborationrequest import CPASCollaborationRequest
-        param_types = {
-            'brands': 'list<string>',
-            'contact_email': 'string',
-            'contact_first_name': 'string',
-            'contact_last_name': 'string',
-            'phone_number': 'string',
-            'receiver_business': 'string',
-            'requester_agency_or_brand': 'requester_agency_or_brand_enum',
-            'sender_client_business': 'string',
-        }
-        enums = {
-            'requester_agency_or_brand_enum': CPASCollaborationRequest.RequesterAgencyOrBrand.__dict__.values(),
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='POST',
             endpoint='/collaborative_ads_collaboration_requests',
             api=self._api,
             param_checker=TypeChecker(param_types, enums),
@@ -3241,12 +3161,18 @@ class Business(
         from facebook_business.adobjects.openbridgeconfiguration import OpenBridgeConfiguration
         param_types = {
             'active': 'bool',
+            'associated_sgw_data_source_id': 'unsigned int',
+            'blocked_event_types': 'list<string>',
+            'blocked_websites': 'list<string>',
+            'capi_publishing_state': 'capi_publishing_state_enum',
             'cloud_provider': 'string',
             'cloud_region': 'string',
             'destination_id': 'string',
             'endpoint': 'string',
+            'event_enrichment_advertiser_state': 'event_enrichment_advertiser_state_enum',
+            'event_enrichment_meta_state': 'event_enrichment_meta_state_enum',
+            'event_enrichment_state': 'event_enrichment_state_enum',
             'fallback_domain': 'string',
-            'first_party_domain': 'string',
             'host_business_id': 'unsigned int',
             'instance_id': 'string',
             'instance_version': 'string',
@@ -3259,6 +3185,10 @@ class Business(
             'sgw_pixel_id': 'unsigned int',
         }
         enums = {
+            'capi_publishing_state_enum': OpenBridgeConfiguration.CapiPublishingState.__dict__.values(),
+            'event_enrichment_advertiser_state_enum': OpenBridgeConfiguration.EventEnrichmentAdvertiserState.__dict__.values(),
+            'event_enrichment_meta_state_enum': OpenBridgeConfiguration.EventEnrichmentMetaState.__dict__.values(),
+            'event_enrichment_state_enum': OpenBridgeConfiguration.EventEnrichmentState.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
@@ -3288,6 +3218,7 @@ class Business(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         from facebook_business.adobjects.adaccount import AdAccount
         param_types = {
+            'include_shared_ad_accounts': 'bool',
             'search_query': 'string',
         }
         enums = {
@@ -3872,7 +3803,7 @@ class Business(
             self.assure_call()
             return request.execute()
 
-    def create_partner_premium_option(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
+    def create_partner_premium_opt_i_on(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
@@ -3890,36 +3821,6 @@ class Business(
             node_id=self['id'],
             method='POST',
             endpoint='/partner_premium_options',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=AbstractCrudObject,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=AbstractCrudObject, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
-    def get_passback_attribution_metadata_configs(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        param_types = {
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='GET',
-            endpoint='/passback_attribution_metadata_configs',
             api=self._api,
             param_checker=TypeChecker(param_types, enums),
             target_class=AbstractCrudObject,
@@ -4393,43 +4294,6 @@ class Business(
             self.assure_call()
             return request.execute()
 
-    def create_setup_managed_partner_ad_account(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        param_types = {
-            'credit_line_id': 'string',
-            'marketplace_business_id': 'string',
-            'subvertical_v2': 'subvertical_v2_enum',
-            'vendor_id': 'string',
-            'vertical_v2': 'vertical_v2_enum',
-        }
-        enums = {
-            'subvertical_v2_enum': Business.SubverticalV2.__dict__.values(),
-            'vertical_v2_enum': Business.VerticalV2.__dict__.values(),
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='POST',
-            endpoint='/setup_managed_partner_adaccounts',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=Business,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=Business, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
     def delete_share_pre_verified_numbers(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
@@ -4649,6 +4513,7 @@ class Business(
             'creative_folder_id': 'string',
             'creative_tools': 'string',
             'description': 'string',
+            'edit_description_spec': 'map',
             'embeddable': 'bool',
             'end_offset': 'unsigned int',
             'fbuploader_video_file_chunk': 'string',
@@ -4665,6 +4530,7 @@ class Business(
             'initial_heading': 'unsigned int',
             'initial_pitch': 'unsigned int',
             'instant_game_entry_point_data': 'string',
+            'is_ai_generated': 'bool',
             'is_boost_intended': 'bool',
             'is_group_linking_post': 'bool',
             'is_partnership_ad': 'bool',
@@ -4681,6 +4547,7 @@ class Business(
             'publish_event_id': 'unsigned int',
             'referenced_sticker_id': 'string',
             'replace_video_id': 'string',
+            'selected_audio_spec': 'map',
             'slideshow_spec': 'map',
             'source': 'string',
             'source_instagram_media_id': 'string',
@@ -4745,6 +4612,7 @@ class Business(
         'id': 'string',
         'is_hidden': 'bool',
         'link': 'string',
+        'marketing_messages_onboarding_status': 'MarketingMessagesOnboardingStatus',
         'name': 'string',
         'payment_account_id': 'string',
         'primary_page': 'Page',
@@ -4757,11 +4625,13 @@ class Business(
         'verification_status': 'VerificationStatus',
         'vertical': 'string',
         'vertical_id': 'unsigned int',
+        'whatsapp_business_manager_messaging_limit': 'WhatsappBusinessManagerMessagingLimit',
     }
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
         field_enum_info['VerificationStatus'] = Business.VerificationStatus.__dict__.values()
+        field_enum_info['WhatsappBusinessManagerMessagingLimit'] = Business.WhatsappBusinessManagerMessagingLimit.__dict__.values()
         field_enum_info['TwoFactorType'] = Business.TwoFactorType.__dict__.values()
         field_enum_info['Vertical'] = Business.Vertical.__dict__.values()
         field_enum_info['PermittedTasks'] = Business.PermittedTasks.__dict__.values()
@@ -4769,8 +4639,6 @@ class Business(
         field_enum_info['TimezoneId'] = Business.TimezoneId.__dict__.values()
         field_enum_info['PagePermittedTasks'] = Business.PagePermittedTasks.__dict__.values()
         field_enum_info['BusinessVertical'] = Business.BusinessVertical.__dict__.values()
-        field_enum_info['SubverticalV2'] = Business.SubverticalV2.__dict__.values()
-        field_enum_info['VerticalV2'] = Business.VerticalV2.__dict__.values()
         field_enum_info['ActionSource'] = Business.ActionSource.__dict__.values()
         return field_enum_info
 

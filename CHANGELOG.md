@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
+## v25.0.3
+### Added
+- Add partner_client_id field to AttributionData
+
+## v25.0.2
+### Added
+- Add total_credit field to AttributionData
+
+## v25.0.1
+### Added
+- Add touchpoint_id field to AttributionData
+
+## v24.0.1
+### Added
+- Add additional AMM fields: attribution_method, decline_reason, auditing_token, linkage_key
+- Add attribution_setting field with inactivity_window_hours and reattribution_window_hours to AttributionData
+
+## v24.0.0
+### Added
+- Add AMM fields to attribution data
+
 ## v23.0.0
 
 
@@ -136,4 +157,3 @@ All notable changes to this project will be documented in this file.
 ### Deprecated
 - `parent_id` in `AbstractCrudObject`.
 - Function `remote_create`, `remote_read`, `remote_update` and `remote_delete` for `AbstractCrudObject`. Check out our [recommended way](https://github.com/facebook/facebook-python-business-sdk#exploring-the-graph) to make API call with python SDK.
-

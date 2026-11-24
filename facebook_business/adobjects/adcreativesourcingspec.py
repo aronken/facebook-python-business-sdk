@@ -24,23 +24,47 @@ class AdCreativeSourcingSpec(
         self._api = api
 
     class Field(AbstractObject.Field):
+        ad_extensions_relevancy_spec = 'ad_extensions_relevancy_spec'
         associated_product_set_id = 'associated_product_set_id'
         brand = 'brand'
+        destination_screenshot_spec = 'destination_screenshot_spec'
+        duplication_source = 'duplication_source'
         dynamic_site_links_spec = 'dynamic_site_links_spec'
         enable_social_feedback_preservation = 'enable_social_feedback_preservation'
+        featured_offering_spec = 'featured_offering_spec'
+        intent = 'intent'
+        ncs_testimonial = 'ncs_testimonial'
+        pca_spec = 'pca_spec'
+        product_media_metadata_spec = 'product_media_metadata_spec'
         promotion_metadata_spec = 'promotion_metadata_spec'
+        selected_video_id = 'selected_video_id'
+        site_links_data_consented = 'site_links_data_consented'
         site_links_spec = 'site_links_spec'
         source_url = 'source_url'
+        ugc_spec = 'ugc_spec'
+        website_media_spec = 'website_media_spec'
         website_summary_spec = 'website_summary_spec'
 
     _field_types = {
+        'ad_extensions_relevancy_spec': 'Object',
         'associated_product_set_id': 'string',
         'brand': 'Object',
+        'destination_screenshot_spec': 'Object',
+        'duplication_source': 'string',
         'dynamic_site_links_spec': 'Object',
         'enable_social_feedback_preservation': 'bool',
+        'featured_offering_spec': 'Object',
+        'intent': 'Object',
+        'ncs_testimonial': 'Object',
+        'pca_spec': 'Object',
+        'product_media_metadata_spec': 'Object',
         'promotion_metadata_spec': 'list<AdCreativePromotionMetadataSpec>',
+        'selected_video_id': 'string',
+        'site_links_data_consented': 'Object',
         'site_links_spec': 'list<AdCreativeSiteLinksSpec>',
         'source_url': 'string',
+        'ugc_spec': 'Object',
+        'website_media_spec': 'Object',
         'website_summary_spec': 'Object',
     }
     @classmethod

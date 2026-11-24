@@ -32,7 +32,6 @@ class LocalServiceBusiness(
         availability = 'availability'
         brand = 'brand'
         category = 'category'
-        category_specific_fields = 'category_specific_fields'
         condition = 'condition'
         cuisine_type = 'cuisine_type'
         currency = 'currency'
@@ -72,6 +71,7 @@ class LocalServiceBusiness(
         available_for_order = 'AVAILABLE_FOR_ORDER'
         discontinued = 'DISCONTINUED'
         in_stock = 'IN_STOCK'
+        mark_as_expired = 'MARK_AS_EXPIRED'
         mark_as_sold = 'MARK_AS_SOLD'
         out_of_stock = 'OUT_OF_STOCK'
         pending = 'PENDING'
@@ -200,7 +200,6 @@ class LocalServiceBusiness(
         'availability': 'Availability',
         'brand': 'string',
         'category': 'string',
-        'category_specific_fields': 'CatalogSubVerticalList',
         'condition': 'Condition',
         'cuisine_type': 'string',
         'currency': 'string',

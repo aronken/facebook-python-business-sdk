@@ -29,10 +29,28 @@ class AdsValueAdjustmentRuleCollection(
     class Field(AbstractObject.Field):
         id = 'id'
         is_default_setting = 'is_default_setting'
+        last_attach_time = 'last_attach_time'
         name = 'name'
         product_type = 'product_type'
         status = 'status'
+        entry_point = 'entry_point'
+        origin = 'origin'
         rules = 'rules'
+
+    class EntryPoint:
+        advertising_settings = 'ADVERTISING_SETTINGS'
+        l2_audience = 'L2_AUDIENCE'
+        l2_conversion_location = 'L2_CONVERSION_LOCATION'
+        l2_global = 'L2_GLOBAL'
+        l2_nca_goal = 'L2_NCA_GOAL'
+        l2_placement = 'L2_PLACEMENT'
+
+    class Origin:
+        advantage_audience_guidance_suggested = 'ADVANTAGE_AUDIENCE_GUIDANCE_SUGGESTED'
+        advertiser_created = 'ADVERTISER_CREATED'
+        placement_guidance_suggested = 'PLACEMENT_GUIDANCE_SUGGESTED'
+        placement_personalized_suggested = 'PLACEMENT_PERSONALIZED_SUGGESTED'
+        translated_from_bid_multipliers = 'TRANSLATED_FROM_BID_MULTIPLIERS'
 
     class ProductType:
         audience = 'AUDIENCE'
@@ -42,6 +60,7 @@ class AdsValueAdjustmentRuleCollection(
     class Status:
         active = 'ACTIVE'
         deleted = 'DELETED'
+        draft = 'DRAFT'
 
     # @deprecated get_endpoint function is deprecated
     @classmethod
@@ -88,11 +107,13 @@ class AdsValueAdjustmentRuleCollection(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'entry_point': 'entry_point_enum',
             'is_default_setting': 'bool',
             'name': 'string',
             'rules': 'list<map>',
         }
         enums = {
+            'entry_point_enum': AdsValueAdjustmentRuleCollection.EntryPoint.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
@@ -121,13 +142,15 @@ class AdsValueAdjustmentRuleCollection(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'status': 'status_enum',
         }
         enums = {
+            'status_enum': AdsValueAdjustmentRuleCollection.Status.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
             method='POST',
-            endpoint='/delete_rule_set',
+            endpoint='/deleteruleset',
             api=self._api,
             param_checker=TypeChecker(param_types, enums),
             target_class=AdsValueAdjustmentRuleCollection,
@@ -179,14 +202,19 @@ class AdsValueAdjustmentRuleCollection(
     _field_types = {
         'id': 'string',
         'is_default_setting': 'bool',
+        'last_attach_time': 'datetime',
         'name': 'string',
         'product_type': 'string',
         'status': 'string',
+        'entry_point': 'EntryPoint',
+        'origin': 'Origin',
         'rules': 'list<map>',
     }
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
+        field_enum_info['EntryPoint'] = AdsValueAdjustmentRuleCollection.EntryPoint.__dict__.values()
+        field_enum_info['Origin'] = AdsValueAdjustmentRuleCollection.Origin.__dict__.values()
         field_enum_info['ProductType'] = AdsValueAdjustmentRuleCollection.ProductType.__dict__.values()
         field_enum_info['Status'] = AdsValueAdjustmentRuleCollection.Status.__dict__.values()
         return field_enum_info

@@ -63,6 +63,7 @@ class Comment(
         graphql_multiple_value_hack_do_not_use = 'GRAPHQL_MULTIPLE_VALUE_HACK_DO_NOT_USE'
         owner_or_commenter = 'OWNER_OR_COMMENTER'
         pending_approval = 'PENDING_APPROVAL'
+        private_conversation_participants_only = 'PRIVATE_CONVERSATION_PARTICIPANTS_ONLY'
         removed_by_admin_assistant = 'REMOVED_BY_ADMIN_ASSISTANT'
         side_conversation = 'SIDE_CONVERSATION'
         side_conversation_and_post_owner = 'SIDE_CONVERSATION_AND_POST_OWNER'
@@ -257,6 +258,7 @@ class Comment(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'attribution_id_v2': 'string',
             'feedback_source': 'string',
             'nectar_module': 'string',
             'tracking': 'string',
@@ -321,6 +323,7 @@ class Comment(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'attribution_id_v2': 'string',
             'feedback_source': 'string',
             'nectar_module': 'string',
             'tracking': 'string',

@@ -49,12 +49,14 @@ class Targeting(
         education_schools = 'education_schools'
         education_statuses = 'education_statuses'
         effective_audience_network_positions = 'effective_audience_network_positions'
+        effective_brand_safety_content_filter_levels = 'effective_brand_safety_content_filter_levels'
         effective_device_platforms = 'effective_device_platforms'
         effective_facebook_positions = 'effective_facebook_positions'
         effective_instagram_positions = 'effective_instagram_positions'
         effective_messenger_positions = 'effective_messenger_positions'
         effective_publisher_platforms = 'effective_publisher_platforms'
         effective_threads_positions = 'effective_threads_positions'
+        effective_whatsapp_positions = 'effective_whatsapp_positions'
         engagement_specs = 'engagement_specs'
         ethnic_affinity = 'ethnic_affinity'
         exclude_reached_since = 'exclude_reached_since'
@@ -85,6 +87,7 @@ class Targeting(
         income = 'income'
         industries = 'industries'
         instagram_positions = 'instagram_positions'
+        install_state_application = 'install_state_application'
         instream_video_skippable_excluded = 'instream_video_skippable_excluded'
         interested_in = 'interested_in'
         interests = 'interests'
@@ -106,24 +109,29 @@ class Targeting(
         regions = 'regions'
         relationship_statuses = 'relationship_statuses'
         site_category = 'site_category'
+        subscriber_universe = 'subscriber_universe'
         targeting_automation = 'targeting_automation'
         targeting_optimization = 'targeting_optimization'
         targeting_relaxation_types = 'targeting_relaxation_types'
         threads_positions = 'threads_positions'
         user_adclusters = 'user_adclusters'
+        user_age_unknown = 'user_age_unknown'
         user_device = 'user_device'
         user_event = 'user_event'
         user_os = 'user_os'
+        whatsapp_positions = 'whatsapp_positions'
         wireless_carrier = 'wireless_carrier'
         work_employers = 'work_employers'
         work_positions = 'work_positions'
         zips = 'zips'
 
     class DevicePlatforms:
+        connected_tv = 'connected_tv'
         desktop = 'desktop'
         mobile = 'mobile'
 
     class EffectiveDevicePlatforms:
+        connected_tv = 'connected_tv'
         desktop = 'desktop'
         mobile = 'mobile'
 
@@ -153,12 +161,14 @@ class Targeting(
         'education_schools': 'list<IDName>',
         'education_statuses': 'list<unsigned int>',
         'effective_audience_network_positions': 'list<string>',
+        'effective_brand_safety_content_filter_levels': 'list<string>',
         'effective_device_platforms': 'list<EffectiveDevicePlatforms>',
         'effective_facebook_positions': 'list<string>',
         'effective_instagram_positions': 'list<string>',
         'effective_messenger_positions': 'list<string>',
         'effective_publisher_platforms': 'list<string>',
         'effective_threads_positions': 'list<string>',
+        'effective_whatsapp_positions': 'list<string>',
         'engagement_specs': 'list<TargetingDynamicRule>',
         'ethnic_affinity': 'list<IDName>',
         'exclude_reached_since': 'list<string>',
@@ -189,6 +199,7 @@ class Targeting(
         'income': 'list<IDName>',
         'industries': 'list<IDName>',
         'instagram_positions': 'list<string>',
+        'install_state_application': 'string',
         'instream_video_skippable_excluded': 'bool',
         'interested_in': 'list<unsigned int>',
         'interests': 'list<IDName>',
@@ -210,14 +221,17 @@ class Targeting(
         'regions': 'list<IDName>',
         'relationship_statuses': 'list<unsigned int>',
         'site_category': 'list<string>',
+        'subscriber_universe': 'TargetingSubscriberUniverse',
         'targeting_automation': 'TargetingAutomation',
         'targeting_optimization': 'string',
         'targeting_relaxation_types': 'TargetingRelaxation',
         'threads_positions': 'list<string>',
         'user_adclusters': 'list<IDName>',
+        'user_age_unknown': 'bool',
         'user_device': 'list<string>',
         'user_event': 'list<unsigned int>',
         'user_os': 'list<string>',
+        'whatsapp_positions': 'list<string>',
         'wireless_carrier': 'list<string>',
         'work_employers': 'list<IDName>',
         'work_positions': 'list<IDName>',

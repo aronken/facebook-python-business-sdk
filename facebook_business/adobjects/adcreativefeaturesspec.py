@@ -30,30 +30,40 @@ class AdCreativeFeaturesSpec(
         advantage_plus_creative = 'advantage_plus_creative'
         app_highlights = 'app_highlights'
         audio = 'audio'
+        auto_promotion_tag = 'auto_promotion_tag'
         biz_ai = 'biz_ai'
         carousel_to_video = 'carousel_to_video'
         catalog_feed_tag = 'catalog_feed_tag'
+        creative_stickers = 'creative_stickers'
         customize_product_recommendation = 'customize_product_recommendation'
         cv_transformation = 'cv_transformation'
         description_automation = 'description_automation'
         dha_optimization = 'dha_optimization'
+        dynamic_cta_text = 'dynamic_cta_text'
         dynamic_partner_content = 'dynamic_partner_content'
+        enable_ncs_testimonials = 'enable_ncs_testimonials'
         enhance_cta = 'enhance_cta'
         fb_feed_tag = 'fb_feed_tag'
         fb_reels_tag = 'fb_reels_tag'
         fb_story_tag = 'fb_story_tag'
         feed_caption_optimization = 'feed_caption_optimization'
+        generate_cta = 'generate_cta'
         hide_price = 'hide_price'
+        hyperlink_formatting = 'hyperlink_formatting'
         ig_feed_tag = 'ig_feed_tag'
         ig_glados_feed = 'ig_glados_feed'
         ig_reels_tag = 'ig_reels_tag'
         ig_stream_tag = 'ig_stream_tag'
+        ig_video_native_subtitle = 'ig_video_native_subtitle'
         image_animation = 'image_animation'
         image_auto_crop = 'image_auto_crop'
         image_background_gen = 'image_background_gen'
+        image_banner = 'image_banner'
         image_brightness_and_contrast = 'image_brightness_and_contrast'
+        image_end_card = 'image_end_card'
         image_enhancement = 'image_enhancement'
         image_templates = 'image_templates'
+        image_text_translation = 'image_text_translation'
         image_touchups = 'image_touchups'
         image_uncrop = 'image_uncrop'
         inline_comment = 'inline_comment'
@@ -61,27 +71,42 @@ class AdCreativeFeaturesSpec(
         media_liquidity_animated_image = 'media_liquidity_animated_image'
         media_order = 'media_order'
         media_type_automation = 'media_type_automation'
+        multi_creative_post_carousel = 'multi_creative_post_carousel'
         multi_photo_to_video = 'multi_photo_to_video'
         music_generation = 'music_generation'
+        pac_genai_recomposition = 'pac_genai_recomposition'
+        pac_recomposition = 'pac_recomposition'
         pac_relaxation = 'pac_relaxation'
+        product_browsing = 'product_browsing'
         product_extensions = 'product_extensions'
         product_metadata_automation = 'product_metadata_automation'
         product_tags = 'product_tags'
         profile_card = 'profile_card'
         profile_extension = 'profile_extension'
+        replace_media_text = 'replace_media_text'
+        reveal_details_over_time = 'reveal_details_over_time'
+        show_destination_blurbs = 'show_destination_blurbs'
         show_summary = 'show_summary'
         site_extensions = 'site_extensions'
         standard_enhancements = 'standard_enhancements'
         standard_enhancements_catalog = 'standard_enhancements_catalog'
+        text_extraction_for_headline = 'text_extraction_for_headline'
+        text_extraction_for_tap_target = 'text_extraction_for_tap_target'
+        text_formatting_optimization = 'text_formatting_optimization'
         text_generation = 'text_generation'
         text_optimizations = 'text_optimizations'
         text_overlay_translation = 'text_overlay_translation'
         text_translation = 'text_translation'
+        translate_voiceover = 'translate_voiceover'
         video_auto_crop = 'video_auto_crop'
         video_filtering = 'video_filtering'
         video_highlight = 'video_highlight'
+        video_highlights = 'video_highlights'
         video_to_image = 'video_to_image'
         video_uncrop = 'video_uncrop'
+        video_uncrop_9x16_to_9x18 = 'video_uncrop_9x16_to_9x18'
+        video_voiceover = 'video_voiceover'
+        wa_mm_image_filtering = 'wa_mm_image_filtering'
         wa_mm_text_truncation_length = 'wa_mm_text_truncation_length'
 
     _field_types = {
@@ -91,30 +116,40 @@ class AdCreativeFeaturesSpec(
         'advantage_plus_creative': 'AdCreativeFeatureDetails',
         'app_highlights': 'AdCreativeFeatureDetails',
         'audio': 'AdCreativeFeatureDetails',
+        'auto_promotion_tag': 'AdCreativeFeatureDetails',
         'biz_ai': 'AdCreativeFeatureDetails',
         'carousel_to_video': 'AdCreativeFeatureDetails',
         'catalog_feed_tag': 'AdCreativeFeatureDetails',
+        'creative_stickers': 'AdCreativeFeatureDetails',
         'customize_product_recommendation': 'AdCreativeFeatureDetails',
         'cv_transformation': 'AdCreativeFeatureDetails',
         'description_automation': 'AdCreativeFeatureDetails',
         'dha_optimization': 'AdCreativeFeatureDetails',
+        'dynamic_cta_text': 'AdCreativeFeatureDetails',
         'dynamic_partner_content': 'AdCreativeFeatureDetails',
+        'enable_ncs_testimonials': 'AdCreativeFeatureDetails',
         'enhance_cta': 'AdCreativeFeatureDetails',
         'fb_feed_tag': 'AdCreativeFeatureDetails',
         'fb_reels_tag': 'AdCreativeFeatureDetails',
         'fb_story_tag': 'AdCreativeFeatureDetails',
         'feed_caption_optimization': 'AdCreativeFeatureDetails',
+        'generate_cta': 'AdCreativeFeatureDetails',
         'hide_price': 'AdCreativeFeatureDetails',
+        'hyperlink_formatting': 'AdCreativeFeatureDetails',
         'ig_feed_tag': 'AdCreativeFeatureDetails',
         'ig_glados_feed': 'AdCreativeFeatureDetails',
         'ig_reels_tag': 'AdCreativeFeatureDetails',
         'ig_stream_tag': 'AdCreativeFeatureDetails',
+        'ig_video_native_subtitle': 'AdCreativeFeatureDetails',
         'image_animation': 'AdCreativeFeatureDetails',
         'image_auto_crop': 'AdCreativeFeatureDetails',
         'image_background_gen': 'AdCreativeFeatureDetails',
+        'image_banner': 'AdCreativeFeatureDetails',
         'image_brightness_and_contrast': 'AdCreativeFeatureDetails',
+        'image_end_card': 'AdCreativeFeatureDetails',
         'image_enhancement': 'AdCreativeFeatureDetails',
         'image_templates': 'AdCreativeFeatureDetails',
+        'image_text_translation': 'AdCreativeFeatureDetails',
         'image_touchups': 'AdCreativeFeatureDetails',
         'image_uncrop': 'AdCreativeFeatureDetails',
         'inline_comment': 'AdCreativeFeatureDetails',
@@ -122,27 +157,42 @@ class AdCreativeFeaturesSpec(
         'media_liquidity_animated_image': 'AdCreativeFeatureDetails',
         'media_order': 'AdCreativeFeatureDetails',
         'media_type_automation': 'AdCreativeFeatureDetails',
+        'multi_creative_post_carousel': 'AdCreativeFeatureDetails',
         'multi_photo_to_video': 'AdCreativeFeatureDetails',
         'music_generation': 'AdCreativeFeatureDetails',
+        'pac_genai_recomposition': 'AdCreativeFeatureDetails',
+        'pac_recomposition': 'AdCreativeFeatureDetails',
         'pac_relaxation': 'AdCreativeFeatureDetails',
+        'product_browsing': 'AdCreativeFeatureDetails',
         'product_extensions': 'AdCreativeFeatureDetails',
         'product_metadata_automation': 'AdCreativeFeatureDetails',
         'product_tags': 'AdCreativeFeatureDetails',
         'profile_card': 'AdCreativeFeatureDetails',
         'profile_extension': 'AdCreativeFeatureDetails',
+        'replace_media_text': 'AdCreativeFeatureDetails',
+        'reveal_details_over_time': 'AdCreativeFeatureDetails',
+        'show_destination_blurbs': 'AdCreativeFeatureDetails',
         'show_summary': 'AdCreativeFeatureDetails',
         'site_extensions': 'AdCreativeFeatureDetails',
         'standard_enhancements': 'AdCreativeFeatureDetails',
         'standard_enhancements_catalog': 'AdCreativeFeatureDetails',
+        'text_extraction_for_headline': 'AdCreativeFeatureDetails',
+        'text_extraction_for_tap_target': 'AdCreativeFeatureDetails',
+        'text_formatting_optimization': 'AdCreativeFeatureDetails',
         'text_generation': 'AdCreativeFeatureDetails',
         'text_optimizations': 'AdCreativeFeatureDetails',
         'text_overlay_translation': 'AdCreativeFeatureDetails',
         'text_translation': 'AdCreativeFeatureDetails',
+        'translate_voiceover': 'AdCreativeFeatureDetails',
         'video_auto_crop': 'AdCreativeFeatureDetails',
         'video_filtering': 'AdCreativeFeatureDetails',
         'video_highlight': 'AdCreativeFeatureDetails',
+        'video_highlights': 'AdCreativeFeatureDetails',
         'video_to_image': 'AdCreativeFeatureDetails',
         'video_uncrop': 'AdCreativeFeatureDetails',
+        'video_uncrop_9x16_to_9x18': 'AdCreativeFeatureDetails',
+        'video_voiceover': 'AdCreativeFeatureDetails',
+        'wa_mm_image_filtering': 'AdCreativeFeatureDetails',
         'wa_mm_text_truncation_length': 'AdCreativeFeatureDetails',
     }
     @classmethod

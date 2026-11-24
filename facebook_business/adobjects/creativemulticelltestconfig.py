@@ -25,17 +25,21 @@ class CreativeMulticellTestConfig(
 
     class Field(AbstractObject.Field):
         budget_percentage = 'budget_percentage'
+        budget_source = 'budget_source'
         configured_cell_count = 'configured_cell_count'
         daily_budget = 'daily_budget'
         entry_source = 'entry_source'
+        lead_gen_forms = 'lead_gen_forms'
         lifetime_budget = 'lifetime_budget'
         use_existing_daily_budget = 'use_existing_daily_budget'
 
     _field_types = {
         'budget_percentage': 'int',
+        'budget_source': 'string',
         'configured_cell_count': 'int',
         'daily_budget': 'int',
         'entry_source': 'string',
+        'lead_gen_forms': 'string',
         'lifetime_budget': 'int',
         'use_existing_daily_budget': 'bool',
     }

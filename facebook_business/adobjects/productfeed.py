@@ -47,11 +47,13 @@ class ProductFeed(
         schedule = 'schedule'
         supplementary_feeds = 'supplementary_feeds'
         update_schedule = 'update_schedule'
+        configuration_source_name = 'configuration_source_name'
         feed_type = 'feed_type'
         override_value = 'override_value'
         primary_feed_ids = 'primary_feed_ids'
         rules = 'rules'
         selected_override_fields = 'selected_override_fields'
+        use_case = 'use_case'
 
     class Delimiter:
         autodetect = 'AUTODETECT'
@@ -80,6 +82,9 @@ class ProductFeed(
         utf8 = 'UTF8'
 
     class FeedType:
+        activity = 'ACTIVITY'
+        app_and_software = 'APP_AND_SOFTWARE'
+        article_and_publication = 'ARTICLE_AND_PUBLICATION'
         automotive_model = 'AUTOMOTIVE_MODEL'
         collection = 'COLLECTION'
         destination = 'DESTINATION'
@@ -92,6 +97,7 @@ class ProductFeed(
         offer = 'OFFER'
         products = 'PRODUCTS'
         product_ratings_and_reviews = 'PRODUCT_RATINGS_AND_REVIEWS'
+        service = 'SERVICE'
         transactable_items = 'TRANSACTABLE_ITEMS'
         vehicles = 'VEHICLES'
         vehicle_offer = 'VEHICLE_OFFER'
@@ -133,6 +139,10 @@ class ProductFeed(
         local = 'LOCAL'
         smart_pixel_language_or_country = 'SMART_PIXEL_LANGUAGE_OR_COUNTRY'
         version = 'VERSION'
+
+    class UseCase:
+        creator_asset = 'CREATOR_ASSET'
+        open_catalog_ucp = 'OPEN_CATALOG_UCP'
 
     # @deprecated get_endpoint function is deprecated
     @classmethod
@@ -398,39 +408,6 @@ class ProductFeed(
             target_class=Hotel,
             api_type='EDGE',
             response_parser=ObjectParser(target_class=Hotel, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
-    def get_media_titles(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        from facebook_business.adobjects.mediatitle import MediaTitle
-        param_types = {
-            'bulk_pagination': 'bool',
-            'filter': 'Object',
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='GET',
-            endpoint='/media_titles',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=MediaTitle,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=MediaTitle, api=self._api),
         )
         request.add_params(params)
         request.add_fields(fields)
@@ -795,11 +772,13 @@ class ProductFeed(
         'schedule': 'ProductFeedSchedule',
         'supplementary_feeds': 'list<string>',
         'update_schedule': 'ProductFeedSchedule',
+        'configuration_source_name': 'string',
         'feed_type': 'FeedType',
         'override_value': 'string',
         'primary_feed_ids': 'list<string>',
         'rules': 'list<string>',
         'selected_override_fields': 'list<string>',
+        'use_case': 'UseCase',
     }
     @classmethod
     def _get_field_enum_info(cls):
@@ -811,6 +790,7 @@ class ProductFeed(
         field_enum_info['FeedType'] = ProductFeed.FeedType.__dict__.values()
         field_enum_info['ItemSubType'] = ProductFeed.ItemSubType.__dict__.values()
         field_enum_info['OverrideType'] = ProductFeed.OverrideType.__dict__.values()
+        field_enum_info['UseCase'] = ProductFeed.UseCase.__dict__.values()
         return field_enum_info
 
 

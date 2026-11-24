@@ -37,6 +37,10 @@ class AdReportRun(
         date_stop = 'date_stop'
         emails = 'emails'
         error_code = 'error_code'
+        error_message = 'error_message'
+        error_subcode = 'error_subcode'
+        error_user_msg = 'error_user_msg'
+        error_user_title = 'error_user_title'
         friendly_name = 'friendly_name'
         id = 'id'
         is_async_export = 'is_async_export'
@@ -49,6 +53,7 @@ class AdReportRun(
         action_breakdowns = 'action_breakdowns'
         action_report_time = 'action_report_time'
         breakdowns = 'breakdowns'
+        cpas_only = 'cpas_only'
         date_preset = 'date_preset'
         default_summary = 'default_summary'
         export_columns = 'export_columns'
@@ -56,6 +61,7 @@ class AdReportRun(
         export_name = 'export_name'
         fields = 'fields'
         filtering = 'filtering'
+        graph_cache = 'graph_cache'
         level = 'level'
         limit = 'limit'
         product_id_limit = 'product_id_limit'
@@ -150,7 +156,11 @@ class AdReportRun(
         'date_start': 'string',
         'date_stop': 'string',
         'emails': 'list<string>',
-        'error_code': 'unsigned int',
+        'error_code': 'int',
+        'error_message': 'string',
+        'error_subcode': 'unsigned int',
+        'error_user_msg': 'string',
+        'error_user_title': 'string',
         'friendly_name': 'string',
         'id': 'string',
         'is_async_export': 'int',
@@ -163,6 +173,7 @@ class AdReportRun(
         'action_breakdowns': 'list<ActionBreakdowns>',
         'action_report_time': 'ActionReportTime',
         'breakdowns': 'list<Breakdowns>',
+        'cpas_only': 'string',
         'date_preset': 'DatePreset',
         'default_summary': 'bool',
         'export_columns': 'list<string>',
@@ -170,6 +181,7 @@ class AdReportRun(
         'export_name': 'string',
         'fields': 'list<string>',
         'filtering': 'list<Object>',
+        'graph_cache': 'bool',
         'level': 'Level',
         'limit': 'int',
         'product_id_limit': 'int',

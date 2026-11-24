@@ -35,6 +35,7 @@ class AdActivity(
         object_id = 'object_id'
         object_name = 'object_name'
         object_type = 'object_type'
+        tool = 'tool'
         translated_event_type = 'translated_event_type'
 
     class EventType:
@@ -89,6 +90,7 @@ class AdActivity(
         share_audience = 'share_audience'
         unknown = 'unknown'
         unshare_audience = 'unshare_audience'
+        update_ad_audience_persona = 'update_ad_audience_persona'
         update_ad_bid_info = 'update_ad_bid_info'
         update_ad_bid_type = 'update_ad_bid_type'
         update_ad_creative = 'update_ad_creative'
@@ -101,6 +103,10 @@ class AdActivity(
         update_ad_set_bid_strategy = 'update_ad_set_bid_strategy'
         update_ad_set_bidding = 'update_ad_set_bidding'
         update_ad_set_budget = 'update_ad_set_budget'
+        update_ad_set_budget_scaling_cost_target = 'update_ad_set_budget_scaling_cost_target'
+        update_ad_set_budget_scaling_extra_budget = 'update_ad_set_budget_scaling_extra_budget'
+        update_ad_set_budget_scaling_status = 'update_ad_set_budget_scaling_status'
+        update_ad_set_cost_bidding_mode = 'update_ad_set_cost_bidding_mode'
         update_ad_set_duration = 'update_ad_set_duration'
         update_ad_set_learning_stage_status = 'update_ad_set_learning_stage_status'
         update_ad_set_min_spend_target = 'update_ad_set_min_spend_target'
@@ -109,19 +115,26 @@ class AdActivity(
         update_ad_set_run_status = 'update_ad_set_run_status'
         update_ad_set_spend_cap = 'update_ad_set_spend_cap'
         update_ad_set_target_spec = 'update_ad_set_target_spec'
+        update_ad_set_value_rules = 'update_ad_set_value_rules'
         update_ad_targets_spec = 'update_ad_targets_spec'
         update_adaccount_agency_fee = 'update_adaccount_agency_fee'
+        update_adaccount_agency_fee_status = 'update_adaccount_agency_fee_status'
         update_adgroup_stop_delivery = 'update_adgroup_stop_delivery'
         update_audience = 'update_audience'
+        update_budget_flex_toggle_status = 'update_budget_flex_toggle_status'
         update_campaign_ad_scheduling = 'update_campaign_ad_scheduling'
         update_campaign_budget = 'update_campaign_budget'
         update_campaign_budget_optimization_toggling_status = 'update_campaign_budget_optimization_toggling_status'
         update_campaign_budget_scheduling_state = 'update_campaign_budget_scheduling_state'
+        update_campaign_budget_split = 'update_campaign_budget_split'
         update_campaign_conversion_goal = 'update_campaign_conversion_goal'
         update_campaign_delivery_destination = 'update_campaign_delivery_destination'
         update_campaign_delivery_type = 'update_campaign_delivery_type'
         update_campaign_group_ad_scheduling = 'update_campaign_group_ad_scheduling'
         update_campaign_group_agency_fee = 'update_campaign_group_agency_fee'
+        update_campaign_group_budget_scaling_cost_target = 'update_campaign_group_budget_scaling_cost_target'
+        update_campaign_group_budget_scaling_extra_budget = 'update_campaign_group_budget_scaling_extra_budget'
+        update_campaign_group_budget_scaling_status = 'update_campaign_group_budget_scaling_status'
         update_campaign_group_budget_scheduling_state = 'update_campaign_group_budget_scheduling_state'
         update_campaign_group_delivery_type = 'update_campaign_group_delivery_type'
         update_campaign_group_high_demand_periods = 'update_campaign_group_high_demand_periods'
@@ -164,6 +177,7 @@ class AdActivity(
         'object_id': 'string',
         'object_name': 'string',
         'object_type': 'string',
+        'tool': 'string',
         'translated_event_type': 'string',
     }
     @classmethod

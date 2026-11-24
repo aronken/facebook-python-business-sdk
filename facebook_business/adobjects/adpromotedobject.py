@@ -24,28 +24,42 @@ class AdPromotedObject(
         self._api = api
 
     class Field(AbstractObject.Field):
+        ads_signal_source_type = 'ads_signal_source_type'
         application_id = 'application_id'
         boosted_product_set_id = 'boosted_product_set_id'
         conversion_goal_id = 'conversion_goal_id'
+        custom_attribution_source_ids = 'custom_attribution_source_ids'
         custom_conversion_id = 'custom_conversion_id'
         custom_event_str = 'custom_event_str'
         custom_event_type = 'custom_event_type'
         dataset_split_id = 'dataset_split_id'
+        dataset_split_ids = 'dataset_split_ids'
         event_id = 'event_id'
         full_funnel_objective = 'full_funnel_objective'
         fundraiser_campaign_id = 'fundraiser_campaign_id'
+        instagram_actor_id = 'instagram_actor_id'
+        is_catalog_user_acknowledged = 'is_catalog_user_acknowledged'
+        job_listing_id = 'job_listing_id'
         lead_ads_custom_event_str = 'lead_ads_custom_event_str'
         lead_ads_custom_event_type = 'lead_ads_custom_event_type'
+        lead_ads_follow_up_event = 'lead_ads_follow_up_event'
         lead_ads_form_event_source_type = 'lead_ads_form_event_source_type'
         lead_ads_offsite_conversion_type = 'lead_ads_offsite_conversion_type'
+        lead_ads_quality_volume_setting = 'lead_ads_quality_volume_setting'
+        lead_ads_selected_pixel_id = 'lead_ads_selected_pixel_id'
+        live_video_destination = 'live_video_destination'
         mcme_conversion_id = 'mcme_conversion_id'
+        multi_event_product = 'multi_event_product'
         object_store_url = 'object_store_url'
         object_store_urls = 'object_store_urls'
         offer_id = 'offer_id'
         offline_conversion_data_set_id = 'offline_conversion_data_set_id'
         offsite_conversion_event_id = 'offsite_conversion_event_id'
         omnichannel_object = 'omnichannel_object'
+        optimization_product_set_id = 'optimization_product_set_id'
         page_id = 'page_id'
+        passback_application_id = 'passback_application_id'
+        passback_pixel_id = 'passback_pixel_id'
         pixel_aggregation_rule = 'pixel_aggregation_rule'
         pixel_id = 'pixel_id'
         pixel_rule = 'pixel_rule'
@@ -57,6 +71,8 @@ class AdPromotedObject(
         product_set_id = 'product_set_id'
         product_set_optimization = 'product_set_optimization'
         retention_days = 'retention_days'
+        smart_pse_enabled = 'smart_pse_enabled'
+        smart_pse_setting = 'smart_pse_setting'
         value_semantic_type = 'value_semantic_type'
         variation = 'variation'
         whats_app_business_phone_number_id = 'whats_app_business_phone_number_id'
@@ -148,28 +164,42 @@ class AdPromotedObject(
         tutorial_completion = 'TUTORIAL_COMPLETION'
 
     _field_types = {
+        'ads_signal_source_type': 'string',
         'application_id': 'string',
         'boosted_product_set_id': 'string',
         'conversion_goal_id': 'string',
+        'custom_attribution_source_ids': 'list<string>',
         'custom_conversion_id': 'string',
         'custom_event_str': 'string',
         'custom_event_type': 'CustomEventType',
         'dataset_split_id': 'string',
+        'dataset_split_ids': 'list<string>',
         'event_id': 'string',
         'full_funnel_objective': 'FullFunnelObjective',
         'fundraiser_campaign_id': 'string',
+        'instagram_actor_id': 'string',
+        'is_catalog_user_acknowledged': 'bool',
+        'job_listing_id': 'string',
         'lead_ads_custom_event_str': 'string',
         'lead_ads_custom_event_type': 'LeadAdsCustomEventType',
+        'lead_ads_follow_up_event': 'string',
         'lead_ads_form_event_source_type': 'string',
         'lead_ads_offsite_conversion_type': 'string',
+        'lead_ads_quality_volume_setting': 'string',
+        'lead_ads_selected_pixel_id': 'string',
+        'live_video_destination': 'string',
         'mcme_conversion_id': 'string',
+        'multi_event_product': 'int',
         'object_store_url': 'string',
         'object_store_urls': 'list<string>',
         'offer_id': 'string',
         'offline_conversion_data_set_id': 'string',
         'offsite_conversion_event_id': 'string',
         'omnichannel_object': 'Object',
+        'optimization_product_set_id': 'string',
         'page_id': 'string',
+        'passback_application_id': 'string',
+        'passback_pixel_id': 'string',
         'pixel_aggregation_rule': 'string',
         'pixel_id': 'string',
         'pixel_rule': 'string',
@@ -181,6 +211,8 @@ class AdPromotedObject(
         'product_set_id': 'string',
         'product_set_optimization': 'string',
         'retention_days': 'string',
+        'smart_pse_enabled': 'bool',
+        'smart_pse_setting': 'string',
         'value_semantic_type': 'string',
         'variation': 'string',
         'whats_app_business_phone_number_id': 'string',

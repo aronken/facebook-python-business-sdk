@@ -24,21 +24,37 @@ class AdCreativeFeatureCustomizations(
         self._api = api
 
     class Field(AbstractObject.Field):
+        aspect_ratio_config = 'aspect_ratio_config'
         background_color = 'background_color'
         catalog_feed_tag_name = 'catalog_feed_tag_name'
+        fb_feed_tag_name = 'fb_feed_tag_name'
+        fb_reels_tag_name = 'fb_reels_tag_name'
+        fb_story_tag_name = 'fb_story_tag_name'
         font_name = 'font_name'
+        ig_feed_tag_name = 'ig_feed_tag_name'
+        ig_reels_tag_name = 'ig_reels_tag_name'
+        ig_stream_tag_name = 'ig_stream_tag_name'
         image_crop_style = 'image_crop_style'
         pe_carousel = 'pe_carousel'
+        recomposition_type = 'recomposition_type'
         showcase_card_display = 'showcase_card_display'
         text_extraction = 'text_extraction'
         text_style = 'text_style'
 
     _field_types = {
+        'aspect_ratio_config': 'Object',
         'background_color': 'string',
         'catalog_feed_tag_name': 'string',
+        'fb_feed_tag_name': 'string',
+        'fb_reels_tag_name': 'string',
+        'fb_story_tag_name': 'string',
         'font_name': 'string',
+        'ig_feed_tag_name': 'string',
+        'ig_reels_tag_name': 'string',
+        'ig_stream_tag_name': 'string',
         'image_crop_style': 'string',
         'pe_carousel': 'Object',
+        'recomposition_type': 'Object',
         'showcase_card_display': 'string',
         'text_extraction': 'Object',
         'text_style': 'string',

@@ -48,11 +48,9 @@ class BusinessAssetGroup(
     class PageTasks:
         advertise = 'ADVERTISE'
         analyze = 'ANALYZE'
-        cashier_role = 'CASHIER_ROLE'
         create_content = 'CREATE_CONTENT'
         global_structure_management = 'GLOBAL_STRUCTURE_MANAGEMENT'
         manage = 'MANAGE'
-        manage_jobs = 'MANAGE_JOBS'
         manage_leads = 'MANAGE_LEADS'
         messaging = 'MESSAGING'
         moderate = 'MODERATE'
@@ -62,6 +60,8 @@ class BusinessAssetGroup(
         profile_plus_advertise = 'PROFILE_PLUS_ADVERTISE'
         profile_plus_analyze = 'PROFILE_PLUS_ANALYZE'
         profile_plus_create_content = 'PROFILE_PLUS_CREATE_CONTENT'
+        profile_plus_creative_management = 'PROFILE_PLUS_CREATIVE_MANAGEMENT'
+        profile_plus_creator_management = 'PROFILE_PLUS_CREATOR_MANAGEMENT'
         profile_plus_facebook_access = 'PROFILE_PLUS_FACEBOOK_ACCESS'
         profile_plus_full_control = 'PROFILE_PLUS_FULL_CONTROL'
         profile_plus_global_structure_management = 'PROFILE_PLUS_GLOBAL_STRUCTURE_MANAGEMENT'
@@ -558,7 +558,7 @@ class BusinessAssetGroup(
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
-        from facebook_business.adobjects.instagramuser import InstagramUser
+        from facebook_business.adobjects.iguser import IGUser
         param_types = {
         }
         enums = {
@@ -569,9 +569,9 @@ class BusinessAssetGroup(
             endpoint='/contained_instagram_accounts',
             api=self._api,
             param_checker=TypeChecker(param_types, enums),
-            target_class=InstagramUser,
+            target_class=IGUser,
             api_type='EDGE',
-            response_parser=ObjectParser(target_class=InstagramUser, api=self._api),
+            response_parser=ObjectParser(target_class=IGUser, api=self._api),
         )
         request.add_params(params)
         request.add_fields(fields)

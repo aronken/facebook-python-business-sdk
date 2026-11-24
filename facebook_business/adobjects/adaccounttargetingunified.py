@@ -36,6 +36,7 @@ class AdAccountTargetingUnified(
         info = 'info'
         info_title = 'info_title'
         is_recommendation = 'is_recommendation'
+        is_youth_ads_age_gated = 'is_youth_ads_age_gated'
         key = 'key'
         link = 'link'
         name = 'name'
@@ -78,6 +79,41 @@ class AdAccountTargetingUnified(
         user_adclusters = 'user_adclusters'
         work_employers = 'work_employers'
         work_positions = 'work_positions'
+
+    class OptimizationGoal:
+        advertiser_siloed_value = 'ADVERTISER_SILOED_VALUE'
+        ad_recall_lift = 'AD_RECALL_LIFT'
+        app_installs = 'APP_INSTALLS'
+        app_installs_and_offsite_conversions = 'APP_INSTALLS_AND_OFFSITE_CONVERSIONS'
+        automatic_objective = 'AUTOMATIC_OBJECTIVE'
+        conversations = 'CONVERSATIONS'
+        derived_events = 'DERIVED_EVENTS'
+        engaged_page_views = 'ENGAGED_PAGE_VIEWS'
+        engaged_users = 'ENGAGED_USERS'
+        event_responses = 'EVENT_RESPONSES'
+        impressions = 'IMPRESSIONS'
+        in_app_value = 'IN_APP_VALUE'
+        landing_page_views = 'LANDING_PAGE_VIEWS'
+        lead_generation = 'LEAD_GENERATION'
+        link_clicks = 'LINK_CLICKS'
+        meaningful_call_attempt = 'MEANINGFUL_CALL_ATTEMPT'
+        messaging_appointment_conversion = 'MESSAGING_APPOINTMENT_CONVERSION'
+        messaging_deep_conversation_and_follow = 'MESSAGING_DEEP_CONVERSATION_AND_FOLLOW'
+        messaging_purchase_conversion = 'MESSAGING_PURCHASE_CONVERSION'
+        none = 'NONE'
+        offsite_conversions = 'OFFSITE_CONVERSIONS'
+        page_likes = 'PAGE_LIKES'
+        post_engagement = 'POST_ENGAGEMENT'
+        profile_and_page_engagement = 'PROFILE_AND_PAGE_ENGAGEMENT'
+        profile_visit = 'PROFILE_VISIT'
+        quality_call = 'QUALITY_CALL'
+        quality_lead = 'QUALITY_LEAD'
+        reach = 'REACH'
+        reminders_set = 'REMINDERS_SET'
+        subscribers = 'SUBSCRIBERS'
+        thruplay = 'THRUPLAY'
+        value = 'VALUE'
+        visit_instagram_profile = 'VISIT_INSTAGRAM_PROFILE'
 
     class RegulatedCategories:
         credit = 'CREDIT'
@@ -349,6 +385,7 @@ class AdAccountTargetingUnified(
         age_range = 'age_range'
         alternate_auto_targeting_option = 'alternate_auto_targeting_option'
         app_install_state = 'app_install_state'
+        audience_concepts = 'audience_concepts'
         audience_network_positions = 'audience_network_positions'
         behaviors = 'behaviors'
         brand_safety_content_filter_levels = 'brand_safety_content_filter_levels'
@@ -368,17 +405,20 @@ class AdAccountTargetingUnified(
         custom_audiences = 'custom_audiences'
         device_platforms = 'device_platforms'
         direct_install_devices = 'direct_install_devices'
+        dt_consolidation_state = 'dt_consolidation_state'
         dynamic_audience_ids = 'dynamic_audience_ids'
         education_majors = 'education_majors'
         education_schools = 'education_schools'
         education_statuses = 'education_statuses'
         effective_audience_network_positions = 'effective_audience_network_positions'
+        effective_brand_safety_content_filter_levels = 'effective_brand_safety_content_filter_levels'
         effective_device_platforms = 'effective_device_platforms'
         effective_facebook_positions = 'effective_facebook_positions'
         effective_instagram_positions = 'effective_instagram_positions'
         effective_messenger_positions = 'effective_messenger_positions'
         effective_oculus_positions = 'effective_oculus_positions'
         effective_publisher_platforms = 'effective_publisher_platforms'
+        effective_streaming_services_positions = 'effective_streaming_services_positions'
         effective_threads_positions = 'effective_threads_positions'
         effective_whatsapp_positions = 'effective_whatsapp_positions'
         engagement_specs = 'engagement_specs'
@@ -411,6 +451,7 @@ class AdAccountTargetingUnified(
         genders = 'genders'
         generation = 'generation'
         geo_locations = 'geo_locations'
+        hashtag_interactions = 'hashtag_interactions'
         home_ownership = 'home_ownership'
         home_type = 'home_type'
         home_value = 'home_value'
@@ -450,12 +491,14 @@ class AdAccountTargetingUnified(
         product_audience_specs = 'product_audience_specs'
         prospecting_audience = 'prospecting_audience'
         publisher_platforms = 'publisher_platforms'
+        purchase_intent = 'purchase_intent'
         radius = 'radius'
         region_keys = 'region_keys'
         regions = 'regions'
         relationship_statuses = 'relationship_statuses'
         rtb_flag = 'rtb_flag'
         site_category = 'site_category'
+        streaming_services_positions = 'streaming_services_positions'
         subscriber_universe = 'subscriber_universe'
         tafe_ca_mitigation_strategy = 'tafe_ca_mitigation_strategy'
         targeting_automation = 'targeting_automation'
@@ -479,6 +522,7 @@ class AdAccountTargetingUnified(
         zips = 'zips'
 
     class AppStore:
+        all_app_stores_for_android_and_ios = 'all_app_stores_for_android_and_ios'
         amazon_app_store = 'amazon_app_store'
         apk_mirror = 'apk_mirror'
         apk_monk = 'apk_monk'
@@ -492,6 +536,7 @@ class AdAccountTargetingUnified(
         fb_gameroom = 'fb_gameroom'
         galaxy_store = 'galaxy_store'
         google_play = 'google_play'
+        horizon_world = 'horizon_world'
         instant_game = 'instant_game'
         itunes = 'itunes'
         itunes_ipad = 'itunes_ipad'
@@ -545,6 +590,7 @@ class AdAccountTargetingUnified(
         'info': 'string',
         'info_title': 'string',
         'is_recommendation': 'bool',
+        'is_youth_ads_age_gated': 'bool',
         'key': 'string',
         'link': 'string',
         'name': 'string',
@@ -564,6 +610,7 @@ class AdAccountTargetingUnified(
     def _get_field_enum_info(cls):
         field_enum_info = {}
         field_enum_info['LimitType'] = AdAccountTargetingUnified.LimitType.__dict__.values()
+        field_enum_info['OptimizationGoal'] = AdAccountTargetingUnified.OptimizationGoal.__dict__.values()
         field_enum_info['RegulatedCategories'] = AdAccountTargetingUnified.RegulatedCategories.__dict__.values()
         field_enum_info['RegulatedCountries'] = AdAccountTargetingUnified.RegulatedCountries.__dict__.values()
         field_enum_info['WhitelistedTypes'] = AdAccountTargetingUnified.WhitelistedTypes.__dict__.values()

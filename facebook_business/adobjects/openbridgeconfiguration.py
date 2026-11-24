@@ -28,23 +28,51 @@ class OpenBridgeConfiguration(
 
     class Field(AbstractObject.Field):
         active = 'active'
+        associated_sgw_data_source_id = 'associated_sgw_data_source_id'
+        blocked_event_types = 'blocked_event_types'
+        blocked_websites = 'blocked_websites'
+        browser_agent = 'browser_agent'
+        capi_publishing_state = 'capi_publishing_state'
         cloud_provider = 'cloud_provider'
         cloud_region = 'cloud_region'
         destination_id = 'destination_id'
         endpoint = 'endpoint'
+        event_enrichment_advertiser_state = 'event_enrichment_advertiser_state'
+        event_enrichment_meta_state = 'event_enrichment_meta_state'
+        event_enrichment_state = 'event_enrichment_state'
         fallback_domain = 'fallback_domain'
-        first_party_domain = 'first_party_domain'
         host_business_id = 'host_business_id'
         id = 'id'
         instance_id = 'instance_id'
         instance_version = 'instance_version'
         is_sgw_instance = 'is_sgw_instance'
         is_sgw_pixel_from_meta_pixel = 'is_sgw_pixel_from_meta_pixel'
+        mpc_fallback_domain = 'mpc_fallback_domain'
         partner_name = 'partner_name'
         pixel_id = 'pixel_id'
         sgw_account_id = 'sgw_account_id'
         sgw_instance_url = 'sgw_instance_url'
         sgw_pixel_id = 'sgw_pixel_id'
+
+    class CapiPublishingState:
+        disabled = 'DISABLED'
+        enabled = 'ENABLED'
+        not_initialized = 'NOT_INITIALIZED'
+
+    class EventEnrichmentAdvertiserState:
+        disabled = 'DISABLED'
+        enabled = 'ENABLED'
+        not_initialized = 'NOT_INITIALIZED'
+
+    class EventEnrichmentMetaState:
+        allowed = 'ALLOWED'
+        blocked = 'BLOCKED'
+        not_initialized = 'NOT_INITIALIZED'
+
+    class EventEnrichmentState:
+        no = 'NO'
+        not_initialized = 'NOT_INITIALIZED'
+        yes = 'YES'
 
     # @deprecated get_endpoint function is deprecated
     @classmethod
@@ -122,12 +150,18 @@ class OpenBridgeConfiguration(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
             'active': 'bool',
+            'associated_sgw_data_source_id': 'unsigned int',
+            'blocked_event_types': 'list<string>',
+            'blocked_websites': 'list<string>',
+            'capi_publishing_state': 'capi_publishing_state_enum',
             'cloud_provider': 'string',
             'cloud_region': 'string',
             'destination_id': 'string',
             'endpoint': 'string',
+            'event_enrichment_advertiser_state': 'event_enrichment_advertiser_state_enum',
+            'event_enrichment_meta_state': 'event_enrichment_meta_state_enum',
+            'event_enrichment_state': 'event_enrichment_state_enum',
             'fallback_domain': 'string',
-            'first_party_domain': 'string',
             'host_business_id': 'unsigned int',
             'instance_id': 'string',
             'instance_version': 'string',
@@ -139,6 +173,10 @@ class OpenBridgeConfiguration(
             'sgw_pixel_id': 'unsigned int',
         }
         enums = {
+            'capi_publishing_state_enum': OpenBridgeConfiguration.CapiPublishingState.__dict__.values(),
+            'event_enrichment_advertiser_state_enum': OpenBridgeConfiguration.EventEnrichmentAdvertiserState.__dict__.values(),
+            'event_enrichment_meta_state_enum': OpenBridgeConfiguration.EventEnrichmentMetaState.__dict__.values(),
+            'event_enrichment_state_enum': OpenBridgeConfiguration.EventEnrichmentState.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
@@ -164,18 +202,26 @@ class OpenBridgeConfiguration(
 
     _field_types = {
         'active': 'bool',
+        'associated_sgw_data_source_id': 'string',
+        'blocked_event_types': 'list<string>',
+        'blocked_websites': 'list<string>',
+        'browser_agent': 'list<string>',
+        'capi_publishing_state': 'string',
         'cloud_provider': 'string',
         'cloud_region': 'string',
         'destination_id': 'string',
         'endpoint': 'string',
+        'event_enrichment_advertiser_state': 'string',
+        'event_enrichment_meta_state': 'string',
+        'event_enrichment_state': 'string',
         'fallback_domain': 'string',
-        'first_party_domain': 'string',
         'host_business_id': 'string',
         'id': 'string',
         'instance_id': 'string',
         'instance_version': 'string',
         'is_sgw_instance': 'bool',
         'is_sgw_pixel_from_meta_pixel': 'bool',
+        'mpc_fallback_domain': 'string',
         'partner_name': 'string',
         'pixel_id': 'string',
         'sgw_account_id': 'string',
@@ -185,6 +231,10 @@ class OpenBridgeConfiguration(
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
+        field_enum_info['CapiPublishingState'] = OpenBridgeConfiguration.CapiPublishingState.__dict__.values()
+        field_enum_info['EventEnrichmentAdvertiserState'] = OpenBridgeConfiguration.EventEnrichmentAdvertiserState.__dict__.values()
+        field_enum_info['EventEnrichmentMetaState'] = OpenBridgeConfiguration.EventEnrichmentMetaState.__dict__.values()
+        field_enum_info['EventEnrichmentState'] = OpenBridgeConfiguration.EventEnrichmentState.__dict__.values()
         return field_enum_info
 
 

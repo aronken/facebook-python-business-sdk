@@ -22,10 +22,17 @@ from unittest import TestCase
 
 from facebook_business.adobjects.serverside.attribution_data import AttributionData
 from facebook_business.adobjects.serverside.attribution_model import AttributionModel
+from facebook_business.adobjects.serverside.attribution_method import AttributionMethod
+from facebook_business.adobjects.serverside.decline_reason import DeclineReason
+from facebook_business.adobjects.serverside.attribution_setting import AttributionSetting
 
 
 class AttributionDataTest(TestCase):
     def test_normalize(self):
+        attribution_setting = AttributionSetting(
+            inactivity_window_hours=24,
+            reattribution_window_hours=48,
+        )
         expected = {
             'scope': 'click',
             'visit_time': 12345,
@@ -36,6 +43,20 @@ class AttributionDataTest(TestCase):
             'attribution_share': 0.5,
             'attribution_model': AttributionModel.LAST_CLICK,
             'attribution_value': 10.5,
+            'attribution_source': 'amm',
+            'touchpoint_type': 'onsite_click',
+            'touchpoint_ts': 12345,
+            'attribution_method': AttributionMethod.ARD,
+            'decline_reason': DeclineReason.LOOKBACK,
+            'auditing_token': 'test_token_123',
+            'linkage_key': 'test_key_456',
+            'touchpoint_id': 'tp_test_touchpoint_id_123',
+            'attribution_setting': {
+                'inactivity_window_hours': 24,
+                'reattribution_window_hours': 48,
+            },
+            'total_credit': 0.85,
+            'partner_client_id': 'partner_workspace_123',
         }
         attribution_data = AttributionData(
             scope=expected['scope'],
@@ -47,6 +68,17 @@ class AttributionDataTest(TestCase):
             attribution_share=expected['attribution_share'],
             attribution_model=expected['attribution_model'],
             attribution_value=expected['attribution_value'],
+            attribution_source=expected['attribution_source'],
+            touchpoint_type=expected['touchpoint_type'],
+            touchpoint_ts=expected['touchpoint_ts'],
+            attribution_method=expected['attribution_method'],
+            decline_reason=expected['decline_reason'],
+            auditing_token=expected['auditing_token'],
+            linkage_key=expected['linkage_key'],
+            touchpoint_id=expected['touchpoint_id'],
+            attribution_setting=attribution_setting,
+            total_credit=expected['total_credit'],
+            partner_client_id=expected['partner_client_id'],
         )
 
         self.assertEqual(attribution_data.normalize(), expected)

@@ -28,9 +28,7 @@ class CommerceMerchantSettings(
 
     class Field(AbstractObject.Field):
         checkout_config = 'checkout_config'
-        checkout_message = 'checkout_message'
         contact_email = 'contact_email'
-        cta = 'cta'
         display_name = 'display_name'
         facebook_channel = 'facebook_channel'
         id = 'id'
@@ -39,14 +37,14 @@ class CommerceMerchantSettings(
         merchant_page = 'merchant_page'
         merchant_status = 'merchant_status'
         offsite_iab_checkout_enabled_countries = 'offsite_iab_checkout_enabled_countries'
-        onsite_commerce_merchant = 'onsite_commerce_merchant'
         payment_provider = 'payment_provider'
         privacy_policy_localized = 'privacy_policy_localized'
-        return_policy_localized = 'return_policy_localized'
-        review_rejection_messages = 'review_rejection_messages'
-        review_rejection_reasons = 'review_rejection_reasons'
         shops_ads_setup = 'shops_ads_setup'
         terms = 'terms'
+
+    class MerchantStatus:
+        enabled = 'ENABLED'
+        externally_disabled = 'EXTERNALLY_DISABLED'
 
     def api_get(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
@@ -78,25 +76,28 @@ class CommerceMerchantSettings(
             self.assure_call()
             return request.execute()
 
-    def create_acknowledge_order(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
+    def api_update(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
-            'idempotency_key': 'string',
-            'orders': 'list<map>',
+            'checkout_config': 'map',
+            'korea_ftc_listing': 'string',
+            'merchant_status': 'merchant_status_enum',
+            'privacy_policy_localized': 'map',
         }
         enums = {
+            'merchant_status_enum': CommerceMerchantSettings.MerchantStatus.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
             method='POST',
-            endpoint='/acknowledge_orders',
+            endpoint='/',
             api=self._api,
             param_checker=TypeChecker(param_types, enums),
             target_class=CommerceMerchantSettings,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=CommerceMerchantSettings, api=self._api),
+            api_type='NODE',
+            response_parser=ObjectParser(reuse_object=self),
         )
         request.add_params(params)
         request.add_fields(fields)
@@ -180,40 +181,6 @@ class CommerceMerchantSettings(
             self.assure_call()
             return request.execute()
 
-    def get_commerce_transactions(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        from facebook_business.adobjects.commerceordertransactiondetail import CommerceOrderTransactionDetail
-        param_types = {
-            'end_time': 'datetime',
-            'payout_reference_id': 'string',
-            'start_time': 'datetime',
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='GET',
-            endpoint='/commerce_transactions',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=CommerceOrderTransactionDetail,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=CommerceOrderTransactionDetail, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
     def get_order_management_apps(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
@@ -232,36 +199,6 @@ class CommerceMerchantSettings(
             target_class=Application,
             api_type='EDGE',
             response_parser=ObjectParser(target_class=Application, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
-    def create_order_management_app(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        param_types = {
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='POST',
-            endpoint='/order_management_apps',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=CommerceMerchantSettings,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=CommerceMerchantSettings, api=self._api),
         )
         request.add_params(params)
         request.add_fields(fields)
@@ -306,47 +243,6 @@ class CommerceMerchantSettings(
             self.assure_call()
             return request.execute()
 
-    def get_returns(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        param_types = {
-            'end_time_created': 'datetime',
-            'merchant_return_id': 'string',
-            'start_time_created': 'datetime',
-            'statuses': 'list<statuses_enum>',
-        }
-        enums = {
-            'statuses_enum': [
-                'APPROVED',
-                'DISAPPROVED',
-                'MERCHANT_MARKED_COMPLETED',
-                'REFUNDED',
-                'REQUESTED',
-            ],
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='GET',
-            endpoint='/returns',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=AbstractCrudObject,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=AbstractCrudObject, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
     def get_setup_status(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
@@ -365,37 +261,6 @@ class CommerceMerchantSettings(
             target_class=CommerceMerchantSettingsSetupStatus,
             api_type='EDGE',
             response_parser=ObjectParser(target_class=CommerceMerchantSettingsSetupStatus, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
-    def get_shipping_profiles(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        param_types = {
-            'reference_id': 'string',
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='GET',
-            endpoint='/shipping_profiles',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=AbstractCrudObject,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=AbstractCrudObject, api=self._api),
         )
         request.add_params(params)
         request.add_fields(fields)
@@ -476,41 +341,9 @@ class CommerceMerchantSettings(
             self.assure_call()
             return request.execute()
 
-    def get_tax_settings(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        param_types = {
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='GET',
-            endpoint='/tax_settings',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=AbstractCrudObject,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=AbstractCrudObject, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
     _field_types = {
         'checkout_config': 'string',
-        'checkout_message': 'string',
         'contact_email': 'string',
-        'cta': 'string',
         'display_name': 'string',
         'facebook_channel': 'Object',
         'id': 'string',
@@ -519,18 +352,15 @@ class CommerceMerchantSettings(
         'merchant_page': 'Profile',
         'merchant_status': 'string',
         'offsite_iab_checkout_enabled_countries': 'list<string>',
-        'onsite_commerce_merchant': 'Object',
         'payment_provider': 'string',
         'privacy_policy_localized': 'string',
-        'return_policy_localized': 'string',
-        'review_rejection_messages': 'list<string>',
-        'review_rejection_reasons': 'list<string>',
         'shops_ads_setup': 'Object',
         'terms': 'string',
     }
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
+        field_enum_info['MerchantStatus'] = CommerceMerchantSettings.MerchantStatus.__dict__.values()
         return field_enum_info
 
 

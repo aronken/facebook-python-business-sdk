@@ -38,6 +38,7 @@ class AdRule(
         schedule_spec = 'schedule_spec'
         status = 'status'
         updated_time = 'updated_time'
+        recommended_rule_key = 'recommended_rule_key'
         ui_creation_source = 'ui_creation_source'
 
     class Status:
@@ -51,6 +52,7 @@ class AdRule(
         am_activity_history_table = 'AM_ACTIVITY_HISTORY_TABLE'
         am_ad_object_name_card = 'AM_AD_OBJECT_NAME_CARD'
         am_amfe_l3_recommendation = 'AM_AMFE_L3_RECOMMENDATION'
+        am_auto2_internal = 'AM_AUTO2_INTERNAL'
         am_autoflow_guidance_card = 'AM_AUTOFLOW_GUIDANCE_CARD'
         am_auto_apply_widget = 'AM_AUTO_APPLY_WIDGET'
         am_editor_card = 'AM_EDITOR_CARD'
@@ -73,6 +75,9 @@ class AdRule(
         rules_management_page_rule_group = 'RULES_MANAGEMENT_PAGE_RULE_GROUP'
         rules_management_page_rule_name = 'RULES_MANAGEMENT_PAGE_RULE_NAME'
         rules_management_page_top_nav = 'RULES_MANAGEMENT_PAGE_TOP_NAV'
+        rules_recommended_rules_card = 'RULES_RECOMMENDED_RULES_CARD'
+        rules_recommended_rules_dialog = 'RULES_RECOMMENDED_RULES_DIALOG'
+        rules_recommended_rules_dialog_custom_rule = 'RULES_RECOMMENDED_RULES_DIALOG_CUSTOM_RULE'
         rules_view_active_rules_dialog = 'RULES_VIEW_ACTIVE_RULES_DIALOG'
         rule_creation_success_dialog = 'RULE_CREATION_SUCCESS_DIALOG'
         rule_syd_redirect = 'RULE_SYD_REDIRECT'
@@ -291,6 +296,7 @@ class AdRule(
         'schedule_spec': 'AdRuleScheduleSpec',
         'status': 'string',
         'updated_time': 'datetime',
+        'recommended_rule_key': 'string',
         'ui_creation_source': 'UiCreationSource',
     }
     @classmethod

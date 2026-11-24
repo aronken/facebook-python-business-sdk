@@ -29,7 +29,6 @@ class User(
     class Field(AbstractObject.Field):
         about = 'about'
         age_range = 'age_range'
-        avatar_2d_profile_picture = 'avatar_2d_profile_picture'
         birthday = 'birthday'
         client_business_id = 'client_business_id'
         community = 'community'
@@ -43,7 +42,6 @@ class User(
         gender = 'gender'
         hometown = 'hometown'
         id = 'id'
-        id_for_avatars = 'id_for_avatars'
         inspirational_people = 'inspirational_people'
         install_type = 'install_type'
         installed = 'installed'
@@ -380,6 +378,7 @@ class User(
             'client_business': 'string',
             'confidence_level': 'float',
             'cooldown_start_time': 'int',
+            'creative_test_config': 'map',
             'description': 'string',
             'end_time': 'int',
             'name': 'string',
@@ -663,6 +662,37 @@ class User(
             self.assure_call()
             return request.execute()
 
+    def get_assigned_instagram_accounts(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
+        from facebook_business.utils import api_utils
+        if batch is None and (success is not None or failure is not None):
+          api_utils.warning('`success` and `failure` callback only work for batch call.')
+        from facebook_business.adobjects.iguser import IGUser
+        param_types = {
+        }
+        enums = {
+        }
+        request = FacebookRequest(
+            node_id=self['id'],
+            method='GET',
+            endpoint='/assigned_instagram_accounts',
+            api=self._api,
+            param_checker=TypeChecker(param_types, enums),
+            target_class=IGUser,
+            api_type='EDGE',
+            response_parser=ObjectParser(target_class=IGUser, api=self._api),
+        )
+        request.add_params(params)
+        request.add_fields(fields)
+
+        if batch is not None:
+            request.add_to_batch(batch, success=success, failure=failure)
+            return request
+        elif pending:
+            return request
+        else:
+            self.assure_call()
+            return request.execute()
+
     def get_assigned_pages(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
@@ -744,37 +774,6 @@ class User(
             target_class=WhatsAppBusinessAccount,
             api_type='EDGE',
             response_parser=ObjectParser(target_class=WhatsAppBusinessAccount, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
-    def get_avatars(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        from facebook_business.adobjects.avatar import Avatar
-        param_types = {
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='GET',
-            endpoint='/avatars',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=Avatar,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=Avatar, api=self._api),
         )
         request.add_params(params)
         request.add_fields(fields)
@@ -934,6 +933,8 @@ class User(
             'folder': 'string',
             'platform': 'platform_enum',
             'tags': 'list<string>',
+            'updated_after_ms': 'unsigned int',
+            'updated_before_ms': 'unsigned int',
             'user_id': 'string',
         }
         enums = {
@@ -1514,7 +1515,6 @@ class User(
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
-        from facebook_business.adobjects.livevideo import LiveVideo
         param_types = {
             'content_tags': 'list<string>',
             'description': 'string',
@@ -1538,11 +1538,31 @@ class User(
             'title': 'string',
         }
         enums = {
-            'projection_enum': LiveVideo.Projection.__dict__.values(),
-            'spatial_audio_format_enum': LiveVideo.SpatialAudioFormat.__dict__.values(),
-            'status_enum': LiveVideo.Status.__dict__.values(),
-            'stereoscopic_mode_enum': LiveVideo.StereoscopicMode.__dict__.values(),
-            'stream_type_enum': LiveVideo.StreamType.__dict__.values(),
+            'projection_enum': [
+                'CUBEMAP',
+                'EQUIRECTANGULAR',
+                'HALF_EQUIRECTANGULAR',
+            ],
+            'spatial_audio_format_enum': [
+                'ambiX_4',
+            ],
+            'status_enum': [
+                'LIVE_NOW',
+                'SCHEDULED_CANCELED',
+                'SCHEDULED_LIVE',
+                'SCHEDULED_UNPUBLISHED',
+                'UNPUBLISHED',
+            ],
+            'stereoscopic_mode_enum': [
+                'LEFT_RIGHT',
+                'MONO',
+                'MULTI_VIEW',
+                'TOP_BOTTOM',
+            ],
+            'stream_type_enum': [
+                'AMBIENT',
+                'REGULAR',
+            ],
         }
         request = FacebookRequest(
             node_id=self['id'],
@@ -1550,9 +1570,9 @@ class User(
             endpoint='/live_videos',
             api=self._api,
             param_checker=TypeChecker(param_types, enums),
-            target_class=LiveVideo,
+            target_class=AbstractCrudObject,
             api_type='EDGE',
-            response_parser=ObjectParser(target_class=LiveVideo, api=self._api),
+            response_parser=ObjectParser(target_class=AbstractCrudObject, api=self._api),
         )
         request.add_params(params)
         request.add_fields(fields)
@@ -1665,11 +1685,15 @@ class User(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
             'bot_message_payload_elements': 'string',
+            'button_title': 'string',
             'filtering': 'list<filtering_enum>',
+            'game_metadata': 'string',
             'href': 'Object',
             'label': 'string',
             'message': 'map',
             'notif_ids': 'list<string>',
+            'notification_content_id': 'unsigned int',
+            'notification_contents': 'list<map>',
             'payload': 'string',
             'read': 'bool',
             'ref': 'string',
@@ -1880,6 +1904,7 @@ class User(
             'backdated_time': 'datetime',
             'backdated_time_granularity': 'backdated_time_granularity_enum',
             'caption': 'string',
+            'composer_entry_point': 'string',
             'composer_session_id': 'string',
             'direct_share_status': 'unsigned int',
             'feed_targeting': 'Object',
@@ -1905,7 +1930,6 @@ class User(
             'place': 'Object',
             'privacy': 'string',
             'profile_id': 'int',
-            'provenance_info': 'map',
             'proxied_app_id': 'string',
             'published': 'bool',
             'qn': 'string',
@@ -2139,6 +2163,7 @@ class User(
             'creative_tools': 'string',
             'description': 'string',
             'direct_share_status': 'unsigned int',
+            'edit_description_spec': 'map',
             'embeddable': 'bool',
             'end_offset': 'unsigned int',
             'fbuploader_video_file_chunk': 'string',
@@ -2155,6 +2180,7 @@ class User(
             'initial_heading': 'unsigned int',
             'initial_pitch': 'unsigned int',
             'instant_game_entry_point_data': 'string',
+            'is_ai_generated': 'bool',
             'is_boost_intended': 'bool',
             'is_explicit_share': 'bool',
             'is_group_linking_post': 'bool',
@@ -2175,6 +2201,7 @@ class User(
             'publish_event_id': 'unsigned int',
             'referenced_sticker_id': 'string',
             'replace_video_id': 'string',
+            'selected_audio_spec': 'map',
             'slideshow_spec': 'map',
             'source': 'string',
             'source_instagram_media_id': 'string',
@@ -2230,7 +2257,6 @@ class User(
     _field_types = {
         'about': 'string',
         'age_range': 'AgeRange',
-        'avatar_2d_profile_picture': 'AvatarProfilePicture',
         'birthday': 'string',
         'client_business_id': 'string',
         'community': 'Group',
@@ -2244,7 +2270,6 @@ class User(
         'gender': 'string',
         'hometown': 'Page',
         'id': 'string',
-        'id_for_avatars': 'string',
         'inspirational_people': 'list<Experience>',
         'install_type': 'string',
         'installed': 'bool',

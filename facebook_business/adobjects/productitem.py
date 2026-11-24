@@ -30,15 +30,19 @@ class ProductItem(
         additional_image_cdn_urls = 'additional_image_cdn_urls'
         additional_image_urls = 'additional_image_urls'
         additional_variant_attributes = 'additional_variant_attributes'
+        affiliate_seller_rating = 'affiliate_seller_rating'
+        affiliate_seller_rating_count = 'affiliate_seller_rating_count'
         age_group = 'age_group'
         applinks = 'applinks'
         availability = 'availability'
+        base_commission_rate = 'base_commission_rate'
         brand = 'brand'
         bundle_items = 'bundle_items'
         bundle_retailer_ids = 'bundle_retailer_ids'
         capabilities_disabled_by_user = 'capabilities_disabled_by_user'
         capability_to_review_status = 'capability_to_review_status'
         category = 'category'
+        category_ranking = 'category_ranking'
         category_specific_fields = 'category_specific_fields'
         color = 'color'
         commerce_insights = 'commerce_insights'
@@ -73,19 +77,25 @@ class ProductItem(
         invalidation_errors = 'invalidation_errors'
         inventory = 'inventory'
         is_bundle_hero = 'is_bundle_hero'
+        live_special_price = 'live_special_price'
         manufacturer_info = 'manufacturer_info'
         manufacturer_part_number = 'manufacturer_part_number'
         marked_for_product_launch = 'marked_for_product_launch'
         material = 'material'
         mobile_link = 'mobile_link'
         name = 'name'
+        native_commerce = 'native_commerce'
+        offer_disclaimer = 'offer_disclaimer'
+        offer_disclaimer_url = 'offer_disclaimer_url'
         ordering_index = 'ordering_index'
         origin_country = 'origin_country'
+        overall_ranking = 'overall_ranking'
         parent_product_id = 'parent_product_id'
         pattern = 'pattern'
         post_conversion_signal_based_enforcement_appeal_eligibility = 'post_conversion_signal_based_enforcement_appeal_eligibility'
         price = 'price'
         product_catalog = 'product_catalog'
+        product_disclosures = 'product_disclosures'
         product_feed = 'product_feed'
         product_group = 'product_group'
         product_local_info = 'product_local_info'
@@ -96,6 +106,7 @@ class ProductItem(
         retailer_product_group_id = 'retailer_product_group_id'
         review_rejection_reasons = 'review_rejection_reasons'
         review_status = 'review_status'
+        rich_text_description = 'rich_text_description'
         sale_price = 'sale_price'
         sale_price_end_date = 'sale_price_end_date'
         sale_price_start_date = 'sale_price_start_date'
@@ -104,6 +115,7 @@ class ProductItem(
         short_description = 'short_description'
         size = 'size'
         start_date = 'start_date'
+        status = 'status'
         tags = 'tags'
         url = 'url'
         vendor_id = 'vendor_id'
@@ -111,6 +123,7 @@ class ProductItem(
         videos = 'videos'
         visibility = 'visibility'
         wa_compliance_category = 'wa_compliance_category'
+        allow_upsert = 'allow_upsert'
         android_app_name = 'android_app_name'
         android_class = 'android_class'
         android_package = 'android_package'
@@ -150,6 +163,7 @@ class ProductItem(
         available_for_order = 'available for order'
         discontinued = 'discontinued'
         in_stock = 'in stock'
+        mark_as_expired = 'mark_as_expired'
         mark_as_sold = 'mark_as_sold'
         out_of_stock = 'out of stock'
         pending = 'pending'
@@ -196,6 +210,10 @@ class ProductItem(
         kg = 'kg'
         lb = 'lb'
         oz = 'oz'
+
+    class Status:
+        published = 'PUBLISHED'
+        staging = 'STAGING'
 
     class VideoFetchStatus:
         direct_upload = 'DIRECT_UPLOAD'
@@ -434,20 +452,23 @@ class ProductItem(
         biz_msg_gen_ai_policy_violated = 'BIZ_MSG_GEN_AI_POLICY_VIOLATED'
         cannot_edit_subscription_products = 'CANNOT_EDIT_SUBSCRIPTION_PRODUCTS'
         catalog_not_connected_to_event_source = 'CATALOG_NOT_CONNECTED_TO_EVENT_SOURCE'
+        catalog_not_onboarded_for_ai_commerce = 'CATALOG_NOT_ONBOARDED_FOR_AI_COMMERCE'
         checkout_disabled_by_user = 'CHECKOUT_DISABLED_BY_USER'
         commerce_account_legal_address_invalid = 'COMMERCE_ACCOUNT_LEGAL_ADDRESS_INVALID'
         commerce_account_not_legally_compliant = 'COMMERCE_ACCOUNT_NOT_LEGALLY_COMPLIANT'
         crawled_availability_mismatch = 'CRAWLED_AVAILABILITY_MISMATCH'
         da_disabled_by_user = 'DA_DISABLED_BY_USER'
-        da_policy_unfit_for_audience = 'DA_POLICY_UNFIT_FOR_AUDIENCE'
         da_policy_violation = 'DA_POLICY_VIOLATION'
         deleted_item = 'DELETED_ITEM'
         digital_goods_not_available_for_checkout = 'DIGITAL_GOODS_NOT_AVAILABLE_FOR_CHECKOUT'
         duplicate_images = 'DUPLICATE_IMAGES'
         duplicate_title_and_description = 'DUPLICATE_TITLE_AND_DESCRIPTION'
         empty_availability = 'EMPTY_AVAILABILITY'
+        empty_brand = 'EMPTY_BRAND'
         empty_condition = 'EMPTY_CONDITION'
         empty_description = 'EMPTY_DESCRIPTION'
+        empty_gpc_and_fpc = 'EMPTY_GPC_AND_FPC'
+        empty_gtin_and_mpn = 'EMPTY_GTIN_AND_MPN'
         empty_image_url = 'EMPTY_IMAGE_URL'
         empty_price = 'EMPTY_PRICE'
         empty_product_url = 'EMPTY_PRODUCT_URL'
@@ -465,8 +486,12 @@ class ProductItem(
         image_fetch_failed_link_broken = 'IMAGE_FETCH_FAILED_LINK_BROKEN'
         image_fetch_failed_timed_out = 'IMAGE_FETCH_FAILED_TIMED_OUT'
         image_resolution_low = 'IMAGE_RESOLUTION_LOW'
+        inactive_magento_product = 'INACTIVE_MAGENTO_PRODUCT'
+        inactive_salesforce_commerce_cloud_product = 'INACTIVE_SALESFORCE_COMMERCE_CLOUD_PRODUCT'
         inactive_shopify_product = 'INACTIVE_SHOPIFY_PRODUCT'
+        inactive_woocommerce_product = 'INACTIVE_WOOCOMMERCE_PRODUCT'
         invalid_commerce_tax_category = 'INVALID_COMMERCE_TAX_CATEGORY'
+        invalid_comscore_market_codes = 'INVALID_COMSCORE_MARKET_CODES'
         invalid_consolidated_locality_information = 'INVALID_CONSOLIDATED_LOCALITY_INFORMATION'
         invalid_content_id = 'INVALID_CONTENT_ID'
         invalid_dealer_communication_parameters = 'INVALID_DEALER_COMMUNICATION_PARAMETERS'
@@ -483,6 +508,7 @@ class ProductItem(
         invalid_range_for_num_of_beds = 'INVALID_RANGE_FOR_NUM_OF_BEDS'
         invalid_range_for_num_of_rooms = 'INVALID_RANGE_FOR_NUM_OF_ROOMS'
         invalid_range_for_parking_spaces = 'INVALID_RANGE_FOR_PARKING_SPACES'
+        invalid_sale_price = 'INVALID_SALE_PRICE'
         invalid_shelter_page_id = 'INVALID_SHELTER_PAGE_ID'
         invalid_shipping_profile_params = 'INVALID_SHIPPING_PROFILE_PARAMS'
         invalid_subscription_disable_params = 'INVALID_SUBSCRIPTION_DISABLE_PARAMS'
@@ -494,15 +520,22 @@ class ProductItem(
         inventory_zero_availability_in_stock = 'INVENTORY_ZERO_AVAILABILITY_IN_STOCK'
         in_another_product_launch = 'IN_ANOTHER_PRODUCT_LAUNCH'
         item_group_not_specified = 'ITEM_GROUP_NOT_SPECIFIED'
+        item_invalid_feature = 'ITEM_INVALID_FEATURE'
+        item_not_approved = 'ITEM_NOT_APPROVED'
+        item_not_native_commerce = 'ITEM_NOT_NATIVE_COMMERCE'
         item_not_shippable_for_sca_shop = 'ITEM_NOT_SHIPPABLE_FOR_SCA_SHOP'
         item_override_empty_availability = 'ITEM_OVERRIDE_EMPTY_AVAILABILITY'
         item_override_empty_price = 'ITEM_OVERRIDE_EMPTY_PRICE'
         item_override_not_visible = 'ITEM_OVERRIDE_NOT_VISIBLE'
         item_price_not_positive = 'ITEM_PRICE_NOT_POSITIVE'
         item_stale_out_of_stock = 'ITEM_STALE_OUT_OF_STOCK'
+        item_suppressed_checkout_error = 'ITEM_SUPPRESSED_CHECKOUT_ERROR'
+        item_without_video = 'ITEM_WITHOUT_VIDEO'
         marketplace_disabled_by_user = 'MARKETPLACE_DISABLED_BY_USER'
+        marketplace_not_shipped_item = 'MARKETPLACE_NOT_SHIPPED_ITEM'
         marketplace_partner_auction_no_bid_close_time = 'MARKETPLACE_PARTNER_AUCTION_NO_BID_CLOSE_TIME'
         marketplace_partner_currency_not_valid = 'MARKETPLACE_PARTNER_CURRENCY_NOT_VALID'
+        marketplace_partner_distribution_disabled = 'MARKETPLACE_PARTNER_DISTRIBUTION_DISABLED'
         marketplace_partner_listing_country_not_match_catalog = 'MARKETPLACE_PARTNER_LISTING_COUNTRY_NOT_MATCH_CATALOG'
         marketplace_partner_listing_limit_exceeded = 'MARKETPLACE_PARTNER_LISTING_LIMIT_EXCEEDED'
         marketplace_partner_missing_latlong = 'MARKETPLACE_PARTNER_MISSING_LATLONG'
@@ -513,6 +546,10 @@ class ProductItem(
         marketplace_partner_rule_listing_limit_exceeded = 'MARKETPLACE_PARTNER_RULE_LISTING_LIMIT_EXCEEDED'
         marketplace_partner_seller_banned = 'MARKETPLACE_PARTNER_SELLER_BANNED'
         marketplace_partner_seller_not_valid = 'MARKETPLACE_PARTNER_SELLER_NOT_VALID'
+        marketplace_shipped_item_expired = 'MARKETPLACE_SHIPPED_ITEM_EXPIRED'
+        marketplace_shipped_item_not_available = 'MARKETPLACE_SHIPPED_ITEM_NOT_AVAILABLE'
+        marketplace_shipped_seller_feature_banned = 'MARKETPLACE_SHIPPED_SELLER_FEATURE_BANNED'
+        marketplace_shipped_seller_not_fully_onboarded = 'MARKETPLACE_SHIPPED_SELLER_NOT_FULLY_ONBOARDED'
         mini_shops_disabled_by_user = 'MINI_SHOPS_DISABLED_BY_USER'
         missing_checkout = 'MISSING_CHECKOUT'
         missing_checkout_currency = 'MISSING_CHECKOUT_CURRENCY'
@@ -535,6 +572,7 @@ class ProductItem(
         product_expired = 'PRODUCT_EXPIRED'
         product_item_hidden_from_all_shops = 'PRODUCT_ITEM_HIDDEN_FROM_ALL_SHOPS'
         product_item_invalid_partner_tokens = 'PRODUCT_ITEM_INVALID_PARTNER_TOKENS'
+        product_item_missing_location_information = 'PRODUCT_ITEM_MISSING_LOCATION_INFORMATION'
         product_item_not_included_in_any_shop = 'PRODUCT_ITEM_NOT_INCLUDED_IN_ANY_SHOP'
         product_item_not_visible = 'PRODUCT_ITEM_NOT_VISIBLE'
         product_not_approved = 'PRODUCT_NOT_APPROVED'
@@ -561,21 +599,28 @@ class ProductItem(
         quality_item_link_broken = 'QUALITY_ITEM_LINK_BROKEN'
         quality_item_link_redirecting = 'QUALITY_ITEM_LINK_REDIRECTING'
         retailer_id_not_provided = 'RETAILER_ID_NOT_PROVIDED'
+        retailer_id_used_by_group = 'RETAILER_ID_USED_BY_GROUP'
         shopify_invalid_retailer_id = 'SHOPIFY_INVALID_RETAILER_ID'
+        shopify_item_missing_delivery_profile_zero_inventory = 'SHOPIFY_ITEM_MISSING_DELIVERY_PROFILE_ZERO_INVENTORY'
         shopify_item_missing_shipping_profile = 'SHOPIFY_ITEM_MISSING_SHIPPING_PROFILE'
         shops_policy_violation = 'SHOPS_POLICY_VIOLATION'
         subscription_info_not_enabled_for_feed = 'SUBSCRIPTION_INFO_NOT_ENABLED_FOR_FEED'
         tax_category_not_supported_in_uk = 'TAX_CATEGORY_NOT_SUPPORTED_IN_UK'
+        top_product_without_videos = 'TOP_PRODUCT_WITHOUT_VIDEOS'
         unique_product_identifier_missing = 'UNIQUE_PRODUCT_IDENTIFIER_MISSING'
         unmatched_events = 'UNMATCHED_EVENTS'
         unsupported_product_category = 'UNSUPPORTED_PRODUCT_CATEGORY'
         variant_attribute_issue = 'VARIANT_ATTRIBUTE_ISSUE'
+        version_override_not_exists = 'VERSION_OVERRIDE_NOT_EXISTS'
         video_fetch_failed = 'VIDEO_FETCH_FAILED'
         video_fetch_failed_bad_gateway = 'VIDEO_FETCH_FAILED_BAD_GATEWAY'
         video_fetch_failed_file_size_exceeded = 'VIDEO_FETCH_FAILED_FILE_SIZE_EXCEEDED'
         video_fetch_failed_forbidden = 'VIDEO_FETCH_FAILED_FORBIDDEN'
         video_fetch_failed_link_broken = 'VIDEO_FETCH_FAILED_LINK_BROKEN'
+        video_fetch_failed_rate_limited = 'VIDEO_FETCH_FAILED_RATE_LIMITED'
+        video_fetch_failed_server_error = 'VIDEO_FETCH_FAILED_SERVER_ERROR'
         video_fetch_failed_timed_out = 'VIDEO_FETCH_FAILED_TIMED_OUT'
+        video_issue_generic = 'VIDEO_ISSUE_GENERIC'
         video_not_downloadable = 'VIDEO_NOT_DOWNLOADABLE'
         whatsapp_disabled_by_user = 'WHATSAPP_DISABLED_BY_USER'
         whatsapp_marketing_message_disabled_by_user = 'WHATSAPP_MARKETING_MESSAGE_DISABLED_BY_USER'
@@ -971,6 +1016,7 @@ class ProductItem(
             'iphone_app_store_id': 'unsigned int',
             'iphone_url': 'string',
             'launch_date': 'string',
+            'live_special_price': 'string',
             'manufacturer_info': 'string',
             'manufacturer_part_number': 'string',
             'marked_for_product_launch': 'marked_for_product_launch_enum',
@@ -990,6 +1036,7 @@ class ProductItem(
             'quantity_to_sell_on_facebook': 'unsigned int',
             'retailer_id': 'string',
             'return_policy_days': 'unsigned int',
+            'rich_text_description': 'string',
             'sale_price': 'unsigned int',
             'sale_price_end_date': 'datetime',
             'sale_price_start_date': 'datetime',
@@ -1167,15 +1214,19 @@ class ProductItem(
         'additional_image_cdn_urls': 'list<list<map<string, string>>>',
         'additional_image_urls': 'list<string>',
         'additional_variant_attributes': 'list<map<string, string>>',
+        'affiliate_seller_rating': 'float',
+        'affiliate_seller_rating_count': 'int',
         'age_group': 'AgeGroup',
         'applinks': 'CatalogItemAppLinks',
         'availability': 'Availability',
+        'base_commission_rate': 'int',
         'brand': 'string',
         'bundle_items': 'list<string>',
         'bundle_retailer_ids': 'list<string>',
         'capabilities_disabled_by_user': 'list<string>',
         'capability_to_review_status': 'list<map<string, ProductItem_capability_to_review_status>>',
         'category': 'string',
+        'category_ranking': 'int',
         'category_specific_fields': 'CatalogSubVerticalList',
         'color': 'string',
         'commerce_insights': 'ProductItemCommerceInsights',
@@ -1210,19 +1261,25 @@ class ProductItem(
         'invalidation_errors': 'list<ProductItemInvalidationError>',
         'inventory': 'int',
         'is_bundle_hero': 'bool',
+        'live_special_price': 'string',
         'manufacturer_info': 'string',
         'manufacturer_part_number': 'string',
         'marked_for_product_launch': 'string',
         'material': 'string',
         'mobile_link': 'string',
         'name': 'string',
+        'native_commerce': 'bool',
+        'offer_disclaimer': 'string',
+        'offer_disclaimer_url': 'string',
         'ordering_index': 'int',
         'origin_country': 'string',
+        'overall_ranking': 'int',
         'parent_product_id': 'string',
         'pattern': 'string',
         'post_conversion_signal_based_enforcement_appeal_eligibility': 'bool',
         'price': 'string',
         'product_catalog': 'ProductCatalog',
+        'product_disclosures': 'list<ProductItemProductDisclosure>',
         'product_feed': 'ProductFeed',
         'product_group': 'ProductGroup',
         'product_local_info': 'ProductItemLocalInfo',
@@ -1233,6 +1290,7 @@ class ProductItem(
         'retailer_product_group_id': 'string',
         'review_rejection_reasons': 'list<string>',
         'review_status': 'ReviewStatus',
+        'rich_text_description': 'string',
         'sale_price': 'string',
         'sale_price_end_date': 'string',
         'sale_price_start_date': 'string',
@@ -1241,6 +1299,7 @@ class ProductItem(
         'short_description': 'string',
         'size': 'string',
         'start_date': 'string',
+        'status': 'Status',
         'tags': 'list<string>',
         'url': 'string',
         'vendor_id': 'string',
@@ -1248,6 +1307,7 @@ class ProductItem(
         'videos': 'list<ProductItemVideoData>',
         'visibility': 'Visibility',
         'wa_compliance_category': 'string',
+        'allow_upsert': 'bool',
         'android_app_name': 'string',
         'android_class': 'string',
         'android_package': 'string',
@@ -1285,6 +1345,7 @@ class ProductItem(
         field_enum_info['ImageFetchStatus'] = ProductItem.ImageFetchStatus.__dict__.values()
         field_enum_info['ReviewStatus'] = ProductItem.ReviewStatus.__dict__.values()
         field_enum_info['ShippingWeightUnit'] = ProductItem.ShippingWeightUnit.__dict__.values()
+        field_enum_info['Status'] = ProductItem.Status.__dict__.values()
         field_enum_info['VideoFetchStatus'] = ProductItem.VideoFetchStatus.__dict__.values()
         field_enum_info['Visibility'] = ProductItem.Visibility.__dict__.values()
         field_enum_info['CommerceTaxCategory'] = ProductItem.CommerceTaxCategory.__dict__.values()

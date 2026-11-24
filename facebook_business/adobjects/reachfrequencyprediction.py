@@ -41,6 +41,7 @@ class ReachFrequencyPrediction(
         campaign_id = 'campaign_id'
         campaign_time_start = 'campaign_time_start'
         campaign_time_stop = 'campaign_time_stop'
+        cpm = 'cpm'
         currency = 'currency'
         curve_budget_reach = 'curve_budget_reach'
         curve_reach = 'curve_reach'
@@ -103,10 +104,12 @@ class ReachFrequencyPrediction(
         plan_type = 'plan_type'
         prediction_mode = 'prediction_mode'
         prediction_progress = 'prediction_progress'
+        product_type = 'product_type'
         reference_id = 'reference_id'
         reservation_status = 'reservation_status'
         start_time = 'start_time'
         status = 'status'
+        status_message = 'status_message'
         story_event_type = 'story_event_type'
         target_cpm = 'target_cpm'
         target_frequency = 'target_frequency'
@@ -117,6 +120,7 @@ class ReachFrequencyPrediction(
         timezone_id = 'timezone_id'
         timezone_name = 'timezone_name'
         topline_id = 'topline_id'
+        trending_topics_spec = 'trending_topics_spec'
         video_view_length_constraint = 'video_view_length_constraint'
         viewtag = 'viewtag'
         action = 'action'
@@ -135,7 +139,6 @@ class ReachFrequencyPrediction(
         rf_prediction_id_to_release = 'rf_prediction_id_to_release'
         rf_prediction_id_to_share = 'rf_prediction_id_to_share'
         stop_time = 'stop_time'
-        trending_topics_spec = 'trending_topics_spec'
 
     class Action:
         cancel = 'cancel'
@@ -166,6 +169,12 @@ class ReachFrequencyPrediction(
         regular_tv_movies = 'REGULAR_TV_MOVIES'
         spanish = 'SPANISH'
         sports = 'SPORTS'
+
+    class ProductType:
+        ads_burst = 'ADS_BURST'
+        ads_super_burst = 'ADS_SUPER_BURST'
+        reels_trending_ads = 'REELS_TRENDING_ADS'
+        standard = 'STANDARD'
 
     # @deprecated get_endpoint function is deprecated
     @classmethod
@@ -220,6 +229,7 @@ class ReachFrequencyPrediction(
         'campaign_id': 'string',
         'campaign_time_start': 'datetime',
         'campaign_time_stop': 'datetime',
+        'cpm': 'int',
         'currency': 'string',
         'curve_budget_reach': 'ReachFrequencyEstimatesCurve',
         'curve_reach': 'list<unsigned int>',
@@ -282,10 +292,12 @@ class ReachFrequencyPrediction(
         'plan_type': 'string',
         'prediction_mode': 'unsigned int',
         'prediction_progress': 'unsigned int',
+        'product_type': 'string',
         'reference_id': 'string',
         'reservation_status': 'unsigned int',
         'start_time': 'datetime',
         'status': 'unsigned int',
+        'status_message': 'string',
         'story_event_type': 'unsigned int',
         'target_cpm': 'unsigned int',
         'target_frequency': 'unsigned int',
@@ -296,6 +308,7 @@ class ReachFrequencyPrediction(
         'timezone_id': 'unsigned int',
         'timezone_name': 'string',
         'topline_id': 'unsigned int',
+        'trending_topics_spec': 'TrendingTopicsSpec',
         'video_view_length_constraint': 'unsigned int',
         'viewtag': 'string',
         'action': 'Action',
@@ -314,7 +327,6 @@ class ReachFrequencyPrediction(
         'rf_prediction_id_to_release': 'string',
         'rf_prediction_id_to_share': 'string',
         'stop_time': 'unsigned int',
-        'trending_topics_spec': 'map',
     }
     @classmethod
     def _get_field_enum_info(cls):
@@ -322,6 +334,7 @@ class ReachFrequencyPrediction(
         field_enum_info['Action'] = ReachFrequencyPrediction.Action.__dict__.values()
         field_enum_info['BuyingType'] = ReachFrequencyPrediction.BuyingType.__dict__.values()
         field_enum_info['InstreamPackages'] = ReachFrequencyPrediction.InstreamPackages.__dict__.values()
+        field_enum_info['ProductType'] = ReachFrequencyPrediction.ProductType.__dict__.values()
         return field_enum_info
 
 

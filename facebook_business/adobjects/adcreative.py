@@ -57,8 +57,10 @@ class AdCreative(
         effective_object_story_id = 'effective_object_story_id'
         enable_direct_install = 'enable_direct_install'
         enable_launch_instant_app = 'enable_launch_instant_app'
+        existing_post_title = 'existing_post_title'
         facebook_branded_content = 'facebook_branded_content'
         format_transformation_spec = 'format_transformation_spec'
+        generative_asset_spec = 'generative_asset_spec'
         id = 'id'
         image_crops = 'image_crops'
         image_hash = 'image_hash'
@@ -71,6 +73,8 @@ class AdCreative(
         link_destination_display_url = 'link_destination_display_url'
         link_og_id = 'link_og_id'
         link_url = 'link_url'
+        marketing_message_structured_spec = 'marketing_message_structured_spec'
+        media_sourcing_spec = 'media_sourcing_spec'
         messenger_sponsored_message = 'messenger_sponsored_message'
         name = 'name'
         object_id = 'object_id'
@@ -88,10 +92,12 @@ class AdCreative(
         portrait_customizations = 'portrait_customizations'
         product_data = 'product_data'
         product_set_id = 'product_set_id'
+        product_suggestion_settings = 'product_suggestion_settings'
         recommender_settings = 'recommender_settings'
         regional_regulation_disclaimer_spec = 'regional_regulation_disclaimer_spec'
         source_facebook_post_id = 'source_facebook_post_id'
         source_instagram_media_id = 'source_instagram_media_id'
+        source_threads_media_id = 'source_threads_media_id'
         status = 'status'
         template_url = 'template_url'
         template_url_spec = 'template_url_spec'
@@ -101,25 +107,33 @@ class AdCreative(
         url_tags = 'url_tags'
         use_page_actor_override = 'use_page_actor_override'
         video_id = 'video_id'
+        wamo_whatsapp_identity_spec = 'wamo_whatsapp_identity_spec'
+        execution_options = 'execution_options'
         image_file = 'image_file'
         is_dco_internal = 'is_dco_internal'
+        media_optimization_spec = 'media_optimization_spec'
 
     class CallToActionType:
         add_to_cart = 'ADD_TO_CART'
         apply_now = 'APPLY_NOW'
         ask_about_services = 'ASK_ABOUT_SERVICES'
+        ask_a_question = 'ASK_A_QUESTION'
         ask_for_more_info = 'ASK_FOR_MORE_INFO'
+        ask_us = 'ASK_US'
         audio_call = 'AUDIO_CALL'
         book_a_consultation = 'BOOK_A_CONSULTATION'
         book_now = 'BOOK_NOW'
         book_travel = 'BOOK_TRAVEL'
+        browse_shop = 'BROWSE_SHOP'
         buy = 'BUY'
+        buy_activity_tickets = 'BUY_ACTIVITY_TICKETS'
         buy_now = 'BUY_NOW'
         buy_tickets = 'BUY_TICKETS'
         buy_via_message = 'BUY_VIA_MESSAGE'
         call = 'CALL'
         call_me = 'CALL_ME'
         call_now = 'CALL_NOW'
+        chat_now = 'CHAT_NOW'
         chat_with_us = 'CHAT_WITH_US'
         confirm = 'CONFIRM'
         contact = 'CONTACT'
@@ -129,11 +143,13 @@ class AdCreative(
         download = 'DOWNLOAD'
         event_rsvp = 'EVENT_RSVP'
         find_a_group = 'FIND_A_GROUP'
+        find_out_more = 'FIND_OUT_MORE'
         find_your_groups = 'FIND_YOUR_GROUPS'
         follow_news_storyline = 'FOLLOW_NEWS_STORYLINE'
         follow_page = 'FOLLOW_PAGE'
         follow_user = 'FOLLOW_USER'
         get_a_quote = 'GET_A_QUOTE'
+        get_details = 'GET_DETAILS'
         get_directions = 'GET_DIRECTIONS'
         get_in_touch = 'GET_IN_TOUCH'
         get_offer = 'GET_OFFER'
@@ -146,6 +162,7 @@ class AdCreative(
         install_app = 'INSTALL_APP'
         install_mobile_app = 'INSTALL_MOBILE_APP'
         join_channel = 'JOIN_CHANNEL'
+        join_live_video = 'JOIN_LIVE_VIDEO'
         learn_more = 'LEARN_MORE'
         like_page = 'LIKE_PAGE'
         listen_music = 'LISTEN_MUSIC'
@@ -167,18 +184,24 @@ class AdCreative(
         request_time = 'REQUEST_TIME'
         say_thanks = 'SAY_THANKS'
         see_more = 'SEE_MORE'
+        see_shop = 'SEE_SHOP'
         sell_now = 'SELL_NOW'
         send_a_gift = 'SEND_A_GIFT'
         send_gift_money = 'SEND_GIFT_MONEY'
         send_updates = 'SEND_UPDATES'
         share = 'SHARE'
         shop_now = 'SHOP_NOW'
+        shop_with_ai = 'SHOP_WITH_AI'
         sign_up = 'SIGN_UP'
         sotto_subscribe = 'SOTTO_SUBSCRIBE'
+        start_a_chat = 'START_A_CHAT'
         start_order = 'START_ORDER'
+        stream_now = 'STREAM_NOW'
         subscribe = 'SUBSCRIBE'
         swipe_up_product = 'SWIPE_UP_PRODUCT'
         swipe_up_shop = 'SWIPE_UP_SHOP'
+        try_demo = 'TRY_DEMO'
+        try_on_with_ai = 'TRY_ON_WITH_AI'
         update_app = 'UPDATE_APP'
         use_app = 'USE_APP'
         use_mobile_app = 'USE_MOBILE_APP'
@@ -189,8 +212,10 @@ class AdCreative(
         view_in_cart = 'VIEW_IN_CART'
         view_product = 'VIEW_PRODUCT'
         visit_pages_feed = 'VISIT_PAGES_FEED'
+        visit_website = 'VISIT_WEBSITE'
         watch_live_video = 'WATCH_LIVE_VIDEO'
         watch_more = 'WATCH_MORE'
+        watch_now = 'WATCH_NOW'
         watch_video = 'WATCH_VIDEO'
         whatsapp_message = 'WHATSAPP_MESSAGE'
         woodhenge_support = 'WOODHENGE_SUPPORT'
@@ -241,6 +266,9 @@ class AdCreative(
     class DynamicAdVoice:
         dynamic = 'DYNAMIC'
         story_owner = 'STORY_OWNER'
+
+    class ExecutionOptions:
+        validate_only = 'validate_only'
 
     class Operator:
         all = 'ALL'
@@ -497,8 +525,10 @@ class AdCreative(
         'effective_object_story_id': 'string',
         'enable_direct_install': 'bool',
         'enable_launch_instant_app': 'bool',
+        'existing_post_title': 'string',
         'facebook_branded_content': 'AdCreativeFacebookBrandedContent',
-        'format_transformation_spec': 'AdCreativeFormatTransformationSpec',
+        'format_transformation_spec': 'list<AdCreativeFormatTransformationSpec>',
+        'generative_asset_spec': 'AdCreativeGenerativeAssetSpec',
         'id': 'string',
         'image_crops': 'AdsImageCrops',
         'image_hash': 'string',
@@ -511,6 +541,8 @@ class AdCreative(
         'link_destination_display_url': 'string',
         'link_og_id': 'string',
         'link_url': 'string',
+        'marketing_message_structured_spec': 'AdCreativeMarketingMessageStructuredSpec',
+        'media_sourcing_spec': 'AdCreativeMediaSourcingSpec',
         'messenger_sponsored_message': 'string',
         'name': 'string',
         'object_id': 'string',
@@ -528,10 +560,12 @@ class AdCreative(
         'portrait_customizations': 'AdCreativePortraitCustomizations',
         'product_data': 'list<AdCreativeProductData>',
         'product_set_id': 'string',
+        'product_suggestion_settings': 'AdCreativeProductSuggestionSettings',
         'recommender_settings': 'AdCreativeRecommenderSettings',
         'regional_regulation_disclaimer_spec': 'AdCreativeRegionalRegulationDisclaimer',
         'source_facebook_post_id': 'string',
         'source_instagram_media_id': 'string',
+        'source_threads_media_id': 'string',
         'status': 'Status',
         'template_url': 'string',
         'template_url_spec': 'AdCreativeTemplateURLSpec',
@@ -541,8 +575,11 @@ class AdCreative(
         'url_tags': 'string',
         'use_page_actor_override': 'bool',
         'video_id': 'string',
+        'wamo_whatsapp_identity_spec': 'AdCreativeWAMOWhatsAppIdentitySpec',
+        'execution_options': 'list<ExecutionOptions>',
         'image_file': 'string',
         'is_dco_internal': 'bool',
+        'media_optimization_spec': 'map',
     }
     @classmethod
     def _get_field_enum_info(cls):
@@ -555,6 +592,7 @@ class AdCreative(
         field_enum_info['CategorizationCriteria'] = AdCreative.CategorizationCriteria.__dict__.values()
         field_enum_info['CategoryMediaSource'] = AdCreative.CategoryMediaSource.__dict__.values()
         field_enum_info['DynamicAdVoice'] = AdCreative.DynamicAdVoice.__dict__.values()
+        field_enum_info['ExecutionOptions'] = AdCreative.ExecutionOptions.__dict__.values()
         field_enum_info['Operator'] = AdCreative.Operator.__dict__.values()
         return field_enum_info
 

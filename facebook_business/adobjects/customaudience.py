@@ -32,6 +32,7 @@ class CustomAudience(
         account_id = 'account_id'
         approximate_count_lower_bound = 'approximate_count_lower_bound'
         approximate_count_upper_bound = 'approximate_count_upper_bound'
+        audience_labels = 'audience_labels'
         customer_file_source = 'customer_file_source'
         data_source = 'data_source'
         data_source_types = 'data_source_types'
@@ -41,6 +42,7 @@ class CustomAudience(
         description = 'description'
         excluded_custom_audiences = 'excluded_custom_audiences'
         external_event_source = 'external_event_source'
+        fields_violating_integrity_policy = 'fields_violating_integrity_policy'
         household_audience = 'household_audience'
         id = 'id'
         included_custom_audiences = 'included_custom_audiences'
@@ -50,6 +52,7 @@ class CustomAudience(
         is_value_based = 'is_value_based'
         lookalike_audience_ids = 'lookalike_audience_ids'
         lookalike_spec = 'lookalike_spec'
+        messenger_marketing_messages_page = 'messenger_marketing_messages_page'
         name = 'name'
         operation_status = 'operation_status'
         opt_out_link = 'opt_out_link'
@@ -81,6 +84,7 @@ class CustomAudience(
         event_sources = 'event_sources'
         exclusions = 'exclusions'
         facebook_page_id = 'facebook_page_id'
+        inclusionoperator = 'inclusionOperator'
         inclusions = 'inclusions'
         list_of_accounts = 'list_of_accounts'
         marketing_message_channels = 'marketing_message_channels'
@@ -90,10 +94,28 @@ class CustomAudience(
         prefill = 'prefill'
         product_set_id = 'product_set_id'
         subscription_info = 'subscription_info'
+        usage_restriction = 'usage_restriction'
         use_for_products = 'use_for_products'
         use_in_campaigns = 'use_in_campaigns'
         video_group_ids = 'video_group_ids'
         whats_app_business_phone_number_id = 'whats_app_business_phone_number_id'
+
+    class AudienceLabels:
+        app_users = 'APP_USERS'
+        at_risk = 'AT_RISK'
+        cart_abandoners = 'CART_ABANDONERS'
+        disengaged = 'DISENGAGED'
+        disqualified_leads = 'DISQUALIFIED_LEADS'
+        engaged_users = 'ENGAGED_USERS'
+        general_customers = 'GENERAL_CUSTOMERS'
+        high_value_customers = 'HIGH_VALUE_CUSTOMERS'
+        low_value_customers = 'LOW_VALUE_CUSTOMERS'
+        other_1 = 'OTHER_1'
+        other_2 = 'OTHER_2'
+        other_3 = 'OTHER_3'
+        qualified_leads = 'QUALIFIED_LEADS'
+        recent_purchasers = 'RECENT_PURCHASERS'
+        trial_users = 'TRIAL_USERS'
 
     class ClaimObjective:
         automotive_model = 'AUTOMOTIVE_MODEL'
@@ -149,6 +171,11 @@ class CustomAudience(
         video = 'VIDEO'
         website = 'WEBSITE'
 
+    class UsageRestriction:
+        exclusion_only = 'EXCLUSION_ONLY'
+        none = 'NONE'
+        no_derivatives = 'NO_DERIVATIVES'
+
     class UseForProducts:
         ads = 'ADS'
         marketing_messages = 'MARKETING_MESSAGES'
@@ -202,6 +229,7 @@ class CustomAudience(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'acting_account_id': 'unsigned int',
             'ad_account_id': 'string',
             'special_ad_categories': 'list<string>',
             'special_ad_category_countries': 'list<string>',
@@ -236,7 +264,9 @@ class CustomAudience(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'acting_account_id': 'unsigned int',
             'allowed_domains': 'list<string>',
+            'audience_labels': 'list<audience_labels_enum>',
             'claim_objective': 'claim_objective_enum',
             'content_type': 'content_type_enum',
             'countries': 'string',
@@ -246,6 +276,7 @@ class CustomAudience(
             'event_source_group': 'string',
             'event_sources': 'list<map>',
             'exclusions': 'list<Object>',
+            'inclusionOperator': 'string',
             'inclusions': 'list<Object>',
             'lookalike_spec': 'string',
             'name': 'string',
@@ -257,12 +288,15 @@ class CustomAudience(
             'rule': 'string',
             'rule_aggregation': 'string',
             'tags': 'list<string>',
+            'use_for_products': 'list<use_for_products_enum>',
             'use_in_campaigns': 'bool',
         }
         enums = {
+            'audience_labels_enum': CustomAudience.AudienceLabels.__dict__.values(),
             'claim_objective_enum': CustomAudience.ClaimObjective.__dict__.values(),
             'content_type_enum': CustomAudience.ContentType.__dict__.values(),
             'customer_file_source_enum': CustomAudience.CustomerFileSource.__dict__.values(),
+            'use_for_products_enum': CustomAudience.UseForProducts.__dict__.values(),
         }
         request = FacebookRequest(
             node_id=self['id'],
@@ -684,6 +718,7 @@ class CustomAudience(
         'account_id': 'string',
         'approximate_count_lower_bound': 'int',
         'approximate_count_upper_bound': 'int',
+        'audience_labels': 'list<string>',
         'customer_file_source': 'string',
         'data_source': 'CustomAudienceDataSource',
         'data_source_types': 'string',
@@ -693,6 +728,7 @@ class CustomAudience(
         'description': 'string',
         'excluded_custom_audiences': 'list<CustomAudience>',
         'external_event_source': 'AdsPixel',
+        'fields_violating_integrity_policy': 'list<string>',
         'household_audience': 'int',
         'id': 'string',
         'included_custom_audiences': 'list<CustomAudience>',
@@ -702,6 +738,7 @@ class CustomAudience(
         'is_value_based': 'bool',
         'lookalike_audience_ids': 'list<string>',
         'lookalike_spec': 'LookalikeSpec',
+        'messenger_marketing_messages_page': 'Page',
         'name': 'string',
         'operation_status': 'CustomAudienceStatus',
         'opt_out_link': 'string',
@@ -733,6 +770,7 @@ class CustomAudience(
         'event_sources': 'list<map>',
         'exclusions': 'list<Object>',
         'facebook_page_id': 'string',
+        'inclusionOperator': 'string',
         'inclusions': 'list<Object>',
         'list_of_accounts': 'list<unsigned int>',
         'marketing_message_channels': 'Object',
@@ -742,6 +780,7 @@ class CustomAudience(
         'prefill': 'bool',
         'product_set_id': 'string',
         'subscription_info': 'list<SubscriptionInfo>',
+        'usage_restriction': 'UsageRestriction',
         'use_for_products': 'list<UseForProducts>',
         'use_in_campaigns': 'bool',
         'video_group_ids': 'list<string>',
@@ -750,11 +789,13 @@ class CustomAudience(
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
+        field_enum_info['AudienceLabels'] = CustomAudience.AudienceLabels.__dict__.values()
         field_enum_info['ClaimObjective'] = CustomAudience.ClaimObjective.__dict__.values()
         field_enum_info['ContentType'] = CustomAudience.ContentType.__dict__.values()
         field_enum_info['CustomerFileSource'] = CustomAudience.CustomerFileSource.__dict__.values()
         field_enum_info['SubscriptionInfo'] = CustomAudience.SubscriptionInfo.__dict__.values()
         field_enum_info['Subtype'] = CustomAudience.Subtype.__dict__.values()
+        field_enum_info['UsageRestriction'] = CustomAudience.UsageRestriction.__dict__.values()
         field_enum_info['UseForProducts'] = CustomAudience.UseForProducts.__dict__.values()
         field_enum_info['ActionSource'] = CustomAudience.ActionSource.__dict__.values()
         return field_enum_info

@@ -66,7 +66,9 @@ class AdVideo(
         premiere_living_room_status = 'premiere_living_room_status'
         privacy = 'privacy'
         published = 'published'
+        replace_audio_status = 'replace_audio_status'
         scheduled_publish_time = 'scheduled_publish_time'
+        selected_audio_spec = 'selected_audio_spec'
         source = 'source'
         spherical = 'spherical'
         status = 'status'
@@ -87,6 +89,7 @@ class AdVideo(
         composer_type = 'composer_type'
         container_type = 'container_type'
         creative_tools = 'creative_tools'
+        edit_description_spec = 'edit_description_spec'
         end_offset = 'end_offset'
         fbuploader_video_file_chunk = 'fbuploader_video_file_chunk'
         file_size = 'file_size'
@@ -102,6 +105,7 @@ class AdVideo(
         initial_heading = 'initial_heading'
         initial_pitch = 'initial_pitch'
         instant_game_entry_point_data = 'instant_game_entry_point_data'
+        is_ai_generated = 'is_ai_generated'
         is_boost_intended = 'is_boost_intended'
         is_group_linking_post = 'is_group_linking_post'
         is_partnership_ad = 'is_partnership_ad'
@@ -149,6 +153,7 @@ class AdVideo(
         ad_break_preview = 'AD_BREAK_PREVIEW'
         ad_derivative = 'AD_DERIVATIVE'
         ad_library_watermark = 'AD_LIBRARY_WATERMARK'
+        ai_interactive_embodiment = 'AI_INTERACTIVE_EMBODIMENT'
         album_multimedia_post = 'ALBUM_MULTIMEDIA_POST'
         aloha_superframe = 'ALOHA_SUPERFRAME'
         app_rereview_screencast = 'APP_REREVIEW_SCREENCAST'
@@ -177,6 +182,7 @@ class AdVideo(
         dim_sum = 'DIM_SUM'
         directed_post_attachment = 'DIRECTED_POST_ATTACHMENT'
         direct_inbox = 'DIRECT_INBOX'
+        double_prod_experiment = 'DOUBLE_PROD_EXPERIMENT'
         drops_shopping_event_page = 'DROPS_SHOPPING_EVENT_PAGE'
         dynamic_item_video = 'DYNAMIC_ITEM_VIDEO'
         dynamic_template_video = 'DYNAMIC_TEMPLATE_VIDEO'
@@ -185,6 +191,8 @@ class AdVideo(
         facecast_dvr = 'FACECAST_DVR'
         fb_avatar_animated_satp = 'FB_AVATAR_ANIMATED_SATP'
         fb_collectible_video = 'FB_COLLECTIBLE_VIDEO'
+        fb_msgr_status_media_element = 'FB_MSGR_STATUS_MEDIA_ELEMENT'
+        fb_quicksnap_video = 'FB_QUICKSNAP_VIDEO'
         fb_shorts = 'FB_SHORTS'
         fb_shorts_content_remixable = 'FB_SHORTS_CONTENT_REMIXABLE'
         fb_shorts_group_post = 'FB_SHORTS_GROUP_POST'
@@ -202,13 +210,12 @@ class AdVideo(
         goodwill_video_share = 'GOODWILL_VIDEO_SHARE'
         goodwill_video_token_required = 'GOODWILL_VIDEO_TOKEN_REQUIRED'
         group_post = 'GROUP_POST'
+        group_post_reel = 'GROUP_POST_REEL'
         heuristic_cluster_video = 'HEURISTIC_CLUSTER_VIDEO'
         highlight_clip_video = 'HIGHLIGHT_CLIP_VIDEO'
         horizon_worlds_tv = 'HORIZON_WORLDS_TV'
         huddle_broadcast = 'HUDDLE_BROADCAST'
         ig_reels_xpv = 'IG_REELS_XPV'
-        ig_stories_reader = 'IG_STORIES_READER'
-        injectable = 'INJECTABLE'
         inspiration_video = 'INSPIRATION_VIDEO'
         instagram_video_copy = 'INSTAGRAM_VIDEO_COPY'
         instant_application_preview = 'INSTANT_APPLICATION_PREVIEW'
@@ -223,12 +230,15 @@ class AdVideo(
         live_creative_kit_video = 'LIVE_CREATIVE_KIT_VIDEO'
         live_photo = 'LIVE_PHOTO'
         look_now_deprecated = 'LOOK_NOW_DEPRECATED'
+        magic_clip_device_upload = 'MAGIC_CLIP_DEVICE_UPLOAD'
         marketplace_listing_video = 'MARKETPLACE_LISTING_VIDEO'
         marketplace_pre_recorded_video = 'MARKETPLACE_PRE_RECORDED_VIDEO'
         moments_video = 'MOMENTS_VIDEO'
         music_clip = 'MUSIC_CLIP'
         music_clip_in_comment = 'MUSIC_CLIP_IN_COMMENT'
+        music_clip_in_fb_msgr_status = 'MUSIC_CLIP_IN_FB_MSGR_STATUS'
         music_clip_in_lightweight_status = 'MUSIC_CLIP_IN_LIGHTWEIGHT_STATUS'
+        music_clip_in_maple_post = 'MUSIC_CLIP_IN_MAPLE_POST'
         music_clip_in_msgr_note = 'MUSIC_CLIP_IN_MSGR_NOTE'
         music_clip_in_poll_option = 'MUSIC_CLIP_IN_POLL_OPTION'
         music_clip_on_dating_profile = 'MUSIC_CLIP_ON_DATING_PROFILE'
@@ -246,7 +256,6 @@ class AdVideo(
         paid_content_video__post = 'PAID_CONTENT_VIDEO__POST'
         pixelcloud = 'PIXELCLOUD'
         podcast_highlight = 'PODCAST_HIGHLIGHT'
-        podcast_ml_preview = 'PODCAST_ML_PREVIEW'
         podcast_ml_preview_no_newsfeed_story = 'PODCAST_ML_PREVIEW_NO_NEWSFEED_STORY'
         podcast_rss = 'PODCAST_RSS'
         podcast_rss_ephemeral = 'PODCAST_RSS_EPHEMERAL'
@@ -263,15 +272,13 @@ class AdVideo(
         profile_cover_video = 'PROFILE_COVER_VIDEO'
         profile_intro_card = 'PROFILE_INTRO_CARD'
         profile_video = 'PROFILE_VIDEO'
-        proton = 'PROTON'
         quick_clip_workplace_post = 'QUICK_CLIP_WORKPLACE_POST'
         quick_promotion = 'QUICK_PROMOTION'
-        replace_video = 'REPLACE_VIDEO'
-        sales_client_interaction = 'SALES_CLIENT_INTERACTION'
         showreel_native_dummy_video = 'SHOWREEL_NATIVE_DUMMY_VIDEO'
         slideshow_animoto = 'SLIDESHOW_ANIMOTO'
         slideshow_shakr = 'SLIDESHOW_SHAKR'
         slideshow_variation_video = 'SLIDESHOW_VARIATION_VIDEO'
+        soil_video = 'SOIL_VIDEO'
         sound_platform_stream = 'SOUND_PLATFORM_STREAM'
         srt_attachment = 'SRT_ATTACHMENT'
         stories_video = 'STORIES_VIDEO'
@@ -281,6 +288,7 @@ class AdVideo(
         story_card_template = 'STORY_CARD_TEMPLATE'
         stream_highlights_video = 'STREAM_HIGHLIGHTS_VIDEO'
         tarot_digest = 'TAROT_DIGEST'
+        temporary = 'TEMPORARY'
         temporary_unlisted = 'TEMPORARY_UNLISTED'
         temp_video_copyright_scan = 'TEMP_VIDEO_COPYRIGHT_SCAN'
         unlisted = 'UNLISTED'
@@ -289,7 +297,6 @@ class AdVideo(
         video_composition_variation = 'VIDEO_COMPOSITION_VARIATION'
         video_creative_editor_autogen_ad_video = 'VIDEO_CREATIVE_EDITOR_AUTOGEN_AD_VIDEO'
         video_superres = 'VIDEO_SUPERRES'
-        voices_article_video = 'VOICES_ARTICLE_VIDEO'
         vu_generated_video = 'VU_GENERATED_VIDEO'
         woodhenge = 'WOODHENGE'
         work_knowledge_video = 'WORK_KNOWLEDGE_VIDEO'
@@ -332,6 +339,7 @@ class AdVideo(
         draft = 'DRAFT'
         inline_created = 'INLINE_CREATED'
         published = 'PUBLISHED'
+        publish_pending = 'PUBLISH_PENDING'
         reviewable_branded_content = 'REVIEWABLE_BRANDED_CONTENT'
         scheduled = 'SCHEDULED'
         scheduled_recurring = 'SCHEDULED_RECURRING'
@@ -362,7 +370,6 @@ class AdVideo(
         instream_video_desktop = 'INSTREAM_VIDEO_DESKTOP'
         instream_video_image = 'INSTREAM_VIDEO_IMAGE'
         instream_video_mobile = 'INSTREAM_VIDEO_MOBILE'
-        messenger_mobile_inbox_media = 'MESSENGER_MOBILE_INBOX_MEDIA'
         messenger_mobile_story_media = 'MESSENGER_MOBILE_STORY_MEDIA'
         mobile_feed_standard = 'MOBILE_FEED_STANDARD'
         mobile_fullwidth = 'MOBILE_FULLWIDTH'
@@ -782,37 +789,6 @@ class AdVideo(
             self.assure_call()
             return request.execute()
 
-    def create_gaming_clip_create(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.utils import api_utils
-        if batch is None and (success is not None or failure is not None):
-          api_utils.warning('`success` and `failure` callback only work for batch call.')
-        param_types = {
-            'duration_seconds': 'float',
-        }
-        enums = {
-        }
-        request = FacebookRequest(
-            node_id=self['id'],
-            method='POST',
-            endpoint='/gaming_clip_create',
-            api=self._api,
-            param_checker=TypeChecker(param_types, enums),
-            target_class=AdVideo,
-            api_type='EDGE',
-            response_parser=ObjectParser(target_class=AdVideo, api=self._api),
-        )
-        request.add_params(params)
-        request.add_fields(fields)
-
-        if batch is not None:
-            request.add_to_batch(batch, success=success, failure=failure)
-            return request
-        elif pending:
-            return request
-        else:
-            self.assure_call()
-            return request.execute()
-
     def get_likes(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
@@ -849,6 +825,7 @@ class AdVideo(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'attribution_id_v2': 'string',
             'feedback_source': 'string',
             'nectar_module': 'string',
             'notify': 'bool',
@@ -1178,7 +1155,9 @@ class AdVideo(
         'premiere_living_room_status': 'string',
         'privacy': 'Privacy',
         'published': 'bool',
+        'replace_audio_status': 'string',
         'scheduled_publish_time': 'datetime',
+        'selected_audio_spec': 'Object',
         'source': 'string',
         'spherical': 'bool',
         'status': 'VideoStatus',
@@ -1199,6 +1178,7 @@ class AdVideo(
         'composer_type': 'string',
         'container_type': 'ContainerType',
         'creative_tools': 'string',
+        'edit_description_spec': 'map',
         'end_offset': 'unsigned int',
         'fbuploader_video_file_chunk': 'string',
         'file_size': 'unsigned int',
@@ -1214,6 +1194,7 @@ class AdVideo(
         'initial_heading': 'unsigned int',
         'initial_pitch': 'unsigned int',
         'instant_game_entry_point_data': 'string',
+        'is_ai_generated': 'bool',
         'is_boost_intended': 'bool',
         'is_group_linking_post': 'bool',
         'is_partnership_ad': 'bool',

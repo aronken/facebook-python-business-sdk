@@ -28,6 +28,7 @@ class UserPageOneTimeOptInTokenSettings(
 
     class Field(AbstractObject.Field):
         creation_timestamp = 'creation_timestamp'
+        custom_audience_ids = 'custom_audience_ids'
         next_eligible_time = 'next_eligible_time'
         next_eligible_time_for_paid_messaging = 'next_eligible_time_for_paid_messaging'
         notification_messages_frequency = 'notification_messages_frequency'
@@ -39,6 +40,12 @@ class UserPageOneTimeOptInTokenSettings(
         topic_title = 'topic_title'
         user_token_status = 'user_token_status'
         id = 'id'
+
+    class OptInSource:
+        comment_automation = 'COMMENT_AUTOMATION'
+        ctm = 'CTM'
+        reply_automation = 'REPLY_AUTOMATION'
+        subscriber_list = 'SUBSCRIBER_LIST'
 
     def api_get(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
@@ -72,6 +79,7 @@ class UserPageOneTimeOptInTokenSettings(
 
     _field_types = {
         'creation_timestamp': 'int',
+        'custom_audience_ids': 'list<string>',
         'next_eligible_time': 'int',
         'next_eligible_time_for_paid_messaging': 'int',
         'notification_messages_frequency': 'string',
@@ -87,6 +95,7 @@ class UserPageOneTimeOptInTokenSettings(
     @classmethod
     def _get_field_enum_info(cls):
         field_enum_info = {}
+        field_enum_info['OptInSource'] = UserPageOneTimeOptInTokenSettings.OptInSource.__dict__.values()
         return field_enum_info
 
 

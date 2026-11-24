@@ -32,9 +32,12 @@ class AdSet(
 
     class Field(AbstractObject.Field):
         account_id = 'account_id'
+        ad_set_goal = 'ad_set_goal'
         adlabels = 'adlabels'
         adset_schedule = 'adset_schedule'
+        anchor_event_attribution_window_days = 'anchor_event_attribution_window_days'
         asset_feed_id = 'asset_feed_id'
+        attribution_count_type = 'attribution_count_type'
         attribution_spec = 'attribution_spec'
         automatic_manual_state = 'automatic_manual_state'
         bid_adjustments = 'bid_adjustments'
@@ -51,6 +54,8 @@ class AdSet(
         campaign_id = 'campaign_id'
         configured_status = 'configured_status'
         created_time = 'created_time'
+        creative_diversity_label = 'creative_diversity_label'
+        creative_diversity_score = 'creative_diversity_score'
         creative_sequence = 'creative_sequence'
         creative_sequence_repetition_pattern = 'creative_sequence_repetition_pattern'
         daily_budget = 'daily_budget'
@@ -68,51 +73,50 @@ class AdSet(
         instagram_user_id = 'instagram_user_id'
         is_ba_skip_delayed_eligible = 'is_ba_skip_delayed_eligible'
         is_budget_schedule_enabled = 'is_budget_schedule_enabled'
+        is_dc_follow_optimized = 'is_dc_follow_optimized'
         is_dynamic_creative = 'is_dynamic_creative'
         is_incremental_attribution_enabled = 'is_incremental_attribution_enabled'
+        is_organic_ad_joint_optimized = 'is_organic_ad_joint_optimized'
+        is_sequenced_conversion_creation = 'is_sequenced_conversion_creation'
         issues_info = 'issues_info'
         learning_stage_info = 'learning_stage_info'
         lifetime_budget = 'lifetime_budget'
         lifetime_imps = 'lifetime_imps'
         lifetime_min_spend_target = 'lifetime_min_spend_target'
         lifetime_spend_cap = 'lifetime_spend_cap'
+        live_video_ad_campaign_config = 'live_video_ad_campaign_config'
+        low_creative_reach = 'low_creative_reach'
         max_budget_spend_percentage = 'max_budget_spend_percentage'
         min_budget_spend_percentage = 'min_budget_spend_percentage'
+        multi_event_conversion_attribution_window_seconds = 'multi_event_conversion_attribution_window_seconds'
         multi_optimization_goal_weight = 'multi_optimization_goal_weight'
         name = 'name'
         optimization_goal = 'optimization_goal'
         optimization_sub_event = 'optimization_sub_event'
         pacing_type = 'pacing_type'
+        placement_soft_opt_out = 'placement_soft_opt_out'
         promoted_object = 'promoted_object'
         recommendations = 'recommendations'
         recurring_budget_semantics = 'recurring_budget_semantics'
         regional_regulated_categories = 'regional_regulated_categories'
         regional_regulation_identities = 'regional_regulation_identities'
+        relative_value = 'relative_value'
         review_feedback = 'review_feedback'
         rf_prediction_id = 'rf_prediction_id'
         source_adset = 'source_adset'
         source_adset_id = 'source_adset_id'
+        special_ad_categories = 'special_ad_categories'
         start_time = 'start_time'
         status = 'status'
         targeting = 'targeting'
         targeting_optimization_types = 'targeting_optimization_types'
         time_based_ad_rotation_id_blocks = 'time_based_ad_rotation_id_blocks'
         time_based_ad_rotation_intervals = 'time_based_ad_rotation_intervals'
+        trending_topics_spec = 'trending_topics_spec'
         updated_time = 'updated_time'
         use_new_app_click = 'use_new_app_click'
-        budget_source = 'budget_source'
-        budget_split_set_id = 'budget_split_set_id'
-        campaign_spec = 'campaign_spec'
-        daily_imps = 'daily_imps'
-        date_format = 'date_format'
-        execution_options = 'execution_options'
-        is_sac_cfca_terms_certified = 'is_sac_cfca_terms_certified'
-        line_number = 'line_number'
-        rb_prediction_id = 'rb_prediction_id'
-        time_start = 'time_start'
-        time_stop = 'time_stop'
-        topline_id = 'topline_id'
-        tune_for_category = 'tune_for_category'
+        value_rule_set_id = 'value_rule_set_id'
+        value_rules_applied = 'value_rules_applied'
 
     class BidStrategy:
         cost_cap = 'COST_CAP'
@@ -156,6 +160,7 @@ class AdSet(
         automatic_objective = 'AUTOMATIC_OBJECTIVE'
         conversations = 'CONVERSATIONS'
         derived_events = 'DERIVED_EVENTS'
+        engaged_page_views = 'ENGAGED_PAGE_VIEWS'
         engaged_users = 'ENGAGED_USERS'
         event_responses = 'EVENT_RESPONSES'
         impressions = 'IMPRESSIONS'
@@ -165,6 +170,7 @@ class AdSet(
         link_clicks = 'LINK_CLICKS'
         meaningful_call_attempt = 'MEANINGFUL_CALL_ATTEMPT'
         messaging_appointment_conversion = 'MESSAGING_APPOINTMENT_CONVERSION'
+        messaging_deep_conversation_and_follow = 'MESSAGING_DEEP_CONVERSATION_AND_FOLLOW'
         messaging_purchase_conversion = 'MESSAGING_PURCHASE_CONVERSION'
         none = 'NONE'
         offsite_conversions = 'OFFSITE_CONVERSIONS'
@@ -187,19 +193,6 @@ class AdSet(
         deleted = 'DELETED'
         paused = 'PAUSED'
 
-    class AutomaticManualState:
-        automatic = 'AUTOMATIC'
-        manual = 'MANUAL'
-        unset = 'UNSET'
-
-    class BudgetSource:
-        none = 'NONE'
-        rmn = 'RMN'
-
-    class CreativeSequenceRepetitionPattern:
-        full_sequence = 'FULL_SEQUENCE'
-        last_ad = 'LAST_AD'
-
     class DatePreset:
         data_maximum = 'DATA_MAXIMUM'
         last_14d = 'LAST_14D'
@@ -221,6 +214,19 @@ class AdSet(
         this_year = 'THIS_YEAR'
         today = 'TODAY'
         yesterday = 'YESTERDAY'
+
+    class Operator:
+        all = 'ALL'
+        any = 'ANY'
+
+    class AutomaticManualState:
+        automatic = 'AUTOMATIC'
+        manual = 'MANUAL'
+        unset = 'UNSET'
+
+    class CreativeSequenceRepetitionPattern:
+        full_sequence = 'FULL_SEQUENCE'
+        last_ad = 'LAST_AD'
 
     class DestinationType:
         app = 'APP'
@@ -264,6 +270,7 @@ class AdSet(
 
     class OptimizationSubEvent:
         none = 'NONE'
+        post_interaction = 'POST_INTERACTION'
         travel_intent = 'TRAVEL_INTENT'
         travel_intent_bucket_01 = 'TRAVEL_INTENT_BUCKET_01'
         travel_intent_bucket_02 = 'TRAVEL_INTENT_BUCKET_02'
@@ -283,6 +290,25 @@ class AdSet(
         value_5 = '5'
         value_6 = '6'
         value_7 = '7'
+        value_8 = '8'
+        value_9 = '9'
+        value_10 = '10'
+        value_11 = '11'
+        value_12 = '12'
+        value_13 = '13'
+        value_14 = '14'
+        value_15 = '15'
+        value_16 = '16'
+        value_17 = '17'
+        value_18 = '18'
+        value_19 = '19'
+        value_20 = '20'
+        value_21 = '21'
+        value_22 = '22'
+        value_24 = '24'
+        value_25 = '25'
+        value_26 = '26'
+        value_27 = '27'
 
     class TuneForCategory:
         credit = 'CREDIT'
@@ -293,10 +319,6 @@ class AdSet(
         none = 'NONE'
         online_gambling_and_gaming = 'ONLINE_GAMBLING_AND_GAMING'
 
-    class Operator:
-        all = 'ALL'
-        any = 'ANY'
-
     class StatusOption:
         active = 'ACTIVE'
         inherited_from_source = 'INHERITED_FROM_SOURCE'
@@ -306,11 +328,6 @@ class AdSet(
     @classmethod
     def get_endpoint(cls):
         return 'adsets'
-
-    # @deprecated api_create is being deprecated
-    def api_create(self, parent_id, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
-        from facebook_business.adobjects.adaccount import AdAccount
-        return AdAccount(api=self._api, fbid=parent_id).create_ad_set(fields, params, batch, success, failure, pending)
 
     def api_delete(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
@@ -404,6 +421,7 @@ class AdSet(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
             'account_id': 'string',
+            'ad_set_goal': 'map',
             'adlabels': 'list<Object>',
             'adset_schedule': 'list<Object>',
             'attribution_spec': 'list<map>',
@@ -413,6 +431,7 @@ class AdSet(
             'bid_constraints': 'map<string, Object>',
             'bid_strategy': 'bid_strategy_enum',
             'billing_event': 'billing_event_enum',
+            'budget_schedule_specs': 'list<Object>',
             'campaign_attribution': 'Object',
             'campaign_spec': 'Object',
             'creative_sequence': 'list<string>',
@@ -428,25 +447,33 @@ class AdSet(
             'end_time': 'datetime',
             'execution_options': 'list<execution_options_enum>',
             'existing_customer_budget_percentage': 'unsigned int',
+            'frequency_control_specs': 'list<Object>',
             'full_funnel_exploration_mode': 'full_funnel_exploration_mode_enum',
             'is_ba_skip_delayed_eligible': 'bool',
+            'is_budget_schedule_enabled': 'bool',
+            'is_dc_follow_optimized': 'bool',
             'is_incremental_attribution_enabled': 'bool',
             'is_sac_cfca_terms_certified': 'bool',
+            'is_sequenced_conversion_creation': 'bool',
             'lifetime_budget': 'unsigned int',
             'lifetime_imps': 'unsigned int',
             'lifetime_min_spend_target': 'unsigned int',
             'lifetime_spend_cap': 'unsigned int',
+            'live_video_ad_campaign_config': 'Object',
             'max_budget_spend_percentage': 'unsigned int',
             'min_budget_spend_percentage': 'unsigned int',
+            'multi_event_conversion_attribution_window_seconds': 'unsigned int',
             'multi_optimization_goal_weight': 'multi_optimization_goal_weight_enum',
             'name': 'string',
             'optimization_goal': 'optimization_goal_enum',
             'optimization_sub_event': 'optimization_sub_event_enum',
             'pacing_type': 'list<string>',
+            'placement_soft_opt_out': 'Object',
             'promoted_object': 'Object',
             'rb_prediction_id': 'string',
             'regional_regulated_categories': 'list<regional_regulated_categories_enum>',
             'regional_regulation_identities': 'map',
+            'relative_value': 'float',
             'rf_prediction_id': 'string',
             'start_time': 'datetime',
             'status': 'status_enum',
@@ -455,7 +482,10 @@ class AdSet(
             'time_based_ad_rotation_intervals': 'list<unsigned int>',
             'time_start': 'datetime',
             'time_stop': 'datetime',
+            'trending_topics_spec': 'map',
             'tune_for_category': 'tune_for_category_enum',
+            'value_rule_set_id': 'string',
+            'value_rules_applied': 'bool',
         }
         enums = {
             'automatic_manual_state_enum': AdSet.AutomaticManualState.__dict__.values(),
@@ -762,6 +792,39 @@ class AdSet(
             self.assure_call()
             return request.execute()
 
+    def get_budget_schedules(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
+        from facebook_business.utils import api_utils
+        if batch is None and (success is not None or failure is not None):
+          api_utils.warning('`success` and `failure` callback only work for batch call.')
+        from facebook_business.adobjects.highdemandperiod import HighDemandPeriod
+        param_types = {
+            'time_start': 'datetime',
+            'time_stop': 'datetime',
+        }
+        enums = {
+        }
+        request = FacebookRequest(
+            node_id=self['id'],
+            method='GET',
+            endpoint='/budget_schedules',
+            api=self._api,
+            param_checker=TypeChecker(param_types, enums),
+            target_class=HighDemandPeriod,
+            api_type='EDGE',
+            response_parser=ObjectParser(target_class=HighDemandPeriod, api=self._api),
+        )
+        request.add_params(params)
+        request.add_fields(fields)
+
+        if batch is not None:
+            request.add_to_batch(batch, success=success, failure=failure)
+            return request
+        elif pending:
+            return request
+        else:
+            self.assure_call()
+            return request.execute()
+
     def create_budget_schedule(self, fields=None, params=None, batch=None, success=None, failure=None, pending=False):
         from facebook_business.utils import api_utils
         if batch is None and (success is not None or failure is not None):
@@ -919,6 +982,7 @@ class AdSet(
             'action_breakdowns': 'list<action_breakdowns_enum>',
             'action_report_time': 'action_report_time_enum',
             'breakdowns': 'list<breakdowns_enum>',
+            'cpas_only': 'string',
             'date_preset': 'date_preset_enum',
             'default_summary': 'bool',
             'export_columns': 'list<string>',
@@ -926,6 +990,7 @@ class AdSet(
             'export_name': 'string',
             'fields': 'list<string>',
             'filtering': 'list<Object>',
+            'graph_cache': 'bool',
             'level': 'level_enum',
             'limit': 'int',
             'product_id_limit': 'int',
@@ -981,6 +1046,7 @@ class AdSet(
             'action_breakdowns': 'list<action_breakdowns_enum>',
             'action_report_time': 'action_report_time_enum',
             'breakdowns': 'list<breakdowns_enum>',
+            'cpas_only': 'string',
             'date_preset': 'date_preset_enum',
             'default_summary': 'bool',
             'export_columns': 'list<string>',
@@ -988,6 +1054,7 @@ class AdSet(
             'export_name': 'string',
             'fields': 'list<string>',
             'filtering': 'list<Object>',
+            'graph_cache': 'bool',
             'level': 'level_enum',
             'limit': 'int',
             'product_id_limit': 'int',
@@ -1111,9 +1178,12 @@ class AdSet(
 
     _field_types = {
         'account_id': 'string',
+        'ad_set_goal': 'AdCampaignGoal',
         'adlabels': 'list<AdLabel>',
         'adset_schedule': 'list<DayPart>',
+        'anchor_event_attribution_window_days': 'int',
         'asset_feed_id': 'string',
+        'attribution_count_type': 'string',
         'attribution_spec': 'list<AttributionSpec>',
         'automatic_manual_state': 'string',
         'bid_adjustments': 'AdBidAdjustments',
@@ -1130,6 +1200,8 @@ class AdSet(
         'campaign_id': 'string',
         'configured_status': 'ConfiguredStatus',
         'created_time': 'datetime',
+        'creative_diversity_label': 'list<string>',
+        'creative_diversity_score': 'list<string>',
         'creative_sequence': 'list<string>',
         'creative_sequence_repetition_pattern': 'string',
         'daily_budget': 'string',
@@ -1147,51 +1219,50 @@ class AdSet(
         'instagram_user_id': 'string',
         'is_ba_skip_delayed_eligible': 'bool',
         'is_budget_schedule_enabled': 'bool',
+        'is_dc_follow_optimized': 'bool',
         'is_dynamic_creative': 'bool',
         'is_incremental_attribution_enabled': 'bool',
+        'is_organic_ad_joint_optimized': 'bool',
+        'is_sequenced_conversion_creation': 'bool',
         'issues_info': 'list<AdCampaignIssuesInfo>',
         'learning_stage_info': 'AdCampaignLearningStageInfo',
         'lifetime_budget': 'string',
         'lifetime_imps': 'int',
         'lifetime_min_spend_target': 'string',
         'lifetime_spend_cap': 'string',
+        'live_video_ad_campaign_config': 'LiveVideoAdCampaignConfig',
+        'low_creative_reach': 'list<string>',
         'max_budget_spend_percentage': 'string',
         'min_budget_spend_percentage': 'string',
+        'multi_event_conversion_attribution_window_seconds': 'int',
         'multi_optimization_goal_weight': 'string',
         'name': 'string',
         'optimization_goal': 'OptimizationGoal',
         'optimization_sub_event': 'string',
         'pacing_type': 'list<string>',
+        'placement_soft_opt_out': 'PlacementSoftOptOut',
         'promoted_object': 'AdPromotedObject',
         'recommendations': 'list<AdRecommendation>',
         'recurring_budget_semantics': 'bool',
         'regional_regulated_categories': 'list<string>',
         'regional_regulation_identities': 'RegionalRegulationIdentities',
+        'relative_value': 'string',
         'review_feedback': 'string',
         'rf_prediction_id': 'string',
         'source_adset': 'AdSet',
         'source_adset_id': 'string',
+        'special_ad_categories': 'list<string>',
         'start_time': 'datetime',
         'status': 'Status',
         'targeting': 'Targeting',
         'targeting_optimization_types': 'list<map<string, int>>',
         'time_based_ad_rotation_id_blocks': 'list<list<int>>',
         'time_based_ad_rotation_intervals': 'list<unsigned int>',
+        'trending_topics_spec': 'TrendingTopicsSpec',
         'updated_time': 'datetime',
         'use_new_app_click': 'bool',
-        'budget_source': 'BudgetSource',
-        'budget_split_set_id': 'string',
-        'campaign_spec': 'Object',
-        'daily_imps': 'unsigned int',
-        'date_format': 'string',
-        'execution_options': 'list<ExecutionOptions>',
-        'is_sac_cfca_terms_certified': 'bool',
-        'line_number': 'unsigned int',
-        'rb_prediction_id': 'string',
-        'time_start': 'datetime',
-        'time_stop': 'datetime',
-        'topline_id': 'string',
-        'tune_for_category': 'TuneForCategory',
+        'value_rule_set_id': 'string',
+        'value_rules_applied': 'bool',
     }
     @classmethod
     def _get_field_enum_info(cls):
@@ -1202,10 +1273,10 @@ class AdSet(
         field_enum_info['EffectiveStatus'] = AdSet.EffectiveStatus.__dict__.values()
         field_enum_info['OptimizationGoal'] = AdSet.OptimizationGoal.__dict__.values()
         field_enum_info['Status'] = AdSet.Status.__dict__.values()
-        field_enum_info['AutomaticManualState'] = AdSet.AutomaticManualState.__dict__.values()
-        field_enum_info['BudgetSource'] = AdSet.BudgetSource.__dict__.values()
-        field_enum_info['CreativeSequenceRepetitionPattern'] = AdSet.CreativeSequenceRepetitionPattern.__dict__.values()
         field_enum_info['DatePreset'] = AdSet.DatePreset.__dict__.values()
+        field_enum_info['Operator'] = AdSet.Operator.__dict__.values()
+        field_enum_info['AutomaticManualState'] = AdSet.AutomaticManualState.__dict__.values()
+        field_enum_info['CreativeSequenceRepetitionPattern'] = AdSet.CreativeSequenceRepetitionPattern.__dict__.values()
         field_enum_info['DestinationType'] = AdSet.DestinationType.__dict__.values()
         field_enum_info['ExecutionOptions'] = AdSet.ExecutionOptions.__dict__.values()
         field_enum_info['FullFunnelExplorationMode'] = AdSet.FullFunnelExplorationMode.__dict__.values()
@@ -1213,7 +1284,6 @@ class AdSet(
         field_enum_info['OptimizationSubEvent'] = AdSet.OptimizationSubEvent.__dict__.values()
         field_enum_info['RegionalRegulatedCategories'] = AdSet.RegionalRegulatedCategories.__dict__.values()
         field_enum_info['TuneForCategory'] = AdSet.TuneForCategory.__dict__.values()
-        field_enum_info['Operator'] = AdSet.Operator.__dict__.values()
         field_enum_info['StatusOption'] = AdSet.StatusOption.__dict__.values()
         return field_enum_info
 

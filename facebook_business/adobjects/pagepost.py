@@ -49,11 +49,14 @@ class PagePost(
         id = 'id'
         instagram_eligibility = 'instagram_eligibility'
         is_app_share = 'is_app_share'
+        is_eligible_for_dark_post = 'is_eligible_for_dark_post'
         is_eligible_for_promotion = 'is_eligible_for_promotion'
         is_expired = 'is_expired'
+        is_fb_live_videos = 'is_fb_live_videos'
         is_hidden = 'is_hidden'
         is_inline_created = 'is_inline_created'
         is_instagram_eligible = 'is_instagram_eligible'
+        is_live_clip = 'is_live_clip'
         is_popular = 'is_popular'
         is_published = 'is_published'
         is_spherical = 'is_spherical'
@@ -81,6 +84,7 @@ class PagePost(
         updated_time = 'updated_time'
         via = 'via'
         video_buying_eligibility = 'video_buying_eligibility'
+        was_fb_live_videos = 'was_fb_live_videos'
         width = 'width'
 
     class With:
@@ -177,6 +181,7 @@ class PagePost(
             'direct_share_status': 'unsigned int',
             'explicitly_added_mentionee_ids': 'list<unsigned int>',
             'feed_story_visibility': 'feed_story_visibility_enum',
+            'is_ai_generated': 'bool',
             'is_explicit_location': 'bool',
             'is_hidden': 'bool',
             'is_pinned': 'bool',
@@ -417,6 +422,7 @@ class PagePost(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'attribution_id_v2': 'string',
             'nectar_module': 'string',
             'tracking': 'string',
         }
@@ -480,6 +486,7 @@ class PagePost(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'attribution_id_v2': 'string',
             'feedback_source': 'string',
             'nectar_module': 'string',
             'tracking': 'string',
@@ -657,11 +664,14 @@ class PagePost(
         'id': 'string',
         'instagram_eligibility': 'string',
         'is_app_share': 'bool',
+        'is_eligible_for_dark_post': 'bool',
         'is_eligible_for_promotion': 'bool',
         'is_expired': 'bool',
+        'is_fb_live_videos': 'bool',
         'is_hidden': 'bool',
         'is_inline_created': 'bool',
         'is_instagram_eligible': 'bool',
+        'is_live_clip': 'bool',
         'is_popular': 'bool',
         'is_published': 'bool',
         'is_spherical': 'bool',
@@ -689,6 +699,7 @@ class PagePost(
         'updated_time': 'datetime',
         'via': 'Object',
         'video_buying_eligibility': 'list<string>',
+        'was_fb_live_videos': 'bool',
         'width': 'unsigned int',
     }
     @classmethod

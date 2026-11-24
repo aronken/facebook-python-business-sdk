@@ -200,6 +200,7 @@ class Album(
         if batch is None and (success is not None or failure is not None):
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         param_types = {
+            'attribution_id_v2': 'string',
             'feedback_source': 'string',
             'nectar_module': 'string',
             'notify': 'bool',
@@ -276,6 +277,7 @@ class Album(
             'backdated_time': 'datetime',
             'backdated_time_granularity': 'backdated_time_granularity_enum',
             'caption': 'string',
+            'composer_entry_point': 'string',
             'composer_session_id': 'string',
             'direct_share_status': 'unsigned int',
             'feed_targeting': 'Object',
@@ -301,7 +303,6 @@ class Album(
             'place': 'Object',
             'privacy': 'string',
             'profile_id': 'int',
-            'provenance_info': 'map',
             'proxied_app_id': 'string',
             'published': 'bool',
             'qn': 'string',

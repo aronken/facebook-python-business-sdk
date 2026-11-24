@@ -153,6 +153,8 @@ class AdsPixel(
             'first_party_cookie_status': 'first_party_cookie_status_enum',
             'name': 'string',
             'server_events_business_ids': 'list<string>',
+            'server_events_business_ids_add': 'list<string>',
+            'server_events_business_ids_remove': 'list<string>',
         }
         enums = {
             'automatic_matching_fields_enum': AdsPixel.AutomaticMatchingFields.__dict__.values(),
@@ -710,6 +712,7 @@ class AdsPixel(
           api_utils.warning('`success` and `failure` callback only work for batch call.')
         from facebook_business.adobjects.adspixelstatsresult import AdsPixelStatsResult
         param_types = {
+            'agent': 'string',
             'aggregation': 'aggregation_enum',
             'end_time': 'datetime',
             'event': 'string',

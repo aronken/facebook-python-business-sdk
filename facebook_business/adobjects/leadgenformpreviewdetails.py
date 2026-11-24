@@ -24,8 +24,8 @@ class LeadGenFormPreviewDetails(
         self._api = api
 
     class Field(AbstractObject.Field):
+        book_on_website_text = 'book_on_website_text'
         call_business_text = 'call_business_text'
-        call_to_action_title = 'call_to_action_title'
         chat_on_messenger_text = 'chat_on_messenger_text'
         chat_on_whatsapp_text = 'chat_on_whatsapp_text'
         contact_information_text = 'contact_information_text'
@@ -63,6 +63,9 @@ class LeadGenFormPreviewDetails(
         return_to_facebook_text = 'return_to_facebook_text'
         review_your_info_text = 'review_your_info_text'
         secure_sharing_text = 'secure_sharing_text'
+        secure_sharing_text_for_embedded_booking = 'secure_sharing_text_for_embedded_booking'
+        secure_sharing_text_for_embedded_booking_calendly = 'secure_sharing_text_for_embedded_booking_calendly'
+        secure_sharing_text_for_embedded_booking_ghl = 'secure_sharing_text_for_embedded_booking_ghl'
         secure_sharing_text_for_optional_privacy_policy = 'secure_sharing_text_for_optional_privacy_policy'
         slide_to_submit_text = 'slide_to_submit_text'
         social_proof_section_headers = 'social_proof_section_headers'
@@ -72,8 +75,8 @@ class LeadGenFormPreviewDetails(
         whats_app_opt_in_title = 'whats_app_opt_in_title'
 
     _field_types = {
+        'book_on_website_text': 'string',
         'call_business_text': 'string',
-        'call_to_action_title': 'string',
         'chat_on_messenger_text': 'string',
         'chat_on_whatsapp_text': 'string',
         'contact_information_text': 'string',
@@ -111,6 +114,9 @@ class LeadGenFormPreviewDetails(
         'return_to_facebook_text': 'string',
         'review_your_info_text': 'string',
         'secure_sharing_text': 'string',
+        'secure_sharing_text_for_embedded_booking': 'string',
+        'secure_sharing_text_for_embedded_booking_calendly': 'string',
+        'secure_sharing_text_for_embedded_booking_ghl': 'string',
         'secure_sharing_text_for_optional_privacy_policy': 'string',
         'slide_to_submit_text': 'string',
         'social_proof_section_headers': 'list<map<string, string>>',

@@ -48,6 +48,8 @@ class Ad(
         created_time = 'created_time'
         creative = 'creative'
         creative_asset_groups_spec = 'creative_asset_groups_spec'
+        creative_audience_pairing_persona = 'creative_audience_pairing_persona'
+        creative_automation_spec = 'creative_automation_spec'
         demolink_hash = 'demolink_hash'
         display_sequence = 'display_sequence'
         effective_status = 'effective_status'
@@ -63,6 +65,7 @@ class Ad(
         recommendations = 'recommendations'
         source_ad = 'source_ad'
         source_ad_id = 'source_ad_id'
+        special_ad_categories = 'special_ad_categories'
         status = 'status'
         targeting = 'targeting'
         tracking_and_conversion_with_defaults = 'tracking_and_conversion_with_defaults'
@@ -70,6 +73,7 @@ class Ad(
         updated_time = 'updated_time'
         adset_spec = 'adset_spec'
         audience_id = 'audience_id'
+        dataset_split_specs = 'dataset_split_specs'
         date_format = 'date_format'
         draft_adgroup_id = 'draft_adgroup_id'
         execution_options = 'execution_options'
@@ -256,6 +260,8 @@ class Ad(
             'conversion_domain': 'string',
             'creative': 'AdCreative',
             'creative_asset_groups_spec': 'Object',
+            'creative_audience_pairing_persona': 'map',
+            'creative_automation_spec': 'Object',
             'display_sequence': 'unsigned int',
             'draft_adgroup_id': 'string',
             'engagement_audience': 'bool',
@@ -470,6 +476,7 @@ class Ad(
             'action_breakdowns': 'list<action_breakdowns_enum>',
             'action_report_time': 'action_report_time_enum',
             'breakdowns': 'list<breakdowns_enum>',
+            'cpas_only': 'string',
             'date_preset': 'date_preset_enum',
             'default_summary': 'bool',
             'export_columns': 'list<string>',
@@ -477,6 +484,7 @@ class Ad(
             'export_name': 'string',
             'fields': 'list<string>',
             'filtering': 'list<Object>',
+            'graph_cache': 'bool',
             'level': 'level_enum',
             'limit': 'int',
             'product_id_limit': 'int',
@@ -532,6 +540,7 @@ class Ad(
             'action_breakdowns': 'list<action_breakdowns_enum>',
             'action_report_time': 'action_report_time_enum',
             'breakdowns': 'list<breakdowns_enum>',
+            'cpas_only': 'string',
             'date_preset': 'date_preset_enum',
             'default_summary': 'bool',
             'export_columns': 'list<string>',
@@ -539,6 +548,7 @@ class Ad(
             'export_name': 'string',
             'fields': 'list<string>',
             'filtering': 'list<Object>',
+            'graph_cache': 'bool',
             'level': 'level_enum',
             'limit': 'int',
             'product_id_limit': 'int',
@@ -717,6 +727,8 @@ class Ad(
         'created_time': 'datetime',
         'creative': 'AdCreative',
         'creative_asset_groups_spec': 'AdCreativeAssetGroupsSpec',
+        'creative_audience_pairing_persona': 'CreativeAudiencePairingPersona',
+        'creative_automation_spec': 'AdCreativeAutomationSpec',
         'demolink_hash': 'string',
         'display_sequence': 'int',
         'effective_status': 'EffectiveStatus',
@@ -732,6 +744,7 @@ class Ad(
         'recommendations': 'list<AdRecommendation>',
         'source_ad': 'Ad',
         'source_ad_id': 'string',
+        'special_ad_categories': 'list<string>',
         'status': 'Status',
         'targeting': 'Targeting',
         'tracking_and_conversion_with_defaults': 'TrackingAndConversionWithDefaults',
@@ -739,6 +752,7 @@ class Ad(
         'updated_time': 'datetime',
         'adset_spec': 'AdSet',
         'audience_id': 'string',
+        'dataset_split_specs': 'list<map>',
         'date_format': 'string',
         'draft_adgroup_id': 'string',
         'execution_options': 'list<ExecutionOptions>',

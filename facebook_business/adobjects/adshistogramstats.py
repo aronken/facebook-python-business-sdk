@@ -30,18 +30,24 @@ class AdsHistogramStats(
         field_1d_ev = '1d_ev'
         field_1d_ev_all_conversions = '1d_ev_all_conversions'
         field_1d_ev_first_conversion = '1d_ev_first_conversion'
+        field_1d_passback = '1d_passback'
+        field_1d_sequenced = '1d_sequenced'
         field_1d_view = '1d_view'
         field_1d_view_all_conversions = '1d_view_all_conversions'
         field_1d_view_first_conversion = '1d_view_first_conversion'
         field_28d_click = '28d_click'
         field_28d_click_all_conversions = '28d_click_all_conversions'
         field_28d_click_first_conversion = '28d_click_first_conversion'
+        field_28d_passback = '28d_passback'
+        field_28d_sequenced = '28d_sequenced'
         field_28d_view = '28d_view'
         field_28d_view_all_conversions = '28d_view_all_conversions'
         field_28d_view_first_conversion = '28d_view_first_conversion'
         field_7d_click = '7d_click'
         field_7d_click_all_conversions = '7d_click_all_conversions'
         field_7d_click_first_conversion = '7d_click_first_conversion'
+        field_7d_passback = '7d_passback'
+        field_7d_sequenced = '7d_sequenced'
         field_7d_view = '7d_view'
         field_7d_view_all_conversions = '7d_view_all_conversions'
         field_7d_view_first_conversion = '7d_view_first_conversion'
@@ -63,6 +69,7 @@ class AdsHistogramStats(
         action_video_asset_id = 'action_video_asset_id'
         action_video_sound = 'action_video_sound'
         action_video_type = 'action_video_type'
+        custom = 'custom'
         dda = 'dda'
         incrementality = 'incrementality'
         incrementality_all_conversions = 'incrementality_all_conversions'
@@ -70,6 +77,7 @@ class AdsHistogramStats(
         inline = 'inline'
         interactive_component_sticker_id = 'interactive_component_sticker_id'
         interactive_component_sticker_response = 'interactive_component_sticker_response'
+        promoted_product_set_result = 'promoted_product_set_result'
         skan_click = 'skan_click'
         skan_click_second_postback = 'skan_click_second_postback'
         skan_click_third_postback = 'skan_click_third_postback'
@@ -85,18 +93,24 @@ class AdsHistogramStats(
         '1d_ev': 'list<int>',
         '1d_ev_all_conversions': 'list<int>',
         '1d_ev_first_conversion': 'list<int>',
+        '1d_passback': 'list<int>',
+        '1d_sequenced': 'list<int>',
         '1d_view': 'list<int>',
         '1d_view_all_conversions': 'list<int>',
         '1d_view_first_conversion': 'list<int>',
         '28d_click': 'list<int>',
         '28d_click_all_conversions': 'list<int>',
         '28d_click_first_conversion': 'list<int>',
+        '28d_passback': 'list<int>',
+        '28d_sequenced': 'list<int>',
         '28d_view': 'list<int>',
         '28d_view_all_conversions': 'list<int>',
         '28d_view_first_conversion': 'list<int>',
         '7d_click': 'list<int>',
         '7d_click_all_conversions': 'list<int>',
         '7d_click_first_conversion': 'list<int>',
+        '7d_passback': 'list<int>',
+        '7d_sequenced': 'list<int>',
         '7d_view': 'list<int>',
         '7d_view_all_conversions': 'list<int>',
         '7d_view_first_conversion': 'list<int>',
@@ -118,6 +132,7 @@ class AdsHistogramStats(
         'action_video_asset_id': 'string',
         'action_video_sound': 'string',
         'action_video_type': 'string',
+        'custom': 'list<int>',
         'dda': 'list<int>',
         'incrementality': 'list<int>',
         'incrementality_all_conversions': 'list<int>',
@@ -125,6 +140,7 @@ class AdsHistogramStats(
         'inline': 'list<int>',
         'interactive_component_sticker_id': 'string',
         'interactive_component_sticker_response': 'string',
+        'promoted_product_set_result': 'string',
         'skan_click': 'list<int>',
         'skan_click_second_postback': 'list<int>',
         'skan_click_third_postback': 'list<int>',
